@@ -553,6 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: {fileID: 1804187126476920, guid: bcbaf813b102afe4baa4eded7d71cce5, type: 2}
+  useMouse: 0
 --- !u!4 &565653299
 Transform:
   m_ObjectHideFlags: 0
