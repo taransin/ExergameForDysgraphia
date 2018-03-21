@@ -8,7 +8,7 @@ public class Swipe : MonoBehaviour {
 
     public GameObject swipe;
 
-    public float tempo;
+    private float tempo;
 
     bool swiping = false;
     private float elapsedTime = 0;
@@ -42,7 +42,7 @@ public class Swipe : MonoBehaviour {
         instance.transform.rotation = side.transform.rotation;
         instance.transform.position = transform.position;
         swiping = true;
-        instance.GetComponentInChildren<SpriteRenderer>().color = Random.ColorHSV();
+        
 
         instance.transform.localScale = new Vector3(side.transform.localScale.x * elapsedTime / tempo,
                                                     instance.transform.localScale.y,
@@ -50,12 +50,35 @@ public class Swipe : MonoBehaviour {
     }
 
 
-    public void ChangeArea()
+    public bool ChangeArea()
     {
-        if(firstArea)
-            firstArea.SetActive(false);
-        if (secondArea)
-            secondArea.SetActive(true);
+        if (this.gameObject.Equals(Beat.instance.swipes[Beat.instance.target].gameObject))
+        {
+            if (!Beat.instance.inTime)
+            {
+                StartCoroutine(ChangeColor(Color.red, Color.yellow, 0.5f));
+            }
+            else
+            {
+                StartCoroutine(ChangeColor(Color.green, Color.yellow, 0.5f));
+            }
+
+            if (firstArea)
+                firstArea.SetActive(false);
+            if (secondArea)
+                secondArea.SetActive(true);
+
+            Beat.instance.ChangeTarget();
+            return true;
+        }
+        return false;
+    }
+
+    IEnumerator ChangeColor(Color toChange, Color defaultColor, float time)
+    {
+        this.GetComponent<SpriteRenderer>().color = toChange;
+        yield return new WaitForSeconds(time);
+        this.GetComponent<SpriteRenderer>().color = defaultColor;
     }
 
 }

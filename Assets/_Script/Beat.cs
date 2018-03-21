@@ -1,34 +1,94 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+public class Beat : MonoBehaviour
+{
 
-public class Beat : MonoBehaviour {
-
+    [Range(0f, 1f)]
+    public float errorPercentage = 0f;
 
     public float offset;
     public float tempo;
     public float change;
-    // Use this for initialization
+
+    //[HideInInspector]
+    public bool inTime = false;
 
     public Swipe[] swipes;
 
     int counter = 0;
 
-	void Start () {
+
+
+    public static Beat instance;
+
+    public int target = 0;
+
+
+    public Text text;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+            Destroy(gameObject);
+    }
+
+
+    void Start()
+    {
         StartCoroutine(Loop());
-	}
-	
+    }
+
+
+    public void ChangeTarget()
+    {
+        target++;
+        if (target >= swipes.Length)
+            target = 0;
+    }
 
     IEnumerator Loop()
     {
-        yield return new WaitForSeconds(offset);
-        while (counter < 3)
+        float attesa = offset / 3;
+        text.text = "3";
+        yield return new WaitForSeconds(attesa);
+        text.text = "2";
+        yield return new WaitForSeconds(attesa);
+        text.text = "1";
+        yield return new WaitForSeconds(attesa - tempo * errorPercentage);
+        text.text = "";
+        inTime = true;
+        yield return new WaitForSeconds(tempo * errorPercentage);
+
+        swipes[counter].StartSwiping(tempo);
+        counter++;
+
+        yield return new WaitForSeconds(tempo * errorPercentage);
+        inTime = false;
+
+
+        for (int i = 1; i < 3; i++)
         {
-            swipes[counter].StartSwiping(tempo);
-            counter++;
-            yield return new WaitForSeconds(tempo);
-            if (counter == 3)
-                counter = 0;
+
+            yield return new WaitForSeconds(tempo - 2 * tempo * errorPercentage);
+            inTime = true;
+            yield return new WaitForSeconds(tempo * errorPercentage);
+            swipes[i].StartSwiping(tempo);
+            yield return new WaitForSeconds(tempo * errorPercentage);
+            inTime = false;
+        }
+
+        while (true)
+        {
+            yield return new WaitForSeconds(tempo - 2 * tempo * errorPercentage);
+            inTime = true;
+            yield return new WaitForSeconds(2 * tempo * errorPercentage);
+            inTime = false;
         }
     }
 }

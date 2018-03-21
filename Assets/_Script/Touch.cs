@@ -37,7 +37,11 @@ public class Touch : MonoBehaviour {
 
         if (Input.touchCount > 0 && (Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetTouch(0).phase == TouchPhase.Canceled))
         {
-            instance.GetComponent<KillPoint>().Kill();
+
+            KillPoint kp = instance.GetComponent<KillPoint>();
+            kp.Kill();
+            kp.KillParticles();
+            
         }
     }
 }
