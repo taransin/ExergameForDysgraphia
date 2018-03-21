@@ -394,8 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d8a119e13772c44b154a7dbbd98a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 8.5
-  tempo: 1.15
+  offset: 8.6
+  tempo: 1.205
   change: 0.5
   swipes:
   - {fileID: 1261363592}

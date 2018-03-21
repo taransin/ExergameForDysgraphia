@@ -24,13 +24,15 @@ public class Swipe : MonoBehaviour {
         {
             elapsedTime += Time.deltaTime;
             //Debug.Log("scale originale: " + swipe.transform.localScale.x + " attuale :" + swipe.transform.localScale.x * elapsedTime / tempo);
-            instance.transform.localScale = new Vector3(side.transform.localScale.x * elapsedTime/tempo,
+            instance.transform.localScale = new Vector3(side.transform.localScale.x * elapsedTime / tempo,
                 instance.transform.localScale.y,
                 instance.transform.localScale.z);
 
             if (elapsedTime >= tempo)
                 swiping = false;
         }
+        else
+            elapsedTime = 0;
 	}
 
     public void StartSwiping(float tempo)
@@ -40,6 +42,7 @@ public class Swipe : MonoBehaviour {
         instance.transform.rotation = side.transform.rotation;
         instance.transform.position = transform.position;
         swiping = true;
+        instance.GetComponentInChildren<SpriteRenderer>().color = Random.ColorHSV();
 
         instance.transform.localScale = new Vector3(side.transform.localScale.x * elapsedTime / tempo,
                                                     instance.transform.localScale.y,

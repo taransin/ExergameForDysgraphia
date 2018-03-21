@@ -27,6 +27,8 @@ public class Beat : MonoBehaviour {
             swipes[counter].StartSwiping(tempo);
             counter++;
             yield return new WaitForSeconds(tempo);
+            if (counter == 3)
+                counter = 0;
         }
     }
 }
