@@ -20,6 +20,7 @@ public class Beat : MonoBehaviour
     int counter = 0;
 
 
+    public int sidesNumber;
 
     public static Beat instance;
 
@@ -72,7 +73,7 @@ public class Beat : MonoBehaviour
         inTime = false;
 
 
-        for (int i = 1; i < 3; i++)
+        for (int i = 1; i < sidesNumber; i++)
         {
 
             yield return new WaitForSeconds(tempo - 2 * tempo * errorPercentage);
