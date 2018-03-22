@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 429695814}
   - component: {fileID: 429695813}
   m_Layer: 0
-  m_Name: AreaAccettabile
+  m_Name: AcceptableArea
   m_TagString: AccettableArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 583002601}
   - component: {fileID: 583002600}
   m_Layer: 0
-  m_Name: AreaAccettabile (2)
+  m_Name: AcceptableArea (2)
   m_TagString: AccettableArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -733,7 +733,7 @@ GameObject:
   - component: {fileID: 903760047}
   - component: {fileID: 903760046}
   m_Layer: 0
-  m_Name: AreaAccettabile (1)
+  m_Name: AcceptableArea (1)
   m_TagString: AccettableArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1063,7 +1063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1081054448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1307,6 +1307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: {fileID: 1804187126476920, guid: bcbaf813b102afe4baa4eded7d71cce5, type: 2}
+  useMouse: 1
 --- !u!4 &1529769560
 Transform:
   m_ObjectHideFlags: 0
@@ -1441,7 +1442,7 @@ GameObject:
   - component: {fileID: 1708072284}
   - component: {fileID: 1708072283}
   m_Layer: 0
-  m_Name: AreaAccettabile (3)
+  m_Name: AcceptableArea (3)
   m_TagString: AccettableArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1738,16 +1739,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d8a119e13772c44b154a7dbbd98a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  errorPercentage: 0.25
+  target: 0
   offset: 4
   tempo: 1.8
-  change: 0.5
+  errorPercentage: 0.25
   inTime: 0
-  swipes:
+  angles:
   - {fileID: 744274682}
   - {fileID: 1541310537}
   - {fileID: 565717753}
   - {fileID: 869581110}
   sidesNumber: 4
-  target: 0
   text: {fileID: 1044752162}

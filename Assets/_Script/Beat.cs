@@ -5,39 +5,18 @@ using UnityEngine.UI;
 public class Beat : MonoBehaviour
 {
 
-    [Range(0f, 1f)]
-    public float errorPercentage = 0f;
-
-    public float offset;
-    public float tempo;
-    public float change;
-
-    //[HideInInspector]
-    public bool inTime = false;
-
-    public Swipe[] swipes;
-
-    int counter = 0;
-
-
-    public int sidesNumber;
-
     public static Beat instance;
 
     public int target = 0;
 
-
+    public float offset;
+    public float tempo;
+    [Range(0f, 1f)] public float errorPercentage = 0f;
+    [HideInInspector] public bool inTime = false;
+    public Swipe[] angles;
+    public int sidesNumber;
+    int counter = 0;
     public Text text;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-            Destroy(gameObject);
-    }
 
 
     void Start()
@@ -46,12 +25,22 @@ public class Beat : MonoBehaviour
     }
 
 
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+
     public void ChangeTarget()
     {
         target++;
-        if (target >= swipes.Length)
+        if (target >= angles.Length)
             target = 0;
     }
+
 
     IEnumerator Loop()
     {
@@ -66,12 +55,11 @@ public class Beat : MonoBehaviour
         inTime = true;
         yield return new WaitForSeconds(tempo * errorPercentage);
 
-        swipes[counter].StartSwiping(tempo);
+        angles[counter].StartSwiping(tempo);
         counter++;
 
         yield return new WaitForSeconds(tempo * errorPercentage);
         inTime = false;
-
 
         for (int i = 1; i < sidesNumber; i++)
         {
@@ -79,7 +67,7 @@ public class Beat : MonoBehaviour
             yield return new WaitForSeconds(tempo - 2 * tempo * errorPercentage);
             inTime = true;
             yield return new WaitForSeconds(tempo * errorPercentage);
-            swipes[i].StartSwiping(tempo);
+            angles[i].StartSwiping(tempo);
             yield return new WaitForSeconds(tempo * errorPercentage);
             inTime = false;
         }
