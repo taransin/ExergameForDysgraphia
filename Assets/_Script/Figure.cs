@@ -45,7 +45,7 @@ public class Figure : MonoBehaviour
     {
         yield return new WaitForSeconds(song.offset - song.tempo * errorPercentage);
         inTime = true;
-        yield return new WaitForSeconds(song.tempo * errorPercentage);
+       // yield return new WaitForSeconds(song.tempo * errorPercentage);
 
         angles[0].StartSwiping(song.tempo);
 
