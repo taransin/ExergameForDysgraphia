@@ -6,6 +6,6 @@ public class ParticleBehaviour : MonoBehaviour {
 
     void LateUpdate()
     {
-        transform.LookAt(Beat.instance.angles[Beat.instance.target].transform);
+        transform.LookAt(GameManager.instance.runningGame.GetNextTarget().transform);
     }
 }

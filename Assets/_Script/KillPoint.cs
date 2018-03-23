@@ -27,8 +27,10 @@ public class KillPoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (active && collision.name.Contains("Angle"))
-            collision.GetComponent<Swipe>().ChangeArea();
+
+        
+        if (active && collision.tag == "Angle")
+            collision.GetComponent<Angle>().ChangeArea();
 
         if (active && collision.tag == "AccettableArea")
             parSystem.SetActive(false);

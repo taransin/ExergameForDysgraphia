@@ -1,0 +1,74 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+[RequireComponent(typeof(AudioSource))]
+public class Figure : MonoBehaviour
+{
+
+    private int target = 0;
+
+    public Song song;
+    [HideInInspector] public float errorPercentage = 0f;
+
+    [HideInInspector] public bool inTime = false;
+
+    // figure data
+    public Angle[] angles;
+    public int sidesNumber;
+    public GameObject[] accettableAreas;
+
+    private void Awake()
+    {
+        GetComponent<AudioSource>().clip = song.audio;
+    }
+
+    void Start()
+    {
+        StartCoroutine(Loop());
+    }
+
+    public void ChangeTarget()
+    {
+        target++;
+        if (target >= angles.Length)
+            target = 0;
+    }
+
+    public GameObject GetNextTarget()
+    {
+        return angles[target].gameObject;
+    }
+
+    IEnumerator Loop()
+    {
+        yield return new WaitForSeconds(song.offset - song.tempo * errorPercentage);
+        inTime = true;
+        yield return new WaitForSeconds(song.tempo * errorPercentage);
+
+        angles[0].StartSwiping(song.tempo);
+
+        yield return new WaitForSeconds(song.tempo * errorPercentage);
+        inTime = false;
+
+        for (int i = 1; i < sidesNumber; i++)
+        {
+
+            yield return new WaitForSeconds(song.tempo - 2 * song.tempo * errorPercentage);
+            inTime = true;
+            yield return new WaitForSeconds(song.tempo * errorPercentage);
+            angles[i].StartSwiping(song.tempo);
+            yield return new WaitForSeconds(song.tempo * errorPercentage);
+            inTime = false;
+        }
+
+        while (true)
+        {
+            yield return new WaitForSeconds(song.tempo - 2 * song.tempo * errorPercentage);
+            inTime = true;
+            yield return new WaitForSeconds(2 * song.tempo * errorPercentage);
+            inTime = false;
+        }
+    }
+}

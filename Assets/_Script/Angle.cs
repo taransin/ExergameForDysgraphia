@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Swipe : MonoBehaviour {
+public class Angle : MonoBehaviour
+{
 
     public GameObject side;
     public GameObject swipe;
@@ -13,22 +14,23 @@ public class Swipe : MonoBehaviour {
 
     public GameObject firstArea;
     public GameObject secondArea;
-	
 
-	void Update () {
+
+    void Update()
+    {
         if (swiping)
         {
             elapsedTime += Time.deltaTime;
             instance.transform.localScale = new Vector3(side.transform.localScale.x * elapsedTime / tempo,
-                instance.transform.localScale.y,
-                instance.transform.localScale.z);
+                                                        instance.transform.localScale.y,
+                                                        instance.transform.localScale.z);
 
             if (elapsedTime >= tempo)
                 swiping = false;
         }
         else
             elapsedTime = 0;
-	}
+    }
 
 
     public void StartSwiping(float tempo)
@@ -45,9 +47,9 @@ public class Swipe : MonoBehaviour {
 
     public bool ChangeArea()
     {
-        if (this.gameObject.Equals(Beat.instance.angles[Beat.instance.target].gameObject))
+        if (this.gameObject.Equals(GameManager.instance.runningGame.GetNextTarget()))
         {
-            if (!Beat.instance.inTime)
+            if (!GameManager.instance.runningGame.inTime)
                 StartCoroutine(ChangeColor(Color.red, Color.yellow, 0.5f));
             else
                 StartCoroutine(ChangeColor(Color.green, Color.yellow, 0.5f));
@@ -57,7 +59,7 @@ public class Swipe : MonoBehaviour {
             if (secondArea)
                 secondArea.SetActive(true);
 
-            Beat.instance.ChangeTarget();
+            GameManager.instance.runningGame.ChangeTarget();
             return true;
         }
         return false;
