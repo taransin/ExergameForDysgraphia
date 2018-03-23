@@ -31,8 +31,12 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if(runningGame)
+        if (runningGame) //for testing
+        {
+            runningGame.errorPercentage = timeErrorPercentage;
             StartCoroutine(GameStartGui(runningGame.song.offset));
+        }
+            
     }
 	
 	// Update is called once per frame
@@ -57,6 +61,7 @@ public class GameManager : MonoBehaviour {
         }
 
         runningGame = Instantiate(figure);
+        runningGame.errorPercentage = timeErrorPercentage;
         StartCoroutine(GameStartGui(runningGame.song.offset));
         
     }

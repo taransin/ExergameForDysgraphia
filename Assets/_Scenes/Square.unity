@@ -1739,7 +1739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac439826f277af0488cfe2363217faa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  song: {fileID: 0}
+  song: {fileID: 11400000, guid: 0e4cfffb49863af41803d2c982996bdf, type: 2}
   errorPercentage: 0
   inTime: 0
   angles:
@@ -1780,7 +1780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa071d2444728b148b8439fbd87942c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeErrorPercentage: 0.355
+  timeErrorPercentage: 0.25
   accettableAreaSize: 5
   figures: []
   runningGame: {fileID: 2089909385}

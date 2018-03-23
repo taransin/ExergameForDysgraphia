@@ -12,7 +12,7 @@ public class Figure : MonoBehaviour
     public Song song;
     [HideInInspector] public float errorPercentage = 0f;
 
-    [HideInInspector] public bool inTime = false;
+    public bool inTime = false;
 
     // figure data
     public Angle[] angles;
