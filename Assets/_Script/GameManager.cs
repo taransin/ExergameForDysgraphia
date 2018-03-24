@@ -3,17 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum GameState
+{
+    MAINMENU,
+    INGAME
+}
+
 public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
-    [Range(0f, 1f)] public float timeErrorPercentage = 0f;
-    public int accettableAreaSize = 5;
 
     public Figure[] figures;
 
-    public Figure runningGame;
+    public GameState gameState = GameState.MAINMENU;
+    [Space]
+    [Header("GUI")]
+    public GameObject counterPanel;
+    public Text counter;
+    public GameObject mainMenu;
+    public Slider time;
+    public Slider Space;
 
-    public Text text;
+    [Space]
+    [Header("For testing")]
+    [Range(0f, 1f)]
+    public float timeErrorPercentage = 0f;
+    public int accettableAreaSize = 5;
+    public Figure runningGame;
 
     void Awake()
     {
@@ -31,19 +47,22 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if (runningGame) //for testing
+        if (runningGame) //for testing      
         {
+            gameState = GameState.INGAME;
+            SetupGui();
             runningGame.errorPercentage = timeErrorPercentage;
+            runningGame.accettableAreaSize = accettableAreaSize;
             StartCoroutine(GameStartGui(runningGame.song.offset));
+        }
+        else
+        {
+            gameState = GameState.MAINMENU;
+            SetupGui();
         }
             
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public Figure GetFigureByName(string name)
     {
         foreach (Figure f in figures)
@@ -59,24 +78,42 @@ public class GameManager : MonoBehaviour {
             Debug.Log("figura " + name + " non trovata!");
             return;
         }
-
+        gameState = GameState.INGAME;
+        SetupGui();
         runningGame = Instantiate(figure);
-        runningGame.errorPercentage = timeErrorPercentage;
+        runningGame.errorPercentage = time.value;
+        runningGame.accettableAreaSize = (int) Space.value;
         StartCoroutine(GameStartGui(runningGame.song.offset));
         
+    }
+
+    void SetupGui()
+    {
+        switch (gameState)
+        {
+            case GameState.INGAME:
+                mainMenu.SetActive(false);
+                counterPanel.SetActive(true);
+                break;
+            case GameState.MAINMENU:
+                mainMenu.SetActive(true);
+                counterPanel.SetActive(false);
+                break;
+
+        }
     }
 
 
     IEnumerator GameStartGui(float time)
     {
         float wait = time / 3;
-        text.text = "3";
+        counter.text = "3";
         yield return new WaitForSeconds(wait);
-        text.text = "2";
+        counter.text = "2";
         yield return new WaitForSeconds(wait);
-        text.text = "1";
+        counter.text = "1";
         yield return new WaitForSeconds(wait);
-        text.text = "";
+        counter.text = "";
     }
 
 }

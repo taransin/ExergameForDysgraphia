@@ -19,7 +19,7 @@ public class Touch : MonoBehaviour
 
     void Update()
     {
-        if (ThereIsInput())
+        if (GameManager.instance.gameState == GameState.INGAME && ThereIsInput())
         {
             if (InputStarted())
             {
@@ -35,11 +35,12 @@ public class Touch : MonoBehaviour
                 if (objPlane.Raycast(ray, out distance))
                     instance.transform.position = ray.GetPoint(distance);
             }
-            else if (InputEnded())
+            else if (InputEnded() && instance)
             {
                 KillPoint kp = instance.GetComponent<KillPoint>();
                 kp.KillPoints();
                 kp.KillParticles();
+
             }
         }
     }

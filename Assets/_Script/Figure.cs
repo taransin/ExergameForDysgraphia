@@ -11,6 +11,7 @@ public class Figure : MonoBehaviour
 
     public Song song;
     [HideInInspector] public float errorPercentage = 0f;
+    [HideInInspector] public int accettableAreaSize = 1;
 
     public bool inTime = false;
 
@@ -26,6 +27,12 @@ public class Figure : MonoBehaviour
 
     void Start()
     {
+        foreach(GameObject g in accettableAreas)
+        {
+            Vector3 scale = g.transform.localScale;
+            g.transform.localScale = new Vector3(scale.x, accettableAreaSize, scale.z);
+        }
+            
         StartCoroutine(Loop());
     }
 
