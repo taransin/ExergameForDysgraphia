@@ -666,6 +666,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   song: {fileID: 11400000, guid: df3e7604884cec7438133bfe956a4940, type: 2}
   errorPercentage: 0
+  accettableAreaSize: 1
+  visualBeatObject: {fileID: 1782218641902642, guid: 338acc54ef0b0c5429892e8dc6f62b71,
+    type: 2}
   inTime: 0
   angles:
   - {fileID: 114732004919337552}

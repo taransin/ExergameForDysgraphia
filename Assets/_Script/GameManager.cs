@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour {
         gameState = GameState.INGAME;
         SetupGui();
         runningGame = Instantiate(figure);
-        runningGame.errorPercentage = time.value;
+        runningGame.errorPercentage = time.value/100;
         runningGame.accettableAreaSize = (int) Space.value;
         StartCoroutine(GameStartGui(runningGame.song.offset));
         

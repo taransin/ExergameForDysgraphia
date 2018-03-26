@@ -13,6 +13,9 @@ public class Figure : MonoBehaviour
     [HideInInspector] public float errorPercentage = 0f;
     [HideInInspector] public int accettableAreaSize = 1;
 
+    public GameObject visualBeatObject;
+    private VisualBeat visualBeatInstance;
+
     public bool inTime = false;
 
     // figure data
@@ -50,12 +53,17 @@ public class Figure : MonoBehaviour
 
     IEnumerator Loop()
     {
+        visualBeatInstance = Instantiate(visualBeatObject, new Vector3(), Quaternion.identity).GetComponent<VisualBeat>();
+        if (visualBeatInstance)
+            visualBeatInstance.tempo = song.tempo;
+
         yield return new WaitForSeconds(song.offset - song.tempo * errorPercentage);
         inTime = true;
-       // yield return new WaitForSeconds(song.tempo * errorPercentage);
-
+        // yield return new WaitForSeconds(song.tempo * errorPercentage);
+                
         angles[0].StartSwiping(song.tempo);
-
+        if (visualBeatInstance)
+            visualBeatInstance.Beat();
         yield return new WaitForSeconds(song.tempo * errorPercentage);
         inTime = false;
 
@@ -66,6 +74,8 @@ public class Figure : MonoBehaviour
             inTime = true;
             yield return new WaitForSeconds(song.tempo * errorPercentage);
             angles[i].StartSwiping(song.tempo);
+            if (visualBeatInstance)
+                visualBeatInstance.Beat();
             yield return new WaitForSeconds(song.tempo * errorPercentage);
             inTime = false;
         }
@@ -74,7 +84,10 @@ public class Figure : MonoBehaviour
         {
             yield return new WaitForSeconds(song.tempo - 2 * song.tempo * errorPercentage);
             inTime = true;
-            yield return new WaitForSeconds(2 * song.tempo * errorPercentage);
+            yield return new WaitForSeconds(song.tempo * errorPercentage);
+            if (visualBeatInstance)
+                visualBeatInstance.Beat();
+            yield return new WaitForSeconds(song.tempo * errorPercentage);
             inTime = false;
         }
     }
