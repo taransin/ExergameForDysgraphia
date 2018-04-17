@@ -7,4 +7,6 @@ public class Song : ScriptableObject {
     public AudioClip audio;
     public float offset;
     public float tempo;
+    public int beatCount;
+    public int stopAt;
 }
