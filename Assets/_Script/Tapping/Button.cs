@@ -2,45 +2,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Button : MonoBehaviour {
 
-    private float time;
-    private bool inTime = false;
-    public Song song;
-    public float errorPercentage = 0.3f;
-
-    public GameObject nextLevel;
-
-    public Text counter;
-
+    private Level level;
     private Color defaultColor;
-
-    private void Awake()
-    {
-        AudioSource _as = gameObject.GetComponent<AudioSource>();
-        _as.clip = song.audio;
-        _as.Play();
-        StartCoroutine(Loop());
-        time = Time.realtimeSinceStartup;
-    }
 
     private void Start()
     {
         defaultColor = GetComponent<SpriteRenderer>().color;
-        StartCoroutine(GameStartGui(song.offset)); 
+        level = this.gameObject.GetComponentInParent<Level>();
+        
     }
 
     public void Clicked()
     {
-        if (inTime)
+        if (level.inTime)
             StartCoroutine(ChangeColor(Color.green));
         else
             StartCoroutine(ChangeColor(Color.red));
     }
 
-    IEnumerator ChangeColor(Color color)
+    private IEnumerator ChangeColor(Color color)
     {
         SpriteRenderer sp = GetComponent<SpriteRenderer>();
         if (sp.color == defaultColor)
@@ -51,59 +34,4 @@ public class Button : MonoBehaviour {
         }
 
     }
-
-    IEnumerator Loop() {
-
-        float errore = 0;
-        time = Time.realtimeSinceStartup;
-        yield return new WaitForSeconds(song.offset - song.tempo * errorPercentage);
-        //Debug.Log("volevo: " + (song.offset - song.tempo * errorPercentage) + " invece ho " + (Time.realtimeSinceStartup - time));
-        errore = (Time.realtimeSinceStartup - time) - (song.offset - song.tempo * errorPercentage);
-        inTime = true;
-        time = Time.realtimeSinceStartup;
-        yield return new WaitForSeconds(2*song.tempo * errorPercentage - errore);
-        errore = (Time.realtimeSinceStartup - time) - (2 * song.tempo * errorPercentage - errore);
-        //Debug.Log("volevo: " + (2 * song.tempo * errorPercentage) + " invece ho " + (Time.realtimeSinceStartup - time));
-        inTime = false;
-        float tempo = 1;
-        while (tempo <= song.beatCount - 3)
-        {
-            time = Time.realtimeSinceStartup;
-            yield return new WaitForSeconds(song.tempo - 2 * song.tempo * errorPercentage - errore);
-            errore = (Time.realtimeSinceStartup - time) - (song.tempo - 2 * song.tempo * errorPercentage - errore);
-            //Debug.Log("volevo: " + (song.tempo - 2 * song.tempo * errorPercentage) + " invece ho " + (Time.realtimeSinceStartup - time));
-            inTime = true;
-            time = Time.realtimeSinceStartup;
-            yield return new WaitForSeconds(2*song.tempo * errorPercentage - errore);
-            errore = (Time.realtimeSinceStartup - time) - (2 * song.tempo * errorPercentage - errore);
-            //Debug.Log("volevo: " + (2 * song.tempo * errorPercentage) + " invece ho " + (Time.realtimeSinceStartup - time));
-            inTime = false;
-
-            if (tempo == song.stopAt)
-                GetComponent<AudioSource>().Stop();
-
-            Debug.Log(tempo + " <= " + song.beatCount);
-
-            tempo++;
-
-        }
-
-
-        nextLevel.SetActive(true);
-    }
-
-
-    IEnumerator GameStartGui(float time)
-    {
-        float wait = time / 3;
-        counter.text = "3";
-        yield return new WaitForSeconds(wait);
-        counter.text = "2";
-        yield return new WaitForSeconds(wait);
-        counter.text = "1";
-        yield return new WaitForSeconds(wait);
-        counter.text = "";
-    }
-
-
 }

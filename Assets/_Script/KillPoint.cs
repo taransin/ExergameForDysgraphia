@@ -7,7 +7,7 @@ public class KillPoint : MonoBehaviour
 
     public GameObject parSystem;
     private bool active = true;
-    private bool inArea = false;
+    private bool inArea;
 
 
     public void KillPoints()

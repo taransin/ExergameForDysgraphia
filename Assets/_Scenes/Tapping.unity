@@ -143,10 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16230868657714f46a0150014b307bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  song: {fileID: 11400000, guid: fb345f1fc32a6f446984befde2798393, type: 2}
-  errorPercentage: 0.15
-  nextLevel: {fileID: 1981754618}
-  counter: {fileID: 1128280924}
 --- !u!82 &15465229
 AudioSource:
   m_ObjectHideFlags: 0
@@ -307,6 +303,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 384259860}
+  - component: {fileID: 384259861}
   m_Layer: 0
   m_Name: Tap50bpm
   m_TagString: Untagged
@@ -329,6 +326,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &384259861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 384259859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22a3fcaa792c3a47a075e053616bc98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inTime: 0
+  song: {fileID: 11400000, guid: ad0623b3a4d35f9409bcc846fd102166, type: 2}
+  counter: {fileID: 1128280924}
+  nextLevelButton: {fileID: 1981754618}
+  errorPercentage: 0.15
 --- !u!1 &452403519
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +350,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 452403520}
+  - component: {fileID: 452403521}
   m_Layer: 0
   m_Name: Tap80bpm
   m_TagString: Untagged
@@ -359,6 +373,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &452403521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 452403519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22a3fcaa792c3a47a075e053616bc98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inTime: 0
+  song: {fileID: 11400000, guid: b201e0c3af97cbb4082e1ec77fae8e7d, type: 2}
+  counter: {fileID: 1128280924}
+  nextLevelButton: {fileID: 1981754618}
+  errorPercentage: 0.25
 --- !u!1 &553586252
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +397,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 553586253}
+  - component: {fileID: 553586254}
   m_Layer: 0
   m_Name: Tap50bpmContinuated
   m_TagString: Untagged
@@ -389,6 +420,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &553586254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 553586252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22a3fcaa792c3a47a075e053616bc98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inTime: 0
+  song: {fileID: 11400000, guid: fb345f1fc32a6f446984befde2798393, type: 2}
+  counter: {fileID: 1128280924}
+  nextLevelButton: {fileID: 1981754618}
+  errorPercentage: 0.15
 --- !u!1 &639887804
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,10 +466,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16230868657714f46a0150014b307bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  song: {fileID: 11400000, guid: 380c9145a3a9a564e820bda50d4260bb, type: 2}
-  errorPercentage: 0.2
-  nextLevel: {fileID: 1981754618}
-  counter: {fileID: 1128280924}
 --- !u!82 &639887806
 AudioSource:
   m_ObjectHideFlags: 0
@@ -583,6 +626,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 940826185}
+  - component: {fileID: 940826186}
   m_Layer: 0
   m_Name: Tap80bpmContinuated
   m_TagString: Untagged
@@ -605,6 +649,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &940826186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 940826184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22a3fcaa792c3a47a075e053616bc98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inTime: 0
+  song: {fileID: 11400000, guid: 380c9145a3a9a564e820bda50d4260bb, type: 2}
+  counter: {fileID: 1128280924}
+  nextLevelButton: {fileID: 1981754618}
+  errorPercentage: 0.25
 --- !u!1 &1053287041
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,10 +896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16230868657714f46a0150014b307bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  song: {fileID: 11400000, guid: b201e0c3af97cbb4082e1ec77fae8e7d, type: 2}
-  errorPercentage: 0.2
-  nextLevel: {fileID: 1981754618}
-  counter: {fileID: 1128280924}
 --- !u!82 &1096561790
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1003,7 +1059,7 @@ GameObject:
   - component: {fileID: 1128280925}
   - component: {fileID: 1128280924}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1328,10 +1384,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16230868657714f46a0150014b307bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  song: {fileID: 11400000, guid: ad0623b3a4d35f9409bcc846fd102166, type: 2}
-  errorPercentage: 0.15
-  nextLevel: {fileID: 1981754618}
-  counter: {fileID: 1128280924}
 --- !u!82 &1588257350
 AudioSource:
   m_ObjectHideFlags: 0

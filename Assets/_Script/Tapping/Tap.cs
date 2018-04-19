@@ -25,9 +25,13 @@ public class Tap : MonoBehaviour {
                 this.transform.position = ray.GetPoint(distance);
                 button.Clicked();
             }
-                
         }
     }
+
+
+
+    // Input methods
+
 
     private bool ThereIsInput()
     {
