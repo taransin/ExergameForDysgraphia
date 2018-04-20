@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Main.unity
     guid: acfe951d70b43234182fbe315a6be268
+  - enabled: 1
+    path: Assets/_Scenes/Isochrony.unity
+    guid: 6713e7f41dbcf26489682334d1bd9319
