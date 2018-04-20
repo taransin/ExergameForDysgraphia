@@ -68,8 +68,7 @@ public class Level : MonoBehaviour {
 
         }
 
-
-        nextLevelButton.SetActive(true);
+        UIManager.instance.ShowNextLevelButton();
     }
 
     private float GetElapsedRealTime(float time)

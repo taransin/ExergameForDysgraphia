@@ -81,4 +81,13 @@ public class CircleTouch : MonoBehaviour {
         else
             return (Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetTouch(0).phase == TouchPhase.Canceled);
     }
+
+    private void OnDisable()
+    {
+        if (instance)
+        {
+            instance.GetComponent<Point>().KillPoints();
+        }
+    }
+
 }
