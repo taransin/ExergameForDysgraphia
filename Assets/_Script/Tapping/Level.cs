@@ -12,24 +12,27 @@ public class Level : MonoBehaviour {
     public GameObject nextLevelButton;
     public float errorPercentage = 0.3f;
 
+
+
+
     private void Awake()
     {
-        AudioSource _as = gameObject.AddComponent<AudioSource>();
-        _as.clip = song.audio;
-        _as.Play();
+        if (song)
+        {
+            AudioSource _as = gameObject.AddComponent<AudioSource>();
+            _as.clip = song.audio;
+            _as.Play();
+            StartCoroutine(Loop());
+        }
 
-        StartCoroutine(Loop());
     }
 
     // Use this for initialization
     void Start () {
-        StartCoroutine(GameStartGui(song.offset));
+        if(song)
+            StartCoroutine(GameStartGui(song.offset));
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     private IEnumerator Loop()
     {
@@ -62,19 +65,23 @@ public class Level : MonoBehaviour {
             if (tempo == song.stopAt)
                 GetComponent<AudioSource>().Stop();
 
-            Debug.Log(tempo + " <= " + song.beatCount);
 
             tempo++;
 
         }
 
-        UIManager.instance.ShowNextLevelButton();
+       UIManager.instance.ShowNextLevelButton();
+
+            
+
     }
 
     private float GetElapsedRealTime(float time)
     {
         return Time.realtimeSinceStartup - time;
     }
+
+
 
 
     private IEnumerator GameStartGui(float time)

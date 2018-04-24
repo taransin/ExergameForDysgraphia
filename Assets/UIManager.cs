@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
     public GameObject initialMenuPanel;
     public GameObject nextLevelPanel;
+    public GameObject resultPanel;
+    public Text resultText;
+
     public LevelChanger _lc50;
     public LevelChanger _lc80;
 
@@ -60,6 +64,12 @@ public class UIManager : MonoBehaviour {
 
     public void NextLevel()
     {
+        if (resultPanel.activeInHierarchy)
+        {
+            resultText.text = "";
+            resultPanel.SetActive(false);
+        }
+
         if (_chosenLC)
         {
             if (_chosenLC.HaveFinished())
@@ -72,6 +82,14 @@ public class UIManager : MonoBehaviour {
         }
         nextLevelPanel.SetActive(false);
     }
+
+
+    public void ShowResult(string result)
+    {
+        resultText.text = result;
+        resultPanel.SetActive(true);
+    }
+
 
 
 }
