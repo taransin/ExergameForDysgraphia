@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/Main.unity
     guid: acfe951d70b43234182fbe315a6be268
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Isochrony.unity
     guid: 6713e7f41dbcf26489682334d1bd9319
+  - enabled: 1
+    path: Assets/_Scenes/Prototype.unity
+    guid: 57b2e8a82c385704b87e4a89cb36ba98
