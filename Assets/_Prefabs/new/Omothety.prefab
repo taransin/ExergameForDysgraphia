@@ -69,9 +69,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4134782163151284}
   - component: {fileID: 212828629403751682}
-  - component: {fileID: 58604199693141542}
   - component: {fileID: 114898019543414144}
   - component: {fileID: 114179511947456684}
+  - component: {fileID: 70577840370697942}
   m_Layer: 0
   m_Name: Circle (2)
   m_TagString: AccettableArea
@@ -88,9 +88,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4028791760770768}
   - component: {fileID: 212648892965269870}
-  - component: {fileID: 58857782413376494}
   - component: {fileID: 114829882275300010}
   - component: {fileID: 114541586530072450}
+  - component: {fileID: 70230047930248146}
   m_Layer: 0
   m_Name: Circle
   m_TagString: AccettableArea
@@ -107,9 +107,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4922570994246730}
   - component: {fileID: 212400744406002340}
-  - component: {fileID: 58171334349032302}
   - component: {fileID: 114276552944222666}
   - component: {fileID: 114015088869564668}
+  - component: {fileID: 70760939746727714}
   m_Layer: 0
   m_Name: Circle (1)
   m_TagString: AccettableArea
@@ -200,38 +200,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58171334349032302
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1903251816784626}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!58 &58604199693141542
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1446117626081452}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!58 &58857782413376494
-CircleCollider2D:
+--- !u!70 &70230047930248146
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -242,9 +212,39 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Offset: {x: 0.6431938, y: -0.00000007667467}
+  m_Size: {x: 3.5233388, y: 1.0000168}
+  m_Direction: 1
+--- !u!70 &70577840370697942
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1446117626081452}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.187442, y: 0.0000001415541}
+  m_Size: {x: 5.3539596, y: 1.0000056}
+  m_Direction: 1
+--- !u!70 &70760939746727714
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1903251816784626}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.102092996, y: 0.000000012170432}
+  m_Size: {x: 2.243207, y: 1.0000076}
+  m_Direction: 1
 --- !u!114 &114015088869564668
 MonoBehaviour:
   m_ObjectHideFlags: 1
