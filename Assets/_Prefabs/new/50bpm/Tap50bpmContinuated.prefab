@@ -247,10 +247,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inTime: 0
+  phase: 0
   song: {fileID: 11400000, guid: fb345f1fc32a6f446984befde2798393, type: 2}
   counter: {fileID: 0}
   nextLevelButton: {fileID: 0}
   errorPercentage: 0.15
+  resultObject: {fileID: 114338698702651406}
 --- !u!114 &114301316996535022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -275,6 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16230868657714f46a0150014b307bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counters: 
 --- !u!212 &212024498090921878
 SpriteRenderer:
   m_ObjectHideFlags: 1

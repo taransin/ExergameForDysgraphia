@@ -7,9 +7,12 @@ public enum Punto
 {
     A,B,C
 }
+public enum Speed
+{
+    NORMAL,SLOW,FAST,NONE
+}
 
-
-public class Controller : MonoBehaviour, CallBackInterface {
+public class Controller : CallBackInterface {
 
     public Checkpoint[] list;
     private Punto startPoint;
@@ -32,26 +35,36 @@ public class Controller : MonoBehaviour, CallBackInterface {
 
     private float littleRelTime;
     private float bigRelTime;
-    private Level level;
+
 
     public int repetitions = 10;
 
-    private int counter = 0;
+    private Speed speed;
+
+    private static float normalMeanTotalTime = 0;
+
+    private int counter;
+    private int Counter
+    {
+        get { return counter; }
+        set
+        {
+            if (value == repetitions)
+                UIManager.instance.ShowResult(GetResult());
+            counter = value;
+        }
+    }
 
 
     private void Start()
     {
-        level = GetComponentInParent<Level>();
         startPoint = Punto.A;
+
     }
 
-    private void Update()
+    public void SetSpeed(Speed s)
     {
-        if (counter >= repetitions)
-        {
-            Callback();
-            counter = 0;
-        }
+        speed = s;
     }
 
     public float Touched(Checkpoint c)
@@ -69,7 +82,7 @@ public class Controller : MonoBehaviour, CallBackInterface {
                 totalTime = littleTime + bigTime;
                 totalFigureTimes.Add(totalTime);
 
-                counter++;
+                Counter++;
             }
             else if (list[(int)Punto.B].touched)
             {
@@ -84,7 +97,7 @@ public class Controller : MonoBehaviour, CallBackInterface {
         return Time.realtimeSinceStartup;
     }
 
-    public void Callback()
+    public override string GetResult()
     {
         string result = "";
         List<float> littleRelatives = new List<float>();
@@ -133,12 +146,90 @@ public class Controller : MonoBehaviour, CallBackInterface {
         deviazione = Mathf.Sqrt(sum / (bigRelatives.Count - 1));
         Debug.Log("deviazione standard big : " + deviazione);
         result += "media cerchio grande: " + FormatNumber(meanBigTime) + "%\ndeviazione cerchio grande: " + FormatNumber(deviazione) + "%\n";
-        UIManager.instance.ShowResult(result);
+
+        if (WasGood())
+        {    
+            result += "GOOD JOB!\n";
+            if (speed == Speed.NORMAL)
+                result+="now do it faster, do it in max " + FormatFloat(.75f * normalMeanTotalTime) + " seconds \n";
+            else if(speed == Speed.FAST)
+                result += "now do it slower, do it in min " + FormatFloat(1.5f * normalMeanTotalTime) + " seconds \n";
+        }
+        else
+        {
+            result += "!\n";
+            if (speed == Speed.FAST)
+                result += "you are not enough fast, do it in max " + FormatFloat(.75f * normalMeanTotalTime) + " seconds\n";
+            else if (speed == Speed.SLOW)
+                result += "you are not enough slow, do it in min " + FormatFloat(1.5f * normalMeanTotalTime) + " seconds \n";
+        }
+
+        sum = 0;
+        for (int i = 0; i < totalFigureTimes.Count; i++)
+        {
+            sum += totalFigureTimes[i];
+        }
+        result += "mean total time: " + sum / totalFigureTimes.Count + " you had to do it in: ";
+        switch (speed)
+        {
+            case Speed.NORMAL: result += FormatFloat(normalMeanTotalTime); break;
+            case Speed.SLOW: result += FormatFloat(normalMeanTotalTime * 1.5f); break;
+            case Speed.FAST: result += FormatFloat(normalMeanTotalTime * .75f); break;
+        }
+
+        result += " seconds";
+        // UIManager.instance.ShowResult(result);
+        return result;
     }
+
+    private string FormatFloat(float number)
+    {
+        return String.Format("{0:00.00}", number);
+    }
+
+
+
 
     private string FormatNumber(float number)
     {
         return String.Format( "{0:00.00}", number*100);
     }
 
+    public override bool WasGood()
+    {
+        float sum = 0;
+        switch (speed)
+        {
+            case Speed.NORMAL:
+                //calcola media tempi totali
+                
+                for (int i = 0; i < totalFigureTimes.Count; i++)
+                {
+                    sum += totalFigureTimes[i];
+                }
+                normalMeanTotalTime = sum/totalFigureTimes.Count;
+                return true;
+                break;
+            case Speed.SLOW:
+                
+                for (int i = 0; i < totalFigureTimes.Count; i++)
+                {
+                    sum += totalFigureTimes[i];
+                }
+                if(sum / totalFigureTimes.Count >= 1.5f * normalMeanTotalTime)
+                    return true;
+                break;
+            case Speed.FAST:
+
+                for (int i = 0; i < totalFigureTimes.Count; i++)
+                {
+                    sum += totalFigureTimes[i];
+                }
+                if (sum / totalFigureTimes.Count <= .75f * normalMeanTotalTime)
+                    return true;
+                break;
+        }
+        
+        return false;
+    }
 }

@@ -2,18 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+
+public enum Phase
+{
+    NOT_STARTED, TOO_EARLY, EARLY, LATE, TOO_LATE
+}
+
 
 public class Level : MonoBehaviour {
     [HideInInspector]
     public bool inTime = false;
+    [HideInInspector]
+    public Phase phase = Phase.NOT_STARTED;
 
     public Song song;
     public Text counter;
     public GameObject nextLevelButton;
     public float errorPercentage = 0.3f;
-
-
-
+    [SerializeField]
+    public CallBackInterface resultObject;
 
     private void Awake()
     {
@@ -24,7 +32,6 @@ public class Level : MonoBehaviour {
             _as.Play();
             StartCoroutine(Loop());
         }
-
     }
 
     // Use this for initialization
@@ -41,26 +48,57 @@ public class Level : MonoBehaviour {
 
         float timeToWait = song.offset - song.tempo * errorPercentage;
         yield return new WaitForSeconds(timeToWait);
+        phase = Phase.EARLY;
         errore = GetElapsedRealTime(time) - timeToWait;
         inTime = true;
         time = Time.realtimeSinceStartup;
-        timeToWait = 2 * song.tempo * errorPercentage - errore;
+        timeToWait = song.tempo * errorPercentage - errore;
         yield return new WaitForSeconds(timeToWait);
+        phase = Phase.LATE;
         errore = GetElapsedRealTime(time) - timeToWait;
+
+        time = Time.realtimeSinceStartup;
+        timeToWait = song.tempo * errorPercentage - errore;
+        yield return new WaitForSeconds(timeToWait);
+        phase = Phase.TOO_LATE;
+        errore = GetElapsedRealTime(time) - timeToWait;
+
         inTime = false;
+
         float tempo = 1;
         while (tempo <= song.beatCount - 3)
         {
+
             time = Time.realtimeSinceStartup;
-            timeToWait = song.tempo - 2 * song.tempo * errorPercentage - errore;
+            timeToWait = song.tempo/2 - song.tempo * errorPercentage - errore;
             yield return new WaitForSeconds(timeToWait);
             errore = GetElapsedRealTime(time) - timeToWait;
+            phase = Phase.TOO_EARLY;
+
+            time = Time.realtimeSinceStartup;
+            timeToWait = song.tempo / 2 - song.tempo * errorPercentage - errore;
+            yield return new WaitForSeconds(timeToWait);
+            errore = GetElapsedRealTime(time) - timeToWait;
+            phase = Phase.EARLY;
             inTime = true;
+
+
             time = Time.realtimeSinceStartup;
-            timeToWait = 2 * song.tempo * errorPercentage - errore;
+            timeToWait = song.tempo * errorPercentage - errore;
             yield return new WaitForSeconds(timeToWait);
+            phase = Phase.LATE;
             errore = GetElapsedRealTime(time) - timeToWait;
+
+            time = Time.realtimeSinceStartup;
+            timeToWait = song.tempo * errorPercentage - errore;
+            yield return new WaitForSeconds(timeToWait);
+            phase = Phase.TOO_LATE;
+            errore = GetElapsedRealTime(time) - timeToWait;
+
             inTime = false;
+
+
+
 
             if (tempo == song.stopAt)
                 GetComponent<AudioSource>().Stop();
@@ -69,10 +107,14 @@ public class Level : MonoBehaviour {
             tempo++;
 
         }
+        phase = Phase.NOT_STARTED;
 
-       UIManager.instance.ShowNextLevelButton();
+        if(resultObject != null)
+            UIManager.instance.ShowResult(resultObject.GetResult());
+        else
+            UIManager.instance.ShowNextLevelButton();   
 
-            
+
 
     }
 

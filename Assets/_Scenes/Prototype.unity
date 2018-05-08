@@ -1335,7 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e8750509af1e246aaf25a944bd924b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actualLevel: 0
+  actualLevel: 5
   levels:
   - {fileID: 1906337734525328, guid: 10e0feeedb1aa1944bd8b09260318068, type: 2}
   - {fileID: 1033704493951254, guid: a288665fcdff8e44783c4c55a392e360, type: 2}
@@ -1345,6 +1345,8 @@ MonoBehaviour:
   - {fileID: 1094034796215728, guid: 5fcbecd326ee07a4a8006f053f85149b, type: 2}
   nextLevelPanel: {fileID: 1124593153}
   counter: {fileID: 2120333593}
+  omothetyLevel: 3
+  loadedLevel: {fileID: 0}
 --- !u!1 &1656041037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,6 +1384,8 @@ MonoBehaviour:
   - {fileID: 1094034796215728, guid: 5fcbecd326ee07a4a8006f053f85149b, type: 2}
   nextLevelPanel: {fileID: 1124593153}
   counter: {fileID: 2120333593}
+  omothetyLevel: 3
+  loadedLevel: {fileID: 0}
 --- !u!224 &1656041039
 RectTransform:
   m_ObjectHideFlags: 0

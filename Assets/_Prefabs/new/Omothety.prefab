@@ -283,10 +283,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inTime: 0
+  phase: 0
   song: {fileID: 0}
   counter: {fileID: 0}
   nextLevelButton: {fileID: 0}
   errorPercentage: 0.3
+  resultObject: {fileID: 114807153540700702}
 --- !u!114 &114276552944222666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,6 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16230868657714f46a0150014b307bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counters: 
 --- !u!114 &114541586530072450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -351,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16230868657714f46a0150014b307bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counters: 
 --- !u!114 &114898019543414144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -362,6 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16230868657714f46a0150014b307bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counters: 
 --- !u!212 &212400744406002340
 SpriteRenderer:
   m_ObjectHideFlags: 1

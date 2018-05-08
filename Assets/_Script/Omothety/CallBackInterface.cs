@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface CallBackInterface {
-    void Callback();
+public abstract class CallBackInterface: MonoBehaviour {
+    public abstract string GetResult();
+    public abstract bool WasGood();
 }

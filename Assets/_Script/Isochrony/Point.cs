@@ -16,16 +16,21 @@ public class Point : MonoBehaviour {
         c.a = 0;
         sr.color = c;
         active = false;
+        gameObject.SetActive(false);
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("triggered " + collision.tag);
+        //Debug.Log("triggered " + collision.tag);
         if (collision.tag == accettableAreaTag)
         {
             inArea = true;
-            collision.GetComponent<Button>().Clicked();
+            IsochronyButton btn = collision.GetComponent<IsochronyButton>();
+            if (btn)
+                btn.Clicked();
+            else
+                collision.GetComponent<Button>().Clicked();
         }
             
     }
@@ -39,5 +44,11 @@ public class Point : MonoBehaviour {
             inArea = false;
         }
     }
+
+    public void ChangeColor(Color c)
+    {
+        GetComponent<SpriteRenderer>().color = c;
+    }
+
 
 }

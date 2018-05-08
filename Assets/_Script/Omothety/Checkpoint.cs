@@ -11,6 +11,7 @@ public class Checkpoint : MonoBehaviour {
     private void Start()
     {
         controller = gameObject.GetComponentInParent<Controller>();
+        timeTouched = Time.realtimeSinceStartup;
     }
 
 

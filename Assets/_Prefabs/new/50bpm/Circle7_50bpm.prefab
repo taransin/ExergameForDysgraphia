@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4566897268487850}
   - component: {fileID: 212873562604454508}
   - component: {fileID: 114768922918345440}
+  - component: {fileID: 114970242399132312}
+  - component: {fileID: 58637697722556142}
   m_Layer: 0
   m_Name: Circle7_50bpm
   m_TagString: Untagged
@@ -37,6 +39,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4758951870417732}
   - component: {fileID: 331128820290050102}
+  - component: {fileID: 58377277282110036}
+  - component: {fileID: 114938762197224090}
   m_Layer: 0
   m_Name: Mask
   m_TagString: Untagged
@@ -53,8 +57,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4951078069749108}
   - component: {fileID: 212755898226211030}
-  - component: {fileID: 114595733637457082}
   - component: {fileID: 58948286251766262}
+  - component: {fileID: 114351338348333162}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: AccettableArea
@@ -102,7 +106,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449414350895582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.448, z: 0}
+  m_LocalPosition: {x: 0, y: -0.448, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4566897268487850}
@@ -158,12 +162,42 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1130182398656736}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.45, z: 0}
+  m_LocalPosition: {x: 0, y: -0.45, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 4566897268487850}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58377277282110036
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057349850100138}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.35
+--- !u!58 &58637697722556142
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023980652295814}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.49999997
 --- !u!58 &58948286251766262
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -205,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeFullRotation: 1.2
   radius: 3.2
---- !u!114 &114595733637457082
+--- !u!114 &114351338348333162
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -213,9 +247,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1130182398656736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16230868657714f46a0150014b307bf6, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a5469cef10be47418d1f8af2d3777bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counters: 
+  exter: {fileID: 114970242399132312}
+  inter: {fileID: 114938762197224090}
 --- !u!114 &114768922918345440
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,10 +265,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inTime: 0
+  phase: 0
   song: {fileID: 11400000, guid: ad0623b3a4d35f9409bcc846fd102166, type: 2}
   counter: {fileID: 0}
   nextLevelButton: {fileID: 0}
   errorPercentage: 0.3
+  resultObject: {fileID: 114351338348333162}
+--- !u!114 &114938762197224090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1057349850100138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae0dad615364ba4381caa219a886885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultValue: 0
+  triggered: 0
+--- !u!114 &114970242399132312
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1023980652295814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae0dad615364ba4381caa219a886885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultValue: 1
+  triggered: 0
 --- !u!212 &212755898226211030
 SpriteRenderer:
   m_ObjectHideFlags: 1

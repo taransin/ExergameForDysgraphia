@@ -72,6 +72,19 @@ public class UIManager : MonoBehaviour {
 
         if (_chosenLC)
         {
+            if (_chosenLC == _lc80 && _chosenLC.actualLevel == 1)
+            {
+                if (!_chosenLC.loadedLevel.GetComponent<Level>().resultObject.WasGood())
+                {
+                    _chosenLC.Finish();
+                    Load50bpmGame();
+                    nextLevelPanel.SetActive(false);
+                    return;
+
+                }    
+            }
+
+
             if (_chosenLC.HaveFinished())
             {
                 _chosenLC.Finish();

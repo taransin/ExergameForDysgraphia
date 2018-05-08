@@ -14,7 +14,7 @@ public class LineGuide : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        angle = 90;
+        angle = 270;
         transform.position = new Vector3(
             Mathf.Cos(angle * Mathf.Deg2Rad) * radius,
             Mathf.Sin(angle * Mathf.Deg2Rad) * radius);
