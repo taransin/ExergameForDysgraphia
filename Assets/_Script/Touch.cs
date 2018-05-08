@@ -15,6 +15,7 @@ public class Touch : MonoBehaviour
     void Start()
     {
         objPlane = new Plane(Camera.main.transform.forward * -1, this.transform.position);
+        Input.multiTouchEnabled = false;
     }
 
     void Update()

@@ -146,6 +146,20 @@ public class Controller : CallBackInterface {
         deviazione = Mathf.Sqrt(sum / (bigRelatives.Count - 1));
         Debug.Log("deviazione standard big : " + deviazione);
         result += "media cerchio grande: " + FormatNumber(meanBigTime) + "%\ndeviazione cerchio grande: " + FormatNumber(deviazione) + "%\n";
+        sum = 0;
+        for (int i = 0; i < totalFigureTimes.Count; i++)
+        {
+            sum += totalFigureTimes[i];
+        }
+        if(speed != Speed.NORMAL)
+            result += "mean total time: " + FormatFloat(sum / totalFigureTimes.Count) + " you had to do it in: ";
+        switch (speed)
+        {
+            case Speed.SLOW: result += FormatFloat(normalMeanTotalTime * 1.5f); break;
+            case Speed.FAST: result += FormatFloat(normalMeanTotalTime * .75f); break;
+        }
+        if (speed != Speed.NORMAL)
+            result += " seconds";
 
         if (WasGood())
         {    
@@ -164,20 +178,7 @@ public class Controller : CallBackInterface {
                 result += "you are not enough slow, do it in min " + FormatFloat(1.5f * normalMeanTotalTime) + " seconds \n";
         }
 
-        sum = 0;
-        for (int i = 0; i < totalFigureTimes.Count; i++)
-        {
-            sum += totalFigureTimes[i];
-        }
-        result += "mean total time: " + sum / totalFigureTimes.Count + " you had to do it in: ";
-        switch (speed)
-        {
-            case Speed.NORMAL: result += FormatFloat(normalMeanTotalTime); break;
-            case Speed.SLOW: result += FormatFloat(normalMeanTotalTime * 1.5f); break;
-            case Speed.FAST: result += FormatFloat(normalMeanTotalTime * .75f); break;
-        }
 
-        result += " seconds";
         // UIManager.instance.ShowResult(result);
         return result;
     }
