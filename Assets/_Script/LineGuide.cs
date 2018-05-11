@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class LineGuide : MonoBehaviour
 {
-
-
+    private const int INITIAL_ANGLE = 270;
     public float timeFullRotation = 60 / 50f;
     public float radius = 1f;
     private float angle = 0;
@@ -14,7 +13,7 @@ public class LineGuide : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        angle = 270;
+        angle = INITIAL_ANGLE;
         transform.position = new Vector3(
             Mathf.Cos(angle * Mathf.Deg2Rad) * radius,
             Mathf.Sin(angle * Mathf.Deg2Rad) * radius);
@@ -28,7 +27,7 @@ public class LineGuide : MonoBehaviour
         transform.position = new Vector3(
             Mathf.Cos(angle * Mathf.Deg2Rad) * radius,
             Mathf.Sin(angle * Mathf.Deg2Rad) * radius);
-        if (angle >= 360 * 3 + 90)
+        if (angle >= 360 * 3 + INITIAL_ANGLE)
             gameObject.SetActive(false);
     }
 
