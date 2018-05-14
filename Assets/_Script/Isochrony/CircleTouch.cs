@@ -43,7 +43,7 @@ public class CircleTouch : MonoBehaviour {
     }
 
 
-    private bool ThereIsInput()
+    public  bool ThereIsInput()
     {
         if (useMouse)
             return Input.GetMouseButton(0) || Input.GetMouseButtonDown(0) || Input.GetMouseButtonUp(0);
@@ -51,13 +51,20 @@ public class CircleTouch : MonoBehaviour {
             return Input.touchCount > 0;
     }
 
-    private Vector3 GetInputPosition()
+    public Vector3 GetInputPosition()
     {
+
         if (useMouse)
             return Input.mousePosition;
         else
             return (Input.GetTouch(0).position);
     }
+
+    public GameObject GetInputInstance()
+    {
+        return instance;
+    }
+
     private bool InputStarted()
     {
         if (useMouse)

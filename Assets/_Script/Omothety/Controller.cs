@@ -12,6 +12,11 @@ public enum Speed
     NORMAL,SLOW,FAST,NONE
 }
 
+public enum Circle
+{
+    SMALL, BIG
+}
+
 public class Controller : CallBackInterface {
 
     public Checkpoint[] list;
@@ -40,6 +45,7 @@ public class Controller : CallBackInterface {
     public int repetitions = 10;
 
     private Speed speed;
+    public Circle drawingCircle = Circle.SMALL; 
 
     private static float normalMeanTotalTime = 0;
 
@@ -55,12 +61,116 @@ public class Controller : CallBackInterface {
         }
     }
 
+    private Vector2 smallCenter;
+    private Vector2 bigCenter;
+    private float smallRadius;
+    private float bigRadius;
+    public float smallError;
+    public float bigError;
+    public CircleTouch touch;
+    private bool exited = false;
+    private int exitCount = 0;
 
     private void Start()
     {
+
+        if (speed == Speed.FAST)
+            timeFullRotation /= 2;
+        else if (speed == Speed.SLOW)
+            timeFullRotation *= 1.8f;
         startPoint = Punto.A;
 
+        smallRadius = (list[(int)Punto.A].transform.position.x - list[(int)Punto.B].transform.position.x) / 2;
+
+        smallCenter = new Vector2(
+                list[(int)Punto.B].transform.position.x + smallRadius,
+                list[(int)Punto.B].transform.position.y
+            );
+
+        bigRadius = (list[(int)Punto.A].transform.position.x - list[(int)Punto.C].transform.position.x) / 2;
+
+        bigCenter = new Vector2(
+            list[(int)Punto.C].transform.position.x + bigRadius,
+            list[(int)Punto.C].transform.position.y
+        );
+
+        Debug.Log("small " + smallRadius + "big" + bigRadius + 
+            "smallCenter" + smallCenter  + "big" + bigCenter);
+
+        angle = initialAngle;
     }
+
+    private bool dragonDrawing = true;
+    private float angle;
+    public float timeFullRotation = 2f;
+    public float initialAngle;
+    private bool dragonInTheSmall = true;
+    public GameObject dragon;
+    private int dragonRotationCount = 0;
+    private void Update()
+    {
+        if (dragonDrawing)
+        {
+            angle += (Time.deltaTime / timeFullRotation) * 360;
+            if (dragonInTheSmall)
+            {
+                dragon.transform.position = (Vector3)smallCenter + (new Vector3(
+                Mathf.Cos(angle * Mathf.Deg2Rad) * smallRadius,
+                Mathf.Sin(angle * Mathf.Deg2Rad) * smallRadius));
+                if (angle - 360 * dragonRotationCount >= 360 )
+                    dragonInTheSmall = false;
+            }
+            else
+            {
+                
+                dragon.transform.position = (Vector3)bigCenter + (new Vector3(
+                Mathf.Cos(angle * Mathf.Deg2Rad) * bigRadius,
+                Mathf.Sin(angle * Mathf.Deg2Rad) * bigRadius));
+                if (angle - 360 * dragonRotationCount >= 360 * 2)
+                {
+                    dragonRotationCount+=2;
+                    dragonInTheSmall = true;
+                }
+            }
+            
+            if (angle >= 360 * 4 + initialAngle)
+            {
+                dragon.SetActive(false);//ciao
+                dragonDrawing = false;
+            }
+        }
+
+
+
+
+        if (!touch.ThereIsInput())
+            return;
+        GameObject inst = touch.GetInputInstance();
+        Vector2 position = inst.transform.position;
+        //Debug.Log("-----> touched in " + position);
+        if(drawingCircle == Circle.SMALL)
+        {
+            float distance = (position - smallCenter).magnitude;
+
+            if (distance < smallRadius - smallError || distance > smallRadius + smallError)
+            {
+                Debug.Log("SEI USCITO STRONZO! MAGNITUDE " + distance);
+                exited = true;
+            }
+        }
+        else
+        {
+            float distance = (position - bigCenter).magnitude;
+
+            if (distance < bigRadius - bigError || distance > bigRadius + bigError)
+            {
+                Debug.Log("SEI USCITO STRONZO!");
+                exited = true;
+            }
+        }
+
+    }
+
 
     public void SetSpeed(Speed s)
     {
@@ -83,6 +193,19 @@ public class Controller : CallBackInterface {
                 totalFigureTimes.Add(totalTime);
 
                 Counter++;
+                drawingCircle = Circle.SMALL;
+
+                if (exited)
+                {
+                    exited = false;
+                    exitCount++;
+                    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.red));
+                }
+                else
+                {
+                    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.green));
+                }
+
             }
             else if (list[(int)Punto.B].touched)
             {
@@ -90,8 +213,25 @@ public class Controller : CallBackInterface {
                 smallFigureTimes.Add(littleTime);
                 foreach (Checkpoint checkpoint in list)
                     checkpoint.Reset();
+                drawingCircle = Circle.BIG;
+
+                if (exited)
+                {
+                    exited = false;
+                    exitCount++;
+                    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.red));
+                }
+                else
+                {
+                    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.green));
+                }
+
             }
         }
+
+
+        // dove stiamo andando?
+
 
 
         return Time.realtimeSinceStartup;
@@ -99,7 +239,7 @@ public class Controller : CallBackInterface {
 
     public override string GetResult()
     {
-        string result = "";
+        string result = "in " + repetitions * 2 + " cirlces, you went out " + exitCount + " times\n";
         List<float> littleRelatives = new List<float>();
 
         int lenght = smallFigureTimes.Count < totalFigureTimes.Count ? smallFigureTimes.Count  : totalFigureTimes.Count;

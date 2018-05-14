@@ -53,7 +53,7 @@ public class Button : CallBackInterface {
     }
 
 
-    private IEnumerator ChangeColor(Color color)
+    public IEnumerator ChangeColor(Color color)
     {
         SpriteRenderer sp = GetComponent<SpriteRenderer>();
         if (sp.color == defaultColor)
