@@ -162,7 +162,7 @@ public class LevelChanger : MonoBehaviour {
 
     public void Reset()
     {
-        //actualLevel = 0;
+        actualLevel = 0;
         if (loadedLevel)
             Destroy(loadedLevel);
     }
