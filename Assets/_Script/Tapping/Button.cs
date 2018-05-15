@@ -25,7 +25,7 @@ public class Button : CallBackInterface {
     }
 
 
-    public void Clicked()
+    public virtual void Clicked()
     {
         if(level.phase != Phase.NOT_STARTED) {
             counters[(int)level.phase - 1]++;
