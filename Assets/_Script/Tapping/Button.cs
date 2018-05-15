@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : CallBackInterface {
+public class Button : CallBackInterface
+{
 
     private Level level;
     private Color defaultColor;
     private int tapCounter = 0;
     public int[] counters;
+    private SpriteRenderer _sr;
 
 
 
@@ -19,7 +21,9 @@ public class Button : CallBackInterface {
 
     public void Init()
     {
-        defaultColor = GetComponent<SpriteRenderer>().color;
+        _sr = GetComponent<SpriteRenderer>();
+        if (_sr)
+            defaultColor = GetComponent<SpriteRenderer>().color;
         level = this.gameObject.GetComponentInParent<Level>();
         counters = new int[4];
     }
@@ -27,14 +31,17 @@ public class Button : CallBackInterface {
 
     public virtual void Clicked()
     {
-        if(level.phase != Phase.NOT_STARTED) {
+        if (level.phase != Phase.NOT_STARTED)
+        {
             counters[(int)level.phase - 1]++;
             tapCounter++;
-
-            if (level.inTime)
-                StartCoroutine(ChangeColor(Color.green));
-            else
-                StartCoroutine(ChangeColor(Color.red));
+            if (_sr)
+            {
+                if (level.inTime)
+                    StartCoroutine(ChangeColor(Color.green));
+                else
+                    StartCoroutine(ChangeColor(Color.red));
+            }
         }
     }
 
