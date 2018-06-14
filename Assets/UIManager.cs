@@ -8,6 +8,11 @@ public class UIManager : MonoBehaviour {
     public GameObject initialMenuPanel;
     public GameObject nextLevelPanel;
     public GameObject resultPanel;
+    public GameObject settingPanel;
+
+    public GameSettings settings;
+
+
     public Text resultText;
 
     public LevelChanger _lc50;
@@ -30,6 +35,7 @@ public class UIManager : MonoBehaviour {
     }
 
 
+
     public void ShowNextLevelButton()
     {
         if (_chosenLC)
@@ -45,11 +51,16 @@ public class UIManager : MonoBehaviour {
         }
     }
 
+    public float GetTimeError()
+    {
+        return settings.timeError;
+    }
 
     public void Load50bpmGame()
     {
         _lc50.Reset();
-        _lc50.InstantiateNextLevel();
+        settingPanel.SetActive(true);
+        //_lc50.InstantiateNextLevel();
         initialMenuPanel.SetActive(false);
         _chosenLC = _lc50;
     }
@@ -57,10 +68,20 @@ public class UIManager : MonoBehaviour {
     public void Load80bpmGame()
     {
         _lc80.Reset();
-        _lc80.InstantiateNextLevel();
+        settingPanel.SetActive(true);
+        //_lc80.InstantiateNextLevel();
         initialMenuPanel.SetActive(false);
         _chosenLC = _lc80;
     }
+
+    public void StartGame()
+    {
+        //TODO: leggi tutte le stronzate
+        //TODO: salvale su file
+        settingPanel.SetActive(false);
+        _chosenLC.InstantiateNextLevel();
+    }
+
 
     public void NextLevel()
     {

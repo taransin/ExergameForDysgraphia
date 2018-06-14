@@ -64,4 +64,6 @@ public class SliderInputFieldBinder : MonoBehaviour {
             ignoreChange = false;
     }
 
+
+
 }

@@ -32,6 +32,8 @@ public class Level : MonoBehaviour {
             _as.Play();
             StartCoroutine(Loop());
         }
+
+        errorPercentage = UIManager.instance.GetTimeError();
     }
 
     // Use this for initialization
