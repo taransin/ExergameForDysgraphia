@@ -56,11 +56,38 @@ public class UIManager : MonoBehaviour {
         return settings.timeError;
     }
 
+    public float GetIsochronyInnerSpace()
+    {
+        return settings.isochronyInnerSpace;
+    }
+    public float GetIsochronyOuterSpace()
+    {
+        return settings.isochronyOuterSpace;
+    }
+
+    public float GetOmothetyDelta()
+    {
+        return settings.omothetyDelta;
+    }
+
+    public int GetOmothetyRounds()
+    {
+        return settings.omothetyRounds;
+    }
     public void Load50bpmGame()
     {
         _lc50.Reset();
         settingPanel.SetActive(true);
         //_lc50.InstantiateNextLevel();
+        initialMenuPanel.SetActive(false);
+        _chosenLC = _lc50;
+    }
+
+
+    public void Load50bpmGameNoSettings()
+    {
+        _lc50.Reset();
+        _lc50.InstantiateNextLevel();
         initialMenuPanel.SetActive(false);
         _chosenLC = _lc50;
     }
@@ -98,7 +125,7 @@ public class UIManager : MonoBehaviour {
                 if (!_chosenLC.loadedLevel.GetComponent<Level>().resultObject.WasGood())
                 {
                     _chosenLC.Finish();
-                    Load50bpmGame();
+                    Load50bpmGameNoSettings();
                     nextLevelPanel.SetActive(false);
                     return;
 

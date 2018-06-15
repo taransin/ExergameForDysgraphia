@@ -10,6 +10,16 @@ public class AreaController : MonoBehaviour {
     private void Start()
     {
         Reset();
+        CircleCollider2D _cc = GetComponent<CircleCollider2D>();
+        if (defaultValue)
+        {
+            
+            _cc.radius = UIManager.instance.GetIsochronyOuterSpace();
+        }
+        else
+        {
+            _cc.radius = UIManager.instance.GetIsochronyInnerSpace();
+        }
     }
 
     public void Reset()

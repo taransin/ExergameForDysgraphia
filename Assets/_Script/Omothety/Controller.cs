@@ -69,7 +69,7 @@ public class Controller : CallBackInterface {
     public float bigError;
     public CircleTouch touch;
     private bool exited = false;
-    private int exitCount = 0;
+
 
     private void Start()
     {
@@ -94,10 +94,18 @@ public class Controller : CallBackInterface {
             list[(int)Punto.C].transform.position.y
         );
 
+
+
         Debug.Log("small " + smallRadius + "big" + bigRadius + 
             "smallCenter" + smallCenter  + "big" + bigCenter);
 
         angle = initialAngle;
+
+
+        smallError = UIManager.instance.GetOmothetyDelta();
+        bigError = UIManager.instance.GetOmothetyDelta();
+
+        repetitions = UIManager.instance.GetOmothetyRounds();
     }
 
     private bool dragonDrawing = true;
@@ -107,6 +115,12 @@ public class Controller : CallBackInterface {
     private bool dragonInTheSmall = true;
     public GameObject dragon;
     private int dragonRotationCount = 0;
+
+
+    private int exitedSmallCircleCounter;
+    private int exitedBigCircleCounter;
+
+
     private void Update()
     {
         if (dragonDrawing)
@@ -141,36 +155,37 @@ public class Controller : CallBackInterface {
         }
 
 
-
-
         if (!touch.ThereIsInput())
             return;
         GameObject inst = touch.GetInputInstance();
         Vector2 position = inst.transform.position;
-        //Debug.Log("-----> touched in " + position);
+
         if(drawingCircle == Circle.SMALL)
         {
             float distance = (position - smallCenter).magnitude;
 
-            if (distance < smallRadius - smallError || distance > smallRadius + smallError)
+            if (!exited && (distance < smallRadius - smallError || distance > smallRadius + smallError))
             {
-                Debug.Log("SEI USCITO STRONZO! MAGNITUDE " + distance);
+                Debug.Log("SEI USCITO STRONZO! PICCOLOOOO MAGNITUDE " + distance);
                 exited = true;
+                exitedSmallCircleCounter++;
             }
         }
         else
         {
             float distance = (position - bigCenter).magnitude;
 
-            if (distance < bigRadius - bigError || distance > bigRadius + bigError)
+            if (!exited && (distance < bigRadius - bigError || distance > bigRadius + bigError))
             {
-                Debug.Log("SEI USCITO STRONZO!");
+                Debug.Log("SEI USCITO GRANDE STRONZO!");
                 exited = true;
+                exitedBigCircleCounter++;
             }
         }
 
     }
 
+    
 
     public void SetSpeed(Speed s)
     {
@@ -181,6 +196,8 @@ public class Controller : CallBackInterface {
     {
         if (c == list[(int)Punto.A])
         {
+            exited = false;
+            
             if (list[(int)Punto.C].touched)
             {
                 bigTime = Time.realtimeSinceStartup - list[(int)Punto.A].timeTouched;
@@ -195,16 +212,16 @@ public class Controller : CallBackInterface {
                 Counter++;
                 drawingCircle = Circle.SMALL;
 
-                if (exited)
-                {
-                    exited = false;
-                    exitCount++;
-                    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.red));
-                }
-                else
-                {
-                    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.green));
-                }
+                //if (exited)
+                //{
+                //    exited = false;
+                //    exitCount++;
+                //    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.red));
+                //}
+                //else
+                //{
+                //    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.green));
+                //}
 
             }
             else if (list[(int)Punto.B].touched)
@@ -215,16 +232,16 @@ public class Controller : CallBackInterface {
                     checkpoint.Reset();
                 drawingCircle = Circle.BIG;
 
-                if (exited)
-                {
-                    exited = false;
-                    exitCount++;
-                    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.red));
-                }
-                else
-                {
-                    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.green));
-                }
+                //if (exited)
+                //{
+                //    exited = false;
+                //    exitCount++;
+                //    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.red));
+                //}
+                //else
+                //{
+                //    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.green));
+                //}
 
             }
         }
@@ -239,7 +256,7 @@ public class Controller : CallBackInterface {
 
     public override string GetResult()
     {
-        string result = "in " + repetitions * 2 + " cirlces, you went out " + exitCount + " times\n";
+        string result = "";
         List<float> littleRelatives = new List<float>();
 
         int lenght = smallFigureTimes.Count < totalFigureTimes.Count ? smallFigureTimes.Count  : totalFigureTimes.Count;
@@ -300,7 +317,8 @@ public class Controller : CallBackInterface {
         }
         if (speed != Speed.NORMAL)
             result += " seconds";
-
+        result += "\n went out small " + exitedSmallCircleCounter + "times, big: " 
+            + exitedBigCircleCounter + " times\n";
         if (WasGood())
         {    
             result += "GOOD JOB!\n";
@@ -311,7 +329,7 @@ public class Controller : CallBackInterface {
         }
         else
         {
-            result += "!\n";
+            result += "ALMOST THERE!\n";
             if (speed == Speed.FAST)
                 result += "you are not enough fast, do it in max " + FormatFloat(.75f * normalMeanTotalTime) + " seconds\n";
             else if (speed == Speed.SLOW)

@@ -12,7 +12,14 @@ public class OmothetyScaler : MonoBehaviour {
 
     public Slider slider;
 
+    private void Start()
+    {
+        outerOuter.sizeDelta = new Vector2(slider.value + 200, slider.value + 200);
+        outerInner.sizeDelta = new Vector2(200 - slider.value, 200 - slider.value);
 
+        innerOuter.sizeDelta = new Vector2(slider.value + 85, slider.value + 85);
+        innerInner.sizeDelta = new Vector2(85 - slider.value, 85 - slider.value);
+    }
 
     public void OnSliderValueChange()
     {

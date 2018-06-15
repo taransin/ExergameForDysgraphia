@@ -1872,6 +1872,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &925322637
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4939141786647020, guid: 5fcbecd326ee07a4a8006f053f85149b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939141786647020, guid: 5fcbecd326ee07a4a8006f053f85149b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939141786647020, guid: 5fcbecd326ee07a4a8006f053f85149b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939141786647020, guid: 5fcbecd326ee07a4a8006f053f85149b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939141786647020, guid: 5fcbecd326ee07a4a8006f053f85149b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939141786647020, guid: 5fcbecd326ee07a4a8006f053f85149b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939141786647020, guid: 5fcbecd326ee07a4a8006f053f85149b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939141786647020, guid: 5fcbecd326ee07a4a8006f053f85149b, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5fcbecd326ee07a4a8006f053f85149b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &927061235
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,6 +3365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1181787360}
   text: {fileID: 69154720}
+  type: 0
 --- !u!114 &1181787360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4789,6 +4832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1627109670}
   text: {fileID: 580105410}
+  type: 0
 --- !u!1 &1658159414
 GameObject:
   m_ObjectHideFlags: 0
@@ -5125,6 +5169,7 @@ MonoBehaviour:
   nextLevelPanel: {fileID: 1283252127}
   resultPanel: {fileID: 1462919724}
   settingPanel: {fileID: 0}
+  settings: {fileID: 0}
   resultText: {fileID: 1023728184}
   _lc50: {fileID: 0}
   _lc80: {fileID: 0}
@@ -5722,6 +5767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1763391188}
   text: {fileID: 1436719270}
+  type: 0
 --- !u!1 &1795091269
 GameObject:
   m_ObjectHideFlags: 0
