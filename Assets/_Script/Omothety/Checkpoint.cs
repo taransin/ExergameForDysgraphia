@@ -7,11 +7,18 @@ public class Checkpoint : MonoBehaviour {
     public bool touched = false;
     public float timeTouched;
     private Controller controller;
-
+    private SpriteRenderer _sr;
+    private Color defaultColor;
+    private void Awake()
+    {
+        _sr = GetComponent<SpriteRenderer>();
+        defaultColor = _sr.color;
+    }
     private void Start()
     {
         controller = gameObject.GetComponentInParent<Controller>();
         timeTouched = Time.realtimeSinceStartup;
+       
     }
 
 
@@ -28,7 +35,20 @@ public class Checkpoint : MonoBehaviour {
     public void Reset()
     {
         touched = false;
+        
     }
+
+    public void ResetColor()
+    {
+        _sr.color = defaultColor;
+    }
+
+    public void ChangeColor()
+    {
+        _sr.color = Color.yellow;
+    }
+
+
 
 
 }

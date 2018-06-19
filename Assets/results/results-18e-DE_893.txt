@@ -1,0 +1,45 @@
+CONFIGURATION
+-------------
+timeDeltaError: 0.25
+isochronyInnerSpace: 111
+isochronyOuterSpace: 217
+omothetyDeltaSpace: 25
+omothetyRounds: 5
+
+RESULTS
+-------
+IsochronyBig_80bpm(Clone)
+IN TIME & STAYED INSIDE:   1
+IN TIME & NOT STAYED INSIDE:   2
+NOT IN TIME & STAYED INSIDE:   2
+NOT IN TIME & NOT STAYED INSIDE:   2
+
+
+
+LOGS
+-----
+18e-DE:482: IsochronyBig_80bpm(Clone)
+18e-DE:921: clicked - TOO EARLY
+18e-DE:922: finished round - not in time
+18e-DE:701: out int
+18e-DE:27: clicked - TOO EARLY
+18e-DE:27: finished round - not in time
+18e-DE:125: out int
+18e-DE:490: out int
+18e-DE:204: out ext
+18e-DE:451: out int
+18e-DE:451: clicked - TOO EARLY
+18e-DE:451: finished round - not in time
+18e-DE:749: clicked - GOOD
+18e-DE:749: finished round - in time
+18e-DE:766: out ext
+18e-DE:927: clicked - GOOD
+18e-DE:927: finished round - in time
+18e-DE:606: out ext
+18e-DE:241: out ext
+18e-DE:285: clicked - GOOD
+18e-DE:285: finished round - in time
+18e-DE:107: clicked - TOO LATE
+18e-DE:107: finished round - not in time
+18e-DE:185: finished round - not in time
+18e-DE:535: out ext

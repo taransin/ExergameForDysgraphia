@@ -22,13 +22,18 @@ public class GameSettings : MonoBehaviour {
 
     public void SaveSettings()
     {
-        //TODO: to file
-
         timeError = timeSlider.value;
         isochronyInnerSpace = (5.5f * isochronyInnerSpaceSlider.value) / 111;
         isochronyOuterSpace = (7.88f * isochronyOuterSpaceSlider.value) / 217;
         omothetyDelta = omothetyDeltaSlider.value / 50f;
         omothetyRounds = (int)omothetyRoundsSlider.value;
+
+        SaveToFile.instance.AddConfiguration("timeDeltaError: " + timeSlider.value);
+        SaveToFile.instance.AddConfiguration("isochronyInnerSpace: " + isochronyInnerSpaceSlider.value);
+        SaveToFile.instance.AddConfiguration("isochronyOuterSpace: " + isochronyOuterSpaceSlider.value);
+        SaveToFile.instance.AddConfiguration("omothetyDeltaSpace: " + omothetyDeltaSlider.value);
+        SaveToFile.instance.AddConfiguration("omothetyRounds: " + (int)omothetyRoundsSlider.value);
+
     }
 
 

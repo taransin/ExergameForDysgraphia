@@ -10,6 +10,7 @@ public class NoteGenerator : Button {
     private void Start()
     {
         base.Init();
+        SaveToFile.instance.AddLog(gameObject.transform.parent.name);
         particles.ForEach(p => p.Stop());
     }
 

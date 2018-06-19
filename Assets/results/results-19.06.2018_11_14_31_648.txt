@@ -1,0 +1,45 @@
+CONFIGURATION
+-------------
+timeDeltaError: 0.25
+isochronyInnerSpace: 111
+isochronyOuterSpace: 217
+omothetyDeltaSpace: 25
+omothetyRounds: 5
+timeDeltaError: 0.25
+isochronyInnerSpace: 111
+isochronyOuterSpace: 217
+omothetyDeltaSpace: 25
+omothetyRounds: 5
+
+RESULTS
+-------
+OMOTHETY - NORMAL
+media cerchio piccolo: 49.42%
+deviazione cerchio piccolo: 12.79%
+media cerchio grande: 65.35%
+deviazione cerchio grande: 00.89%
+
+ went out small 2times, big: 3 times
+GOOD JOB!
+now do it faster, do it in max 03.92 seconds 
+
+OMOTHETY - NORMAL
+media cerchio piccolo: 43.68%
+deviazione cerchio piccolo: 02.16%
+media cerchio grande: 63.69%
+deviazione cerchio grande: 02.69%
+
+ went out small 15times, big: 4 times
+GOOD JOB!
+now do it faster, do it in max 00.96 seconds 
+
+
+
+LOGS
+-----
+19.06.2018 11:13:36:478: A
+19.06.2018 11:13:36:478: B
+19.06.2018 11:13:36:478: C
+19.06.2018 11:14:09:418: A
+19.06.2018 11:14:09:418: B
+19.06.2018 11:14:09:418: C

@@ -15,7 +15,7 @@ public class Level : MonoBehaviour {
     public bool inTime = false;
     [HideInInspector]
     public Phase phase = Phase.NOT_STARTED;
-
+    
     public Song song;
     public Text counter;
     public GameObject nextLevelButton;
@@ -25,6 +25,7 @@ public class Level : MonoBehaviour {
 
     private void Awake()
     {
+        errorPercentage = UIManager.instance.GetTimeError();
         if (song)
         {
             AudioSource _as = gameObject.AddComponent<AudioSource>();
@@ -33,12 +34,13 @@ public class Level : MonoBehaviour {
             StartCoroutine(Loop());
         }
 
-        errorPercentage = UIManager.instance.GetTimeError();
+            
     }
 
     // Use this for initialization
     void Start () {
-        if(song)
+        errorPercentage = UIManager.instance.GetTimeError();
+        if (song)
             StartCoroutine(GameStartGui(song.offset));
     }
 	
@@ -112,8 +114,13 @@ public class Level : MonoBehaviour {
         phase = Phase.NOT_STARTED;
 
         if(resultObject != null)
-            UIManager.instance.ShowResult(resultObject.GetResult());
-        else
+        {
+            string result = resultObject.GetResult();
+            UIManager.instance.ShowResult(result);
+            SaveToFile.instance.AddResults(gameObject.name);
+            SaveToFile.instance.AddResults(result);
+            
+        }else  
             UIManager.instance.ShowNextLevelButton();   
 
 

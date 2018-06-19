@@ -20,6 +20,8 @@ public class AreaController : MonoBehaviour {
         {
             _cc.radius = UIManager.instance.GetIsochronyInnerSpace();
         }
+        if(gameObject.name!="Mask")
+            SaveToFile.instance.AddLog(gameObject.name);
     }
 
     public void Reset()
@@ -34,6 +36,7 @@ public class AreaController : MonoBehaviour {
             triggered = true;
             collision.gameObject.GetComponent<Point>().ChangeColor(Color.black);
             Debug.Log("sono exter e tu sei uscito");
+            SaveToFile.instance.AddLog("out ext");
         }
         else
         {
@@ -49,6 +52,7 @@ public class AreaController : MonoBehaviour {
             triggered = true;
             collision.gameObject.GetComponent<Point>().ChangeColor(Color.black);
             Debug.Log("sono inter e tu sei entrato");
+            SaveToFile.instance.AddLog("out int");
         }
         else
         {

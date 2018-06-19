@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour {
 
     public LevelChanger _lc50;
     public LevelChanger _lc80;
+    public LevelChanger _testLC;
+
 
     private LevelChanger _chosenLC;
 
@@ -44,6 +46,7 @@ public class UIManager : MonoBehaviour {
             {
                 _chosenLC.Finish();
                 nextLevelPanel.SetActive(false);
+                SaveToFile.instance.SaveResultFile();
                 initialMenuPanel.SetActive(true);
             }
             else
@@ -84,8 +87,19 @@ public class UIManager : MonoBehaviour {
     }
 
 
+    public void LoadTestGame()
+    {
+        _testLC.Reset();
+        settingPanel.SetActive(true);
+        //_lc50.InstantiateNextLevel();
+        initialMenuPanel.SetActive(false);
+        _chosenLC = _testLC;
+    }
+
+
     public void Load50bpmGameNoSettings()
     {
+        SaveToFile.instance.Init();
         _lc50.Reset();
         _lc50.InstantiateNextLevel();
         initialMenuPanel.SetActive(false);
@@ -94,6 +108,7 @@ public class UIManager : MonoBehaviour {
 
     public void Load80bpmGame()
     {
+        SaveToFile.instance.Init();
         _lc80.Reset();
         settingPanel.SetActive(true);
         //_lc80.InstantiateNextLevel();
@@ -136,6 +151,7 @@ public class UIManager : MonoBehaviour {
             if (_chosenLC.HaveFinished())
             {
                 _chosenLC.Finish();
+                SaveToFile.instance.SaveResultFile();
                 initialMenuPanel.SetActive(true);
             }
             else  

@@ -56,7 +56,13 @@ public class Controller : CallBackInterface {
         set
         {
             if (value == repetitions)
-                UIManager.instance.ShowResult(GetResult());
+            {
+                string result = GetResult();
+                SaveToFile.instance.AddResults("OMOTHETY - " + speed.ToString());
+                SaveToFile.instance.AddResults(result);
+                UIManager.instance.ShowResult(result);
+            }
+                
             counter = value;
         }
     }
@@ -69,6 +75,8 @@ public class Controller : CallBackInterface {
     public float bigError;
     public CircleTouch touch;
     private bool exited = false;
+
+    private OmothetyFSM fsm;
 
 
     private void Start()
@@ -106,6 +114,9 @@ public class Controller : CallBackInterface {
         bigError = UIManager.instance.GetOmothetyDelta();
 
         repetitions = UIManager.instance.GetOmothetyRounds();
+
+        fsm = new OmothetyFSM();
+        list[(int)Punto.A].ChangeColor();
     }
 
     private bool dragonDrawing = true;
@@ -116,6 +127,7 @@ public class Controller : CallBackInterface {
     public GameObject dragon;
     private int dragonRotationCount = 0;
 
+    private bool firstTime = true;
 
     private int exitedSmallCircleCounter;
     private int exitedBigCircleCounter;
@@ -194,12 +206,21 @@ public class Controller : CallBackInterface {
 
     public float Touched(Checkpoint c)
     {
-        if (c == list[(int)Punto.A])
-        {
+        if(c.name == "A")
             exited = false;
-            
-            if (list[(int)Punto.C].touched)
+        OmothetyState actualState = fsm.Action(c.name);
+        if (fsm.changed)
+        {
+            if(actualState == OmothetyState.SMALL_A)
             {
+                if (firstTime)
+                {
+                    ChangeCheckpointColor();
+                    firstTime = false;
+                    return Time.realtimeSinceStartup;
+
+                }
+
                 bigTime = Time.realtimeSinceStartup - list[(int)Punto.A].timeTouched;
 
                 bigFigureTimes.Add(bigTime);
@@ -211,47 +232,37 @@ public class Controller : CallBackInterface {
 
                 Counter++;
                 drawingCircle = Circle.SMALL;
-
-                //if (exited)
-                //{
-                //    exited = false;
-                //    exitCount++;
-                //    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.red));
-                //}
-                //else
-                //{
-                //    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.green));
-                //}
-
             }
-            else if (list[(int)Punto.B].touched)
+            else if(actualState == OmothetyState.BIG_A)
             {
                 littleTime = Time.realtimeSinceStartup - list[(int)Punto.A].timeTouched;
                 smallFigureTimes.Add(littleTime);
                 foreach (Checkpoint checkpoint in list)
                     checkpoint.Reset();
                 drawingCircle = Circle.BIG;
-
-                //if (exited)
-                //{
-                //    exited = false;
-                //    exitCount++;
-                //    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.red));
-                //}
-                //else
-                //{
-                //    StartCoroutine(list[(int)Punto.A].GetComponent<Button>().ChangeColor(Color.green));
-                //}
-
             }
+            ChangeCheckpointColor();
+
+            return Time.realtimeSinceStartup;
         }
 
-
         // dove stiamo andando?
+        return c.timeTouched;
+        
+    }
 
 
-
-        return Time.realtimeSinceStartup;
+    private void ChangeCheckpointColor()
+    {
+        foreach (Checkpoint c in list)
+            c.ResetColor();
+        OmothetyState nextState = fsm.GetNextState();
+        if (nextState == OmothetyState.SMALL_A || nextState == OmothetyState.BIG_A)
+            list[(int)Punto.A].ChangeColor();
+        if (nextState == OmothetyState.SMALL_B)
+            list[(int)Punto.B].ChangeColor();
+        if (nextState == OmothetyState.BIG_C)
+            list[(int)Punto.C].ChangeColor();
     }
 
     public override string GetResult()

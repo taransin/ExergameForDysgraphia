@@ -68,6 +68,11 @@ public class IsochronyButton : Button
             else
                 notStayedInsideNotInTime++;
         }
+
+        if (_level.inTime)
+            SaveToFile.instance.AddLog("finished round - in time");
+        else
+            SaveToFile.instance.AddLog("finished round - not in time");
         lap++;
         exter.Reset();
         inter.Reset();

@@ -12,11 +12,14 @@ public class Button : CallBackInterface
     public int[] counters;
     private SpriteRenderer _sr;
 
+    private string[] names = { "TOO EARLY", "PERFECT", "GOOD", "TOO LATE" };
 
 
     private void Start()
     {
         Init();
+        if(!gameObject.name.Contains("Circle"))
+            SaveToFile.instance.AddLog(gameObject.name);
     }
 
     public void Init()
@@ -34,6 +37,7 @@ public class Button : CallBackInterface
         if (level.phase != Phase.NOT_STARTED)
         {
             counters[(int)level.phase - 1]++;
+            SaveToFile.instance.AddLog("clicked - " + names[(int)level.phase - 1]);
             tapCounter++;
             if (_sr)
             {
@@ -48,10 +52,10 @@ public class Button : CallBackInterface
     public override string GetResult()
     {
         string result = "";
-        result += "TOO EARLY: " + counters[0] + "\n";
-        result += "PERFECT:   " + counters[1] + "\n";
-        result += "GOOD:      " + counters[2] + "\n";
-        result += "TOO LATE:  " + counters[3] + "\n";
+        result += names[0] + ": " + counters[0] + "\n";
+        result += names[1] + ":   " + counters[1] + "\n";
+        result += names[2] + ":      " + counters[2] + "\n";
+        result += names[3] + ":  " + counters[3] + "\n";
         if (WasGood())
             result += "Well Done!!" + "\n";
         else

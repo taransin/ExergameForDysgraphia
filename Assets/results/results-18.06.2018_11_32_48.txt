@@ -1,0 +1,45 @@
+CONFIGURATION
+-------------
+timeDeltaError: 0.25
+isochronyInnerSpace: 111
+isochronyOuterSpace: 217
+omothetyDeltaSpace: 25
+omothetyRounds: 5
+
+RESULTS
+-------
+Tap80bpm(Clone)
+TOO EARLY: 3
+PERFECT:   5
+GOOD:      13
+TOO LATE:  3
+Well Done!!
+
+
+
+LOGS
+-----
+18.06.2018 11:32:32: clicked - LATE
+18.06.2018 11:32:33: clicked - LATE
+18.06.2018 11:32:34: clicked - TOO_LATE
+18.06.2018 11:32:34: clicked - LATE
+18.06.2018 11:32:35: clicked - LATE
+18.06.2018 11:32:36: clicked - LATE
+18.06.2018 11:32:36: clicked - LATE
+18.06.2018 11:32:37: clicked - LATE
+18.06.2018 11:32:38: clicked - LATE
+18.06.2018 11:32:39: clicked - LATE
+18.06.2018 11:32:39: clicked - LATE
+18.06.2018 11:32:40: clicked - LATE
+18.06.2018 11:32:41: clicked - EARLY
+18.06.2018 11:32:42: clicked - TOO_EARLY
+18.06.2018 11:32:43: clicked - LATE
+18.06.2018 11:32:44: clicked - TOO_EARLY
+18.06.2018 11:32:44: clicked - EARLY
+18.06.2018 11:32:44: clicked - TOO_LATE
+18.06.2018 11:32:44: clicked - TOO_LATE
+18.06.2018 11:32:45: clicked - EARLY
+18.06.2018 11:32:45: clicked - EARLY
+18.06.2018 11:32:45: clicked - TOO_EARLY
+18.06.2018 11:32:45: clicked - EARLY
+18.06.2018 11:32:45: clicked - LATE

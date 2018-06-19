@@ -1,0 +1,48 @@
+CONFIGURATION
+-------------
+timeDeltaError: 0.25
+isochronyInnerSpace: 111
+isochronyOuterSpace: 217
+omothetyDeltaSpace: 25
+omothetyRounds: 1
+RESULTS
+-------
+OMOTHETY - NORMAL
+media cerchio piccolo: 34.53%
+deviazione cerchio piccolo: 00.00%
+media cerchio grande: 65.47%
+deviazione cerchio grande: NaN%
+
+ went out small 1times, big: 1 times
+GOOD JOB!
+now do it faster, do it in max 01.54 seconds 
+
+OMOTHETY - FAST
+media cerchio piccolo: NaN%
+deviazione cerchio piccolo: NaN%
+media cerchio grande: 100.00%
+deviazione cerchio grande: NaN%
+mean total time: 00.98 you had to do it in: 01.54 seconds
+ went out small 1times, big: 0 times
+GOOD JOB!
+now do it slower, do it in min 03.09 seconds 
+
+OMOTHETY - SLOW
+media cerchio piccolo: 54.85%
+deviazione cerchio piccolo: 00.00%
+media cerchio grande: 45.15%
+deviazione cerchio grande: NaN%
+mean total time: 02.90 you had to do it in: 03.09 seconds
+ went out small 1times, big: 1 times
+ALMOST THERE!
+you are not enough slow, do it in min 03.09 seconds 
+
+OMOTHETY - SLOW
+media cerchio piccolo: 14.00%
+deviazione cerchio piccolo: 00.00%
+media cerchio grande: 86.00%
+deviazione cerchio grande: NaN%
+mean total time: 15.86 you had to do it in: 03.09 seconds
+ went out small 1times, big: 1 times
+GOOD JOB!
+

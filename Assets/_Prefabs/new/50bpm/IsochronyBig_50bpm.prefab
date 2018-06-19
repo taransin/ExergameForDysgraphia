@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 58991976971318426}
   - component: {fileID: 114684367854444894}
   m_Layer: 0
-  m_Name: Circle9_50bpm
+  m_Name: IsochronyBig_50bpm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
