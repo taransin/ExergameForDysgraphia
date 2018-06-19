@@ -68,6 +68,11 @@ public class UIManager : MonoBehaviour {
         return settings.isochronyOuterSpace;
     }
 
+    public int GetIsochronyRepetitions()
+    {
+        return settings.isochronyRepetitions;
+    }
+
     public float GetOmothetyDelta()
     {
         return settings.omothetyDelta;
@@ -77,6 +82,19 @@ public class UIManager : MonoBehaviour {
     {
         return settings.omothetyRounds;
     }
+
+    public float GetSlowMultiplier()
+    {
+        return settings.omothetySlowMultiplier;
+    }
+
+
+    public float GetFastMultiplier()
+    {
+        return settings.omothetyFastMultiplier;
+    }
+
+
     public void Load50bpmGame()
     {
         _lc50.Reset();

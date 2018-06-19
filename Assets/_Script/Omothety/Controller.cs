@@ -19,6 +19,11 @@ public enum Circle
 
 public class Controller : CallBackInterface {
 
+    private static float meanTime;
+
+
+    private float fastMultiplier = .75f;
+    private float slowMultiplier = 1.5f;
     public Checkpoint[] list;
     private Punto startPoint;
 
@@ -45,7 +50,7 @@ public class Controller : CallBackInterface {
     public int repetitions = 10;
 
     private Speed speed;
-    public Circle drawingCircle = Circle.SMALL; 
+    private Circle drawingCircle = Circle.BIG; 
 
     private static float normalMeanTotalTime = 0;
 
@@ -75,12 +80,14 @@ public class Controller : CallBackInterface {
     public float bigError;
     public CircleTouch touch;
     private bool exited = false;
-
+    private bool finished = false;
     private OmothetyFSM fsm;
 
 
     private void Start()
     {
+        slowMultiplier = UIManager.instance.GetSlowMultiplier();
+        fastMultiplier = UIManager.instance.GetFastMultiplier();
 
         if (speed == Speed.FAST)
             timeFullRotation /= 2;
@@ -123,7 +130,7 @@ public class Controller : CallBackInterface {
     private float angle;
     public float timeFullRotation = 2f;
     public float initialAngle;
-    private bool dragonInTheSmall = true;
+    private bool dragonInTheSmall = false;
     public GameObject dragon;
     private int dragonRotationCount = 0;
 
@@ -135,27 +142,30 @@ public class Controller : CallBackInterface {
 
     private void Update()
     {
+        if (finished) return;
         if (dragonDrawing)
         {
             angle += (Time.deltaTime / timeFullRotation) * 360;
-            if (dragonInTheSmall)
+            if (!dragonInTheSmall)
+            {
+                dragon.transform.position = (Vector3)bigCenter + (new Vector3(
+                Mathf.Cos(angle * Mathf.Deg2Rad) * bigRadius,
+                Mathf.Sin(angle * Mathf.Deg2Rad) * bigRadius));
+                if (angle - 360 * dragonRotationCount >= 360)                
+                {
+                    
+                    dragonInTheSmall = true;
+                }
+            }
+            else
             {
                 dragon.transform.position = (Vector3)smallCenter + (new Vector3(
                 Mathf.Cos(angle * Mathf.Deg2Rad) * smallRadius,
                 Mathf.Sin(angle * Mathf.Deg2Rad) * smallRadius));
-                if (angle - 360 * dragonRotationCount >= 360 )
-                    dragonInTheSmall = false;
-            }
-            else
-            {
-                
-                dragon.transform.position = (Vector3)bigCenter + (new Vector3(
-                Mathf.Cos(angle * Mathf.Deg2Rad) * bigRadius,
-                Mathf.Sin(angle * Mathf.Deg2Rad) * bigRadius));
                 if (angle - 360 * dragonRotationCount >= 360 * 2)
                 {
-                    dragonRotationCount+=2;
-                    dragonInTheSmall = true;
+                    dragonRotationCount += 2;
+                    dragonInTheSmall = false;
                 }
             }
             
@@ -178,7 +188,7 @@ public class Controller : CallBackInterface {
 
             if (!exited && (distance < smallRadius - smallError || distance > smallRadius + smallError))
             {
-                Debug.Log("SEI USCITO STRONZO! PICCOLOOOO MAGNITUDE " + distance);
+                SaveToFile.instance.AddLog("out internal circle");
                 exited = true;
                 exitedSmallCircleCounter++;
             }
@@ -189,15 +199,13 @@ public class Controller : CallBackInterface {
 
             if (!exited && (distance < bigRadius - bigError || distance > bigRadius + bigError))
             {
-                Debug.Log("SEI USCITO GRANDE STRONZO!");
+                SaveToFile.instance.AddLog("out external circle");
                 exited = true;
                 exitedBigCircleCounter++;
             }
         }
 
     }
-
-    
 
     public void SetSpeed(Speed s)
     {
@@ -206,13 +214,28 @@ public class Controller : CallBackInterface {
 
     public float Touched(Checkpoint c)
     {
-        if(c.name == "A")
-            exited = false;
+        if (finished) return c.timeTouched;
         OmothetyState actualState = fsm.Action(c.name);
         if (fsm.changed)
         {
-            if(actualState == OmothetyState.SMALL_A)
+
+            SaveToFile.instance.AddLog("touched " + c.name + " - correct");
+            if (c.name == "A")
+                exited = false;
+            if (actualState == OmothetyState.SMALL_A)
             {
+
+                littleTime = Time.realtimeSinceStartup - list[(int)Punto.A].timeTouched;
+                smallFigureTimes.Add(littleTime);
+                
+                foreach (Checkpoint checkpoint in list)
+                    checkpoint.Reset();
+
+                drawingCircle = Circle.SMALL;
+            }
+            else if(actualState == OmothetyState.BIG_A)
+            {
+
                 if (firstTime)
                 {
                     ChangeCheckpointColor();
@@ -222,30 +245,23 @@ public class Controller : CallBackInterface {
                 }
 
                 bigTime = Time.realtimeSinceStartup - list[(int)Punto.A].timeTouched;
-
                 bigFigureTimes.Add(bigTime);
 
                 foreach (Checkpoint checkpoint in list)
                     checkpoint.Reset();
+
                 totalTime = littleTime + bigTime;
                 totalFigureTimes.Add(totalTime);
-
                 Counter++;
-                drawingCircle = Circle.SMALL;
-            }
-            else if(actualState == OmothetyState.BIG_A)
-            {
-                littleTime = Time.realtimeSinceStartup - list[(int)Punto.A].timeTouched;
-                smallFigureTimes.Add(littleTime);
-                foreach (Checkpoint checkpoint in list)
-                    checkpoint.Reset();
+                if (counter == repetitions)
+                    finished = true;
                 drawingCircle = Circle.BIG;
             }
             ChangeCheckpointColor();
 
             return Time.realtimeSinceStartup;
         }
-
+        SaveToFile.instance.AddLog("touched " + c.name + " - wrong");
         // dove stiamo andando?
         return c.timeTouched;
         
@@ -269,62 +285,66 @@ public class Controller : CallBackInterface {
     {
         string result = "";
         List<float> littleRelatives = new List<float>();
-
-        int lenght = smallFigureTimes.Count < totalFigureTimes.Count ? smallFigureTimes.Count  : totalFigureTimes.Count;
-        float sum = 0;
-        for (int i = 0; i < lenght; i++)
+        List<float> bigRelatives = new List<float>();
+        float sumSmall = 0;
+        float sumBig = 0;
+        //Calcolo tempi relativi
+        for (int i = 0; i < totalFigureTimes.Count; i++)
         {
             littleRelatives.Add(smallFigureTimes[i] / totalFigureTimes[i]);
-            sum += smallFigureTimes[i] / totalFigureTimes[i];
-        }
+            sumSmall += smallFigureTimes[i] / totalFigureTimes[i];
 
-        meanSmallTime = sum / lenght;
-
-        List<float> bigRelatives = new List<float>();
-        lenght = bigFigureTimes.Count < totalFigureTimes.Count ? bigFigureTimes.Count : totalFigureTimes.Count;
-        sum = 0;
-        for (int i = 0; i < lenght; i++)
-        {
             bigRelatives.Add(bigFigureTimes[i] / totalFigureTimes[i]);
-            sum += bigFigureTimes[i] / totalFigureTimes[i];
+            sumBig += bigFigureTimes[i] / totalFigureTimes[i];
         }
+        //calcolo medie
+        meanSmallTime = sumSmall / totalFigureTimes.Count;
+        meanBigTime = sumBig / totalFigureTimes.Count;
 
-        meanBigTime = sum / lenght;
-
-        littleRelatives.ForEach(e => Debug.Log("small: " + e));
-        Debug.Log("mean small : " + meanSmallTime);
-        sum = 0;
+        //calcolo deviazioni standard
+        sumSmall = 0;
         foreach (float f in littleRelatives)
         {
-            sum =(f - meanSmallTime) * (f - meanSmallTime);
+            sumSmall =(f - meanSmallTime) * (f - meanSmallTime);
         }
-        float deviazione = Mathf.Sqrt(sum / (littleRelatives.Count));
-        Debug.Log("deviazione standard small : " + deviazione );
-
+        float deviazione;
+        if (littleRelatives.Count - 1 == 0)
+            deviazione = 0;
+        else
+            deviazione = Mathf.Sqrt(sumSmall / (littleRelatives.Count-1));
+ 
         result += "media cerchio piccolo: " + FormatNumber(meanSmallTime) + "%\ndeviazione cerchio piccolo: " + FormatNumber(deviazione) +"%\n";
 
-        Debug.Log("--------------------------------------");
-        bigRelatives.ForEach(e => Debug.Log("big: " + e));
-        Debug.Log("mean big : " + meanBigTime);
-        sum = 0;
+        sumBig = 0;
         foreach (float f in bigRelatives)
         {
-            sum = (f - meanBigTime) * (f - meanBigTime);
+            sumBig = (f - meanBigTime) * (f - meanBigTime);
         }
-        deviazione = Mathf.Sqrt(sum / (bigRelatives.Count - 1));
-        Debug.Log("deviazione standard big : " + deviazione);
+        if(bigRelatives.Count - 1 == 0)
+            deviazione = 0;
+        else
+            deviazione = Mathf.Sqrt(sumBig / (bigRelatives.Count - 1));
         result += "media cerchio grande: " + FormatNumber(meanBigTime) + "%\ndeviazione cerchio grande: " + FormatNumber(deviazione) + "%\n";
-        sum = 0;
+
+        //calcolo prossimo tempo per giro totale
+        float sum = 0;
         for (int i = 0; i < totalFigureTimes.Count; i++)
         {
             sum += totalFigureTimes[i];
         }
-        if(speed != Speed.NORMAL)
+
+        if (speed == Speed.NORMAL)
+        {
+            result += "mean total time: " + FormatFloat(sum / totalFigureTimes.Count) + " seconds";
+            meanTime = sum / totalFigureTimes.Count;
+        }
+
+        if (speed != Speed.NORMAL)
             result += "mean total time: " + FormatFloat(sum / totalFigureTimes.Count) + " you had to do it in: ";
         switch (speed)
         {
-            case Speed.SLOW: result += FormatFloat(normalMeanTotalTime * 1.5f); break;
-            case Speed.FAST: result += FormatFloat(normalMeanTotalTime * .75f); break;
+            case Speed.SLOW: result += FormatFloat(meanTime * slowMultiplier); break;
+            case Speed.FAST: result += FormatFloat(meanTime * fastMultiplier); break;
         }
         if (speed != Speed.NORMAL)
             result += " seconds";
@@ -334,9 +354,9 @@ public class Controller : CallBackInterface {
         {    
             result += "GOOD JOB!\n";
             if (speed == Speed.NORMAL)
-                result+="now do it faster, do it in max " + FormatFloat(.75f * normalMeanTotalTime) + " seconds \n";
+                result+="now do it faster, do it in max " + FormatFloat(fastMultiplier * normalMeanTotalTime) + " seconds \n";
             else if(speed == Speed.FAST)
-                result += "now do it slower, do it in min " + FormatFloat(1.5f * normalMeanTotalTime) + " seconds \n";
+                result += "now do it slower, do it in min " + FormatFloat(slowMultiplier * normalMeanTotalTime) + " seconds \n";
         }
         else
         {
@@ -357,9 +377,6 @@ public class Controller : CallBackInterface {
         return String.Format("{0:00.00}", number);
     }
 
-
-
-
     private string FormatNumber(float number)
     {
         return String.Format( "{0:00.00}", number*100);
@@ -371,15 +388,13 @@ public class Controller : CallBackInterface {
         switch (speed)
         {
             case Speed.NORMAL:
-                //calcola media tempi totali
-                
+                //calcola media tempi total      
                 for (int i = 0; i < totalFigureTimes.Count; i++)
                 {
                     sum += totalFigureTimes[i];
                 }
                 normalMeanTotalTime = sum/totalFigureTimes.Count;
                 return true;
-                break;
             case Speed.SLOW:
                 
                 for (int i = 0; i < totalFigureTimes.Count; i++)
@@ -398,8 +413,7 @@ public class Controller : CallBackInterface {
                 if (sum / totalFigureTimes.Count <= .75f * normalMeanTotalTime)
                     return true;
                 break;
-        }
-        
+        }        
         return false;
     }
 }

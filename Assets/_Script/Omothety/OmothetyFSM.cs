@@ -20,7 +20,7 @@ public class OmothetyFSM {
                 if (state == OmothetyState.INIT)
                 {
                     changed = true;
-                    state = OmothetyState.SMALL_A;
+                    state = OmothetyState.BIG_A;
                 }
 
                 if (state == OmothetyState.SMALL_B)
@@ -62,7 +62,7 @@ public class OmothetyFSM {
         switch (state)
         {
             case OmothetyState.INIT:
-                return OmothetyState.SMALL_A;
+                return OmothetyState.BIG_A;
             case OmothetyState.SMALL_A:
                 return OmothetyState.SMALL_B;
             case OmothetyState.SMALL_B:

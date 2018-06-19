@@ -19,6 +19,8 @@ public class LevelChanger : MonoBehaviour {
     private int isochronyRepetitions = 0;
     private int lastPlayed = 3;
 
+    private int chosenRepetitions;
+
 
     public void ChangeLevel()
     {
@@ -101,6 +103,7 @@ public class LevelChanger : MonoBehaviour {
 
     private void ManageIsochronyLevels()
     {
+        chosenRepetitions = UIManager.instance.GetIsochronyRepetitions();
         if(isochronyToPlay == 3)
         {
             GenerateLevelsOrder();
@@ -120,7 +123,7 @@ public class LevelChanger : MonoBehaviour {
         isochronyToPlay++;
         //carica e gioca al livello isochronyToPlay
         //isochronyToPlay++
-        if(isochronyRepetitions==3 && isochronyToPlay == 3)
+        if(isochronyRepetitions==chosenRepetitions && isochronyToPlay == 3)
         {
             isochronyRepetitions = 0;
             actualLevel += 3;
