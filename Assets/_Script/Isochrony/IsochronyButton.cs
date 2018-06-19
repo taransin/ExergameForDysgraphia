@@ -13,6 +13,9 @@ public class IsochronyButton : Button
     private int stayedInsideNotInTime = 0;
     private int notStayedInsideNotInTime = 0;
 
+
+    public GameObject coppa;
+
     private Level _level;
     int lap = 0;
 
@@ -48,6 +51,20 @@ public class IsochronyButton : Button
     public override bool WasGood()
     {
         return base.WasGood();
+    }
+
+
+
+    public override IEnumerator ChangeColor(Color color)
+    {
+        if(color == Color.green)
+        {
+            coppa.SetActive(true);
+            yield return new WaitForSeconds(0.2f);
+            coppa.SetActive(false);
+        }
+
+
     }
 
     public new void Clicked()

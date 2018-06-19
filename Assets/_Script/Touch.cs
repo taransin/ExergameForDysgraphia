@@ -14,6 +14,7 @@ public class Touch : MonoBehaviour
 
     void Start()
     {
+        useMouse = UIManager.instance.useMouse;
         objPlane = new Plane(Camera.main.transform.forward * -1, this.transform.position);
         Input.multiTouchEnabled = false;
     }

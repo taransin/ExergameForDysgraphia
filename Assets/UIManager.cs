@@ -24,6 +24,8 @@ public class UIManager : MonoBehaviour {
 
     public static UIManager instance;
 
+
+    public bool useMouse = true;
     private void Awake()
     {
         if (instance)
@@ -57,6 +59,11 @@ public class UIManager : MonoBehaviour {
     public float GetTimeError()
     {
         return settings.timeError;
+    }
+
+    public float GetErrorPercentage()
+    {
+        return settings.tapError;
     }
 
     public float GetIsochronyInnerSpace()

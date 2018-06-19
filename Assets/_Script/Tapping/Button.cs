@@ -12,6 +12,8 @@ public class Button : CallBackInterface
     public int[] counters;
     private SpriteRenderer _sr;
 
+    private float error;
+
     private string[] names = { "TOO EARLY", "PERFECT", "GOOD", "TOO LATE" };
 
 
@@ -29,6 +31,8 @@ public class Button : CallBackInterface
             defaultColor = GetComponent<SpriteRenderer>().color;
         level = this.gameObject.GetComponentInParent<Level>();
         counters = new int[4];
+
+        error = UIManager.instance.GetErrorPercentage();
     }
 
 
@@ -59,12 +63,15 @@ public class Button : CallBackInterface
         if (WasGood())
             result += "Well Done!!" + "\n";
         else
-            result += "Let's try an easier level!!" + "\n";
+            if (transform.parent.name.Contains("Continuated") || transform.parent.name.Contains("50"))
+                result += "You can do better!";
+            else
+                result += "Let's try an easier level!!" + "\n";
         return result;
     }
 
 
-    public IEnumerator ChangeColor(Color color)
+    public virtual IEnumerator ChangeColor(Color color)
     {
         SpriteRenderer sp = GetComponent<SpriteRenderer>();
         if (sp.color == defaultColor)
@@ -78,8 +85,7 @@ public class Button : CallBackInterface
 
     public override bool WasGood()
     {
-        Debug.Log("test: " + (tapCounter * 0.3f > (counters[(int)Phase.TOO_EARLY - 1] + counters[(int)Phase.TOO_LATE - 1])));
-        if (tapCounter * 0.3f > (counters[(int)Phase.TOO_EARLY - 1] + counters[(int)Phase.TOO_LATE - 1]))
+        if (tapCounter * error > (counters[(int)Phase.TOO_EARLY - 1] + counters[(int)Phase.TOO_LATE - 1]))
             return true;
         return false;
     }

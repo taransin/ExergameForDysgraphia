@@ -10,8 +10,10 @@ public class Tap : MonoBehaviour {
 
     void Start()
     {
+        useMouse = UIManager.instance.useMouse;
         objPlane = new Plane(Camera.main.transform.forward * -1, this.transform.position);
         transform.position = new Vector3();
+        Input.multiTouchEnabled = false;
     }
 
     void Update()

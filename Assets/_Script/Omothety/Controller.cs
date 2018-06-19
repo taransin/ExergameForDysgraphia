@@ -225,9 +225,9 @@ public class Controller : CallBackInterface {
             if (actualState == OmothetyState.SMALL_A)
             {
 
-                littleTime = Time.realtimeSinceStartup - list[(int)Punto.A].timeTouched;
-                smallFigureTimes.Add(littleTime);
-                
+                bigTime = Time.realtimeSinceStartup - list[(int)Punto.A].timeTouched;
+                bigFigureTimes.Add(bigTime);
+
                 foreach (Checkpoint checkpoint in list)
                     checkpoint.Reset();
 
@@ -243,9 +243,9 @@ public class Controller : CallBackInterface {
                     return Time.realtimeSinceStartup;
 
                 }
+                littleTime = Time.realtimeSinceStartup - list[(int)Punto.A].timeTouched;
+                smallFigureTimes.Add(littleTime);
 
-                bigTime = Time.realtimeSinceStartup - list[(int)Punto.A].timeTouched;
-                bigFigureTimes.Add(bigTime);
 
                 foreach (Checkpoint checkpoint in list)
                     checkpoint.Reset();
@@ -305,26 +305,19 @@ public class Controller : CallBackInterface {
         sumSmall = 0;
         foreach (float f in littleRelatives)
         {
-            sumSmall =(f - meanSmallTime) * (f - meanSmallTime);
+            sumSmall +=(f - meanSmallTime) * (f - meanSmallTime);
         }
+
         float deviazione;
         if (littleRelatives.Count - 1 == 0)
             deviazione = 0;
         else
             deviazione = Mathf.Sqrt(sumSmall / (littleRelatives.Count-1));
  
-        result += "media cerchio piccolo: " + FormatNumber(meanSmallTime) + "%\ndeviazione cerchio piccolo: " + FormatNumber(deviazione) +"%\n";
+        result += "mean small circle: " + FormatNumber(meanSmallTime) + "%\n";
 
-        sumBig = 0;
-        foreach (float f in bigRelatives)
-        {
-            sumBig = (f - meanBigTime) * (f - meanBigTime);
-        }
-        if(bigRelatives.Count - 1 == 0)
-            deviazione = 0;
-        else
-            deviazione = Mathf.Sqrt(sumBig / (bigRelatives.Count - 1));
-        result += "media cerchio grande: " + FormatNumber(meanBigTime) + "%\ndeviazione cerchio grande: " + FormatNumber(deviazione) + "%\n";
+        result += "mean big circle: " + FormatNumber(meanBigTime) + "%\n";
+        result+= "Standard deviation: " + FormatNumber(deviazione) + "%\n";
 
         //calcolo prossimo tempo per giro totale
         float sum = 0;
@@ -348,7 +341,7 @@ public class Controller : CallBackInterface {
         }
         if (speed != Speed.NORMAL)
             result += " seconds";
-        result += "\n went out small " + exitedSmallCircleCounter + "times, big: " 
+        result += "\nwent out small " + exitedSmallCircleCounter + " times, big: " 
             + exitedBigCircleCounter + " times\n";
         if (WasGood())
         {    

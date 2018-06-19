@@ -57,4 +57,9 @@ public class SettingSliderTextBinder : MonoBehaviour {
         text.text = slider.value.ToString();
     }
 
+    public void OnSliderChangePercentage()
+    {
+        text.text = slider.value.ToString()+"%";
+    }
+
 }

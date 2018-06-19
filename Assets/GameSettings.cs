@@ -7,6 +7,9 @@ public class GameSettings : MonoBehaviour {
     public Slider timeSlider;
     public float timeError;
 
+    public Slider tapErrorSlider;
+    public float tapError;
+
     public Slider isochronyInnerSpaceSlider;
     public float isochronyInnerSpace;
 
@@ -40,8 +43,9 @@ public class GameSettings : MonoBehaviour {
         omothetyRounds = (int)omothetyRoundsSlider.value;
         omothetySlowMultiplier = omothetySlowMultiplierSlider.value;
         omothetyFastMultiplier = 1f / omothetyFastMultiplierSlider.value;
-
+        tapError = tapErrorSlider.value / 100f;
         SaveToFile.instance.AddConfiguration("timeDeltaError: " + timeSlider.value);
+        SaveToFile.instance.AddConfiguration("tapError: " + tapErrorSlider.value);
         SaveToFile.instance.AddConfiguration("isochronyInnerSpace: " + isochronyInnerSpaceSlider.value);
         SaveToFile.instance.AddConfiguration("isochronyOuterSpace: " + isochronyOuterSpaceSlider.value);
         SaveToFile.instance.AddConfiguration("isochronyRepetitions: " + isochronyRepetitions);
