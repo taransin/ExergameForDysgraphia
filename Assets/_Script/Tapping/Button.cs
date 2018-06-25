@@ -42,6 +42,11 @@ public class Button : CallBackInterface
         {
             counters[(int)level.phase - 1]++;
             SaveToFile.instance.AddLog("clicked - " + names[(int)level.phase - 1]);
+            if(level.song)
+            {
+                SaveToFile.instance.AddLog("delta error: " + (level.GetTimeSinceLevelStarted() - level.nextPerfect));
+            }
+
             tapCounter++;
             if (_sr)
             {

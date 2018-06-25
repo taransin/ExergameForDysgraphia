@@ -23,12 +23,25 @@ public class Level : MonoBehaviour {
     [SerializeField]
     public CallBackInterface resultObject;
 
+    public float nextPerfect;
+
+    private float timeStart;
+
+    AudioSource _as;
+
+    public float GetTimeSinceLevelStarted()
+    {
+        if (song)
+            return _as.time;
+        return 0;
+    }
+
     private void Awake()
     {
         errorPercentage = UIManager.instance.GetTimeError();
         if (song)
         {
-            AudioSource _as = gameObject.AddComponent<AudioSource>();
+            _as = gameObject.AddComponent<AudioSource>();
             _as.clip = song.audio;
             _as.Play();
             StartCoroutine(Loop());
@@ -39,6 +52,7 @@ public class Level : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
         errorPercentage = UIManager.instance.GetTimeError();
         if (song)
             StartCoroutine(GameStartGui(song.offset));
@@ -48,7 +62,9 @@ public class Level : MonoBehaviour {
     private IEnumerator Loop()
     {
         float errore = 0;
+        nextPerfect = song.offset;
         float time = Time.realtimeSinceStartup;
+
 
         float timeToWait = song.offset - song.tempo * errorPercentage;
         yield return new WaitForSeconds(timeToWait);
@@ -78,7 +94,7 @@ public class Level : MonoBehaviour {
             yield return new WaitForSeconds(timeToWait);
             errore = GetElapsedRealTime(time) - timeToWait;
             phase = Phase.TOO_EARLY;
-
+            nextPerfect += song.tempo;
             time = Time.realtimeSinceStartup;
             timeToWait = song.tempo / 2 - song.tempo * errorPercentage - errore;
             yield return new WaitForSeconds(timeToWait);
@@ -97,6 +113,7 @@ public class Level : MonoBehaviour {
             timeToWait = song.tempo * errorPercentage - errore;
             yield return new WaitForSeconds(timeToWait);
             phase = Phase.TOO_LATE;
+            
             errore = GetElapsedRealTime(time) - timeToWait;
 
             inTime = false;

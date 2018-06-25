@@ -6,7 +6,8 @@ using UnityEngine;
 public class SaveToFile : MonoBehaviour {
 
     public static SaveToFile instance;
-
+    public GameSettings settings;
+    private string playerData;
     private string configuration;
     private string results;
     private string logs;
@@ -30,13 +31,19 @@ public class SaveToFile : MonoBehaviour {
 
     public void Init()
     {
+        playerData = "";
         configuration = "";
         results = "";
         logs = "";
-
+        print(Application.persistentDataPath);
         string folderPath = (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer ? Application.persistentDataPath : Application.dataPath) + "/results/";
         Debug.Log(folderPath);
 
+    }
+
+    public void AddPlayerData(string data)
+    {
+        playerData += data + "\n";
     }
 
     public void AddConfiguration(string conf)
@@ -65,14 +72,18 @@ public class SaveToFile : MonoBehaviour {
         string folderPath = (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer ? Application.persistentDataPath : Application.dataPath) + "/results/";
 
 
-        string filePath = folderPath + "results-"+ GetTimestamp().Replace(' ','_').Replace(':','_')+ ".txt";
+        string filePath = folderPath + settings.GetPlayerName() +"-"+ GetTimestamp().Replace(' ','_').Replace(':','_')+ ".txt";
 
         if (!Directory.Exists(folderPath))
         {
             Directory.CreateDirectory(folderPath);
         }
 
-        string text = "CONFIGURATION\n" +
+        string text =
+              "PLAYER\n" +
+              "------\n" +
+              playerData +
+              "\nCONFIGURATION\n" +
               "-------------\n" +
               configuration +
               "\nRESULTS\n" +

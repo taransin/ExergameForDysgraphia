@@ -1,0 +1,234 @@
+PLAYER
+------
+CONFIGURATION
+-------------
+timeDeltaError: 0.25
+tapError: 30
+isochronyInnerSpace: 111
+isochronyOuterSpace: 217
+isochronyRepetitions: 3
+omothetyDeltaSpace: 25
+omothetyRounds: 5
+omothetySlowMultiplier: 1.5
+omothetyFastMultiplier: 1.25
+
+RESULTS
+-------
+OMOTHETY - NORMAL
+mean small circle: 30.97%
+mean big circle: 69.03%
+Standard deviation: 08.10%
+mean total time: 01.64 seconds
+went out small 5 times, big: 5 times
+GOOD JOB!
+now do it faster, do it in max 01.31 seconds 
+
+OMOTHETY - FAST
+mean small circle: 39.36%
+mean big circle: 60.64%
+Standard deviation: 15.93%
+mean total time: 01.23 you had to do it in: 01.31 seconds
+went out small 5 times, big: 5 times
+ALMOST THERE!
+you are not enough fast, do it in max 01.23 seconds
+
+OMOTHETY - FAST
+mean small circle: 47.87%
+mean big circle: 52.13%
+Standard deviation: 16.13%
+mean total time: 01.01 you had to do it in: 01.31 seconds
+went out small 5 times, big: 6 times
+GOOD JOB!
+now do it slower, do it in min 02.46 seconds 
+
+OMOTHETY - SLOW
+mean small circle: 43.75%
+mean big circle: 56.25%
+Standard deviation: 02.10%
+mean total time: 06.26 you had to do it in: 02.46 seconds
+went out small 5 times, big: 5 times
+GOOD JOB!
+
+
+
+LOGS
+-----
+25.06.2018 11:33:41:225: A
+25.06.2018 11:33:41:225: B
+25.06.2018 11:33:41:225: C
+25.06.2018 11:34:04:723: touched A - correct
+25.06.2018 11:34:04:831: out external circle
+25.06.2018 11:34:05:112: touched B - wrong
+25.06.2018 11:34:05:608: touched A - wrong
+25.06.2018 11:34:06:437: touched C - correct
+25.06.2018 11:34:06:951: touched A - correct
+25.06.2018 11:34:07:0: out internal circle
+25.06.2018 11:34:07:199: touched B - correct
+25.06.2018 11:34:07:448: touched A - correct
+25.06.2018 11:34:07:613: out external circle
+25.06.2018 11:34:07:779: touched C - correct
+25.06.2018 11:34:08:176: touched A - correct
+25.06.2018 11:34:08:391: out internal circle
+25.06.2018 11:34:08:424: touched B - correct
+25.06.2018 11:34:08:657: touched A - correct
+25.06.2018 11:34:08:989: out external circle
+25.06.2018 11:34:09:187: touched C - correct
+25.06.2018 11:34:09:569: touched A - correct
+25.06.2018 11:34:09:784: out internal circle
+25.06.2018 11:34:09:817: touched B - correct
+25.06.2018 11:34:09:999: touched A - correct
+25.06.2018 11:34:10:82: out external circle
+25.06.2018 11:34:10:512: touched C - correct
+25.06.2018 11:34:11:59: touched A - correct
+25.06.2018 11:34:11:258: out internal circle
+25.06.2018 11:34:11:357: touched B - correct
+25.06.2018 11:34:11:639: touched A - correct
+25.06.2018 11:34:12:152: touched C - correct
+25.06.2018 11:34:12:302: out external circle
+25.06.2018 11:34:12:549: touched A - correct
+25.06.2018 11:34:12:798: touched B - correct
+25.06.2018 11:34:12:848: out internal circle
+25.06.2018 11:34:12:931: touched A - correct
+25.06.2018 11:34:22:761: A
+25.06.2018 11:34:22:761: B
+25.06.2018 11:34:22:761: C
+25.06.2018 11:34:23:886: touched A - correct
+25.06.2018 11:34:23:968: out external circle
+25.06.2018 11:34:24:299: touched C - correct
+25.06.2018 11:34:24:548: touched A - correct
+25.06.2018 11:34:24:548: out internal circle
+25.06.2018 11:34:24:713: touched B - correct
+25.06.2018 11:34:24:912: touched A - correct
+25.06.2018 11:34:24:912: out external circle
+25.06.2018 11:34:25:178: touched C - correct
+25.06.2018 11:34:25:326: touched A - correct
+25.06.2018 11:34:25:326: out internal circle
+25.06.2018 11:34:25:509: touched B - correct
+25.06.2018 11:34:25:657: touched A - correct
+25.06.2018 11:34:25:757: out external circle
+25.06.2018 11:34:25:823: touched B - wrong
+25.06.2018 11:34:26:287: touched B - wrong
+25.06.2018 11:34:26:436: touched C - correct
+25.06.2018 11:34:26:453: touched B - wrong
+25.06.2018 11:34:26:486: touched A - correct
+25.06.2018 11:34:26:486: out internal circle
+25.06.2018 11:34:26:635: touched A - wrong
+25.06.2018 11:34:26:916: touched B - correct
+25.06.2018 11:34:27:16: touched A - correct
+25.06.2018 11:34:27:16: out external circle
+25.06.2018 11:34:27:398: touched B - wrong
+25.06.2018 11:34:27:463: touched A - wrong
+25.06.2018 11:34:27:679: touched C - correct
+25.06.2018 11:34:27:795: touched B - wrong
+25.06.2018 11:34:28:159: touched A - correct
+25.06.2018 11:34:28:175: out internal circle
+25.06.2018 11:34:28:209: touched B - correct
+25.06.2018 11:34:28:391: touched A - correct
+25.06.2018 11:34:28:392: out external circle
+25.06.2018 11:34:28:507: touched B - wrong
+25.06.2018 11:34:28:589: touched A - wrong
+25.06.2018 11:34:28:805: touched B - wrong
+25.06.2018 11:34:28:838: touched C - correct
+25.06.2018 11:34:29:37: touched A - correct
+25.06.2018 11:34:29:87: out internal circle
+25.06.2018 11:34:29:220: touched B - correct
+25.06.2018 11:34:29:418: touched B - wrong
+25.06.2018 11:34:29:816: touched C - wrong
+25.06.2018 11:34:30:48: touched A - correct
+25.06.2018 11:34:33:180: A
+25.06.2018 11:34:33:180: B
+25.06.2018 11:34:33:180: C
+25.06.2018 11:34:33:676: out external circle
+25.06.2018 11:34:33:692: touched B - wrong
+25.06.2018 11:34:33:908: touched B - wrong
+25.06.2018 11:34:33:924: touched C - wrong
+25.06.2018 11:34:33:990: touched B - wrong
+25.06.2018 11:34:34:24: touched A - correct
+25.06.2018 11:34:34:24: out external circle
+25.06.2018 11:34:34:89: touched B - wrong
+25.06.2018 11:34:34:107: touched C - correct
+25.06.2018 11:34:34:173: touched C - wrong
+25.06.2018 11:34:34:454: touched A - correct
+25.06.2018 11:34:34:471: touched B - correct
+25.06.2018 11:34:34:471: out internal circle
+25.06.2018 11:34:34:571: touched B - wrong
+25.06.2018 11:34:34:586: touched A - correct
+25.06.2018 11:34:34:587: out external circle
+25.06.2018 11:34:34:736: touched C - correct
+25.06.2018 11:34:34:753: touched B - wrong
+25.06.2018 11:34:34:786: touched A - correct
+25.06.2018 11:34:34:786: out internal circle
+25.06.2018 11:34:34:820: touched C - wrong
+25.06.2018 11:34:34:919: touched C - wrong
+25.06.2018 11:34:34:934: touched B - correct
+25.06.2018 11:34:34:952: touched A - correct
+25.06.2018 11:34:34:968: out external circle
+25.06.2018 11:34:34:984: touched B - wrong
+25.06.2018 11:34:35:697: touched A - wrong
+25.06.2018 11:34:35:715: touched B - wrong
+25.06.2018 11:34:35:730: touched C - correct
+25.06.2018 11:34:35:995: touched C - wrong
+25.06.2018 11:34:36:11: touched A - correct
+25.06.2018 11:34:36:35: out internal circle
+25.06.2018 11:34:36:168: touched C - wrong
+25.06.2018 11:34:36:979: touched C - wrong
+25.06.2018 11:34:37:144: touched A - wrong
+25.06.2018 11:34:37:178: touched C - wrong
+25.06.2018 11:34:37:244: touched C - wrong
+25.06.2018 11:34:37:294: touched A - wrong
+25.06.2018 11:34:37:443: touched C - wrong
+25.06.2018 11:34:37:494: touched A - wrong
+25.06.2018 11:34:38:238: touched C - wrong
+25.06.2018 11:34:38:287: touched B - correct
+25.06.2018 11:34:38:305: touched A - correct
+25.06.2018 11:34:38:305: out external circle
+25.06.2018 11:34:38:387: touched C - correct
+25.06.2018 11:34:38:470: touched B - wrong
+25.06.2018 11:34:38:486: touched A - correct
+25.06.2018 11:34:38:487: out internal circle
+25.06.2018 11:34:38:569: touched B - correct
+25.06.2018 11:34:38:586: touched C - wrong
+25.06.2018 11:34:38:669: touched A - correct
+25.06.2018 11:34:38:669: out external circle
+25.06.2018 11:34:38:769: touched A - wrong
+25.06.2018 11:34:38:785: touched C - correct
+25.06.2018 11:34:38:868: touched A - correct
+25.06.2018 11:34:38:868: out internal circle
+25.06.2018 11:34:39:50: touched C - wrong
+25.06.2018 11:34:39:67: touched B - correct
+25.06.2018 11:34:39:83: touched A - correct
+25.06.2018 11:34:41:355: A
+25.06.2018 11:34:41:355: B
+25.06.2018 11:34:41:355: C
+25.06.2018 11:34:44:657: touched A - correct
+25.06.2018 11:34:44:955: out external circle
+25.06.2018 11:34:46:545: touched C - correct
+25.06.2018 11:34:48:384: touched A - correct
+25.06.2018 11:34:48:384: out internal circle
+25.06.2018 11:34:49:676: touched B - correct
+25.06.2018 11:34:51:118: touched A - correct
+25.06.2018 11:34:51:118: out external circle
+25.06.2018 11:34:52:956: touched C - correct
+25.06.2018 11:34:54:680: touched A - correct
+25.06.2018 11:34:54:729: out internal circle
+25.06.2018 11:34:56:112: touched B - correct
+25.06.2018 11:34:57:719: touched A - correct
+25.06.2018 11:34:58:200: out external circle
+25.06.2018 11:34:59:359: touched C - correct
+25.06.2018 11:35:01:397: touched A - correct
+25.06.2018 11:35:01:448: out internal circle
+25.06.2018 11:35:02:623: touched B - correct
+25.06.2018 11:35:04:197: touched A - correct
+25.06.2018 11:35:04:496: out external circle
+25.06.2018 11:35:05:754: touched C - correct
+25.06.2018 11:35:07:394: touched A - correct
+25.06.2018 11:35:07:527: out internal circle
+25.06.2018 11:35:08:388: touched C - wrong
+25.06.2018 11:35:08:819: touched B - correct
+25.06.2018 11:35:09:647: touched A - correct
+25.06.2018 11:35:09:747: out external circle
+25.06.2018 11:35:11:56: touched C - correct
+25.06.2018 11:35:13:56: touched A - correct
+25.06.2018 11:35:13:436: out internal circle
+25.06.2018 11:35:14:415: touched B - correct
+25.06.2018 11:35:15:938: touched A - correct

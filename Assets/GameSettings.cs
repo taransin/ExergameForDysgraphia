@@ -32,9 +32,22 @@ public class GameSettings : MonoBehaviour {
     public Slider omothetyFastMultiplierSlider;
     public float omothetyFastMultiplier;
 
+    public InputField playerNameField;
+    public string playerName;
+
+    public InputField playerDescriptionField;
+    public string playerDescription;
+
 
     public void SaveSettings()
     {
+
+        playerName = playerNameField.text == "" ? "000" : playerNameField.text;
+        playerDescription = playerDescriptionField.text;
+        SaveToFile.instance.AddPlayerData("Name: " + playerName);
+        if(playerDescription!="")
+            SaveToFile.instance.AddPlayerData("Description: " + playerDescription);
+
         timeError = timeSlider.value;
         isochronyInnerSpace = (5.5f * isochronyInnerSpaceSlider.value) / 111;
         isochronyOuterSpace = (7.88f * isochronyOuterSpaceSlider.value) / 217;
@@ -55,5 +68,10 @@ public class GameSettings : MonoBehaviour {
         SaveToFile.instance.AddConfiguration("omothetyFastMultiplier: " + omothetyFastMultiplierSlider.value);
     }
 
+
+    public string GetPlayerName()
+    {
+        return playerName;
+    }
 
 }
