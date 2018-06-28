@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 58121653473402182}
   - component: {fileID: 114283370563566314}
   m_Layer: 8
-  m_Name: smallPoint
+  m_Name: OmothetyPoint
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

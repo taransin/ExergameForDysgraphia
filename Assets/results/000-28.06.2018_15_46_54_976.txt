@@ -1,0 +1,782 @@
+PLAYER
+------
+Name: 000
+
+CONFIGURATION
+-------------
+timeDeltaError: 0.3525402
+tapError: 30
+isochronyInnerSpace: 111
+isochronyOuterSpace: 217
+isochronyRepetitions: 1
+omothetyDeltaSpace: 25
+omothetyRounds: 2
+omothetySlowMultiplier: 1.5
+omothetyFastMultiplier: 1.25
+
+RESULTS
+-------
+Tap80bpm(Clone)
+TOO EARLY: 1
+PERFECT:   11
+GOOD:      9
+TOO LATE:  1
+Well Done!!
+
+Tap80bpmContinuated(Clone)
+TOO EARLY: 0
+PERFECT:   0
+GOOD:      12
+TOO LATE:  0
+Well Done!!
+
+IsochronySmall_80bpm(Clone)
+IN TIME & STAYED INSIDE:   0
+IN TIME & NOT STAYED INSIDE:   33
+NOT IN TIME & STAYED INSIDE:   2
+NOT IN TIME & NOT STAYED INSIDE:   12
+
+IsochronyBig_80bpm(Clone)
+IN TIME & STAYED INSIDE:   1
+IN TIME & NOT STAYED INSIDE:   20
+NOT IN TIME & STAYED INSIDE:   3
+NOT IN TIME & NOT STAYED INSIDE:   5
+
+IsochronyMedium_80bpm(Clone)
+IN TIME & STAYED INSIDE:   1
+IN TIME & NOT STAYED INSIDE:   22
+NOT IN TIME & STAYED INSIDE:   1
+NOT IN TIME & NOT STAYED INSIDE:   10
+
+OMOTHETY - NORMAL
+mean small circle: 37.69%
+mean big circle: 62.31%
+Standard deviation: 01.58%
+mean total time: 01.38 seconds
+went out small 2 times, big: 2 times
+GOOD JOB!
+now do it faster, do it in max 01.11 seconds 
+
+OMOTHETY - FAST
+mean small circle: 36.91%
+mean big circle: 63.09%
+Standard deviation: 03.74%
+mean total time: 01.08 you had to do it in: 01.11 seconds
+went out small 2 times, big: 3 times
+ALMOST THERE!
+you are not enough fast, do it in max 01.04 seconds
+
+OMOTHETY - FAST
+mean small circle: 47.27%
+mean big circle: 52.73%
+Standard deviation: 05.56%
+mean total time: 01.55 you had to do it in: 01.11 seconds
+went out small 2 times, big: 2 times
+ALMOST THERE!
+you are not enough fast, do it in max 01.04 seconds
+
+OMOTHETY - FAST
+mean small circle: 42.59%
+mean big circle: 57.41%
+Standard deviation: 00.26%
+mean total time: 01.01 you had to do it in: 01.11 seconds
+went out small 2 times, big: 2 times
+GOOD JOB!
+now do it slower, do it in min 02.07 seconds 
+
+OMOTHETY - SLOW
+mean small circle: 42.16%
+mean big circle: 57.84%
+Standard deviation: 04.43%
+mean total time: 04.28 you had to do it in: 02.07 seconds
+went out small 1 times, big: 2 times
+GOOD JOB!
+
+
+
+LOGS
+-----
+28.06.2018 15:44:05:469: Tap80bpm(Clone)
+28.06.2018 15:44:07:862: clicked - GOOD
+28.06.2018 15:44:07:862: delta error: 0.1393197
+28.06.2018 15:44:08:557: clicked - GOOD
+28.06.2018 15:44:08:557: delta error: 0.09331059
+28.06.2018 15:44:09:286: clicked - GOOD
+28.06.2018 15:44:09:286: delta error: 0.08997726
+28.06.2018 15:44:09:981: clicked - GOOD
+28.06.2018 15:44:09:981: delta error: 0.0226531
+28.06.2018 15:44:10:694: clicked - PERFECT
+28.06.2018 15:44:10:694: delta error: -0.002017975
+28.06.2018 15:44:11:390: clicked - PERFECT
+28.06.2018 15:44:11:390: delta error: -0.06934261
+28.06.2018 15:44:12:118: clicked - PERFECT
+28.06.2018 15:44:12:118: delta error: -0.0726757
+28.06.2018 15:44:12:848: clicked - PERFECT
+28.06.2018 15:44:12:848: delta error: -0.1186848
+28.06.2018 15:44:13:609: clicked - PERFECT
+28.06.2018 15:44:13:609: delta error: -0.1006804
+28.06.2018 15:44:14:321: clicked - PERFECT
+28.06.2018 15:44:14:322: delta error: -0.1253519
+28.06.2018 15:44:15:17: clicked - PERFECT
+28.06.2018 15:44:15:18: delta error: -0.1926756
+28.06.2018 15:44:15:763: clicked - PERFECT
+28.06.2018 15:44:15:763: delta error: -0.1746712
+28.06.2018 15:44:16:575: clicked - PERFECT
+28.06.2018 15:44:16:575: delta error: -0.1140137
+28.06.2018 15:44:17:254: clicked - PERFECT
+28.06.2018 15:44:17:254: delta error: -0.2026758
+28.06.2018 15:44:17:900: clicked - TOO EARLY
+28.06.2018 15:44:17:900: delta error: -0.3126755
+28.06.2018 15:44:18:580: clicked - TOO LATE
+28.06.2018 15:44:18:580: delta error: 0.369977
+28.06.2018 15:44:19:226: clicked - GOOD
+28.06.2018 15:44:19:226: delta error: 0.2813148
+28.06.2018 15:44:19:955: clicked - GOOD
+28.06.2018 15:44:19:955: delta error: 0.2566442
+28.06.2018 15:44:20:650: clicked - GOOD
+28.06.2018 15:44:20:650: delta error: 0.1893196
+28.06.2018 15:44:21:313: clicked - GOOD
+28.06.2018 15:44:21:313: delta error: 0.1219959
+28.06.2018 15:44:22:25: clicked - GOOD
+28.06.2018 15:44:22:25: delta error: 0.07598686
+28.06.2018 15:44:22:672: clicked - PERFECT
+28.06.2018 15:44:22:672: delta error: -0.03401375
+28.06.2018 15:44:40:516: Tap80bpmContinuated(Clone)
+28.06.2018 15:44:43:711: clicked - GOOD
+28.06.2018 15:44:43:711: delta error: 0.1786621
+28.06.2018 15:44:44:474: clicked - GOOD
+28.06.2018 15:44:44:474: delta error: 0.2179818
+28.06.2018 15:44:45:170: clicked - GOOD
+28.06.2018 15:44:45:170: delta error: 0.1506577
+28.06.2018 15:44:45:947: clicked - GOOD
+28.06.2018 15:44:45:947: delta error: 0.1899772
+28.06.2018 15:44:46:677: clicked - GOOD
+28.06.2018 15:44:46:677: delta error: 0.165329
+28.06.2018 15:44:47:439: clicked - GOOD
+28.06.2018 15:44:47:439: delta error: 0.1619954
+28.06.2018 15:44:50:338: clicked - GOOD
+28.06.2018 15:44:50:338: delta error: 0.06331062
+28.06.2018 15:44:51:116: clicked - GOOD
+28.06.2018 15:44:51:116: delta error: 0.08131504
+28.06.2018 15:44:51:846: clicked - GOOD
+28.06.2018 15:44:51:846: delta error: 0.05664444
+28.06.2018 15:44:52:591: clicked - GOOD
+28.06.2018 15:44:52:591: delta error: 0.05331039
+28.06.2018 15:44:53:386: clicked - GOOD
+28.06.2018 15:44:53:386: delta error: 0.1139908
+28.06.2018 15:44:54:82: clicked - GOOD
+28.06.2018 15:44:54:82: delta error: 0.04664421
+28.06.2018 15:45:08:613: IsochronySmall_80bpm(Clone)
+28.06.2018 15:45:11:180: clicked - TOO LATE
+28.06.2018 15:45:11:180: delta error: 0.3099773
+28.06.2018 15:45:11:180: finished round - not in time
+28.06.2018 15:45:11:230: out int
+28.06.2018 15:45:11:759: out int
+28.06.2018 15:45:11:792: clicked - GOOD
+28.06.2018 15:45:11:792: delta error: 0.1786621
+28.06.2018 15:45:11:792: finished round - in time
+28.06.2018 15:45:12:8: out ext
+28.06.2018 15:45:12:209: out int
+28.06.2018 15:45:12:224: clicked - PERFECT
+28.06.2018 15:45:12:224: delta error: -0.1233561
+28.06.2018 15:45:12:224: finished round - in time
+28.06.2018 15:45:12:374: out ext
+28.06.2018 15:45:12:507: out ext
+28.06.2018 15:45:12:589: clicked - GOOD
+28.06.2018 15:45:12:589: delta error: 0.2179818
+28.06.2018 15:45:12:589: finished round - in time
+28.06.2018 15:45:12:606: out ext
+28.06.2018 15:45:12:953: out int
+28.06.2018 15:45:12:953: clicked - PERFECT
+28.06.2018 15:45:12:953: delta error: -0.1693425
+28.06.2018 15:45:12:953: finished round - in time
+28.06.2018 15:45:13:153: out ext
+28.06.2018 15:45:13:285: out int
+28.06.2018 15:45:13:285: clicked - GOOD
+28.06.2018 15:45:13:285: delta error: 0.1719956
+28.06.2018 15:45:13:285: finished round - in time
+28.06.2018 15:45:13:319: out ext
+28.06.2018 15:45:13:599: clicked - TOO EARLY
+28.06.2018 15:45:13:599: delta error: -0.2580047
+28.06.2018 15:45:13:599: finished round - not in time
+28.06.2018 15:45:13:634: out ext
+28.06.2018 15:45:13:833: out int
+28.06.2018 15:45:13:898: clicked - GOOD
+28.06.2018 15:45:13:898: delta error: 0.04065752
+28.06.2018 15:45:13:898: finished round - in time
+28.06.2018 15:45:13:964: out ext
+28.06.2018 15:45:14:147: out ext
+28.06.2018 15:45:14:230: out int
+28.06.2018 15:45:14:230: clicked - TOO LATE
+28.06.2018 15:45:14:230: delta error: 0.3819957
+28.06.2018 15:45:14:230: finished round - not in time
+28.06.2018 15:45:14:412: out ext
+28.06.2018 15:45:14:528: out int
+28.06.2018 15:45:14:627: out ext
+28.06.2018 15:45:14:744: out int
+28.06.2018 15:45:14:744: clicked - GOOD
+28.06.2018 15:45:14:744: delta error: 0.143991
+28.06.2018 15:45:14:744: finished round - in time
+28.06.2018 15:45:14:892: out ext
+28.06.2018 15:45:15:8: out int
+28.06.2018 15:45:15:8: clicked - TOO EARLY
+28.06.2018 15:45:15:8: delta error: -0.3500228
+28.06.2018 15:45:15:8: finished round - not in time
+28.06.2018 15:45:15:44: out ext
+28.06.2018 15:45:15:193: out int
+28.06.2018 15:45:15:248: clicked - PERFECT
+28.06.2018 15:45:15:248: delta error: -0.1366892
+28.06.2018 15:45:15:248: finished round - in time
+28.06.2018 15:45:15:331: out ext
+28.06.2018 15:45:15:447: out int
+28.06.2018 15:45:15:513: clicked - GOOD
+28.06.2018 15:45:15:513: delta error: 0.1406574
+28.06.2018 15:45:15:513: finished round - in time
+28.06.2018 15:45:15:547: out ext
+28.06.2018 15:45:15:679: out int
+28.06.2018 15:45:15:812: out int
+28.06.2018 15:45:15:812: clicked - TOO EARLY
+28.06.2018 15:45:15:812: delta error: -0.3320184
+28.06.2018 15:45:15:812: finished round - not in time
+28.06.2018 15:45:15:994: out ext
+28.06.2018 15:45:16:93: clicked - PERFECT
+28.06.2018 15:45:16:93: delta error: -0.03335619
+28.06.2018 15:45:16:93: finished round - in time
+28.06.2018 15:45:16:292: out ext
+28.06.2018 15:45:16:341: clicked - GOOD
+28.06.2018 15:45:16:341: delta error: 0.2013154
+28.06.2018 15:45:16:341: finished round - in time
+28.06.2018 15:45:16:358: out int
+28.06.2018 15:45:16:391: out ext
+28.06.2018 15:45:16:540: out int
+28.06.2018 15:45:16:572: clicked - TOO EARLY
+28.06.2018 15:45:16:572: delta error: -0.292676
+28.06.2018 15:45:16:572: finished round - not in time
+28.06.2018 15:45:16:673: out ext
+28.06.2018 15:45:16:872: out int
+28.06.2018 15:45:16:922: clicked - GOOD
+28.06.2018 15:45:16:922: delta error: 0.02732468
+28.06.2018 15:45:16:922: finished round - in time
+28.06.2018 15:45:17:4: out ext
+28.06.2018 15:45:17:419: out int
+28.06.2018 15:45:17:501: clicked - PERFECT
+28.06.2018 15:45:17:501: delta error: -0.1466894
+28.06.2018 15:45:17:501: finished round - in time
+28.06.2018 15:45:17:568: out ext
+28.06.2018 15:45:17:782: clicked - GOOD
+28.06.2018 15:45:17:782: delta error: 0.1519957
+28.06.2018 15:45:17:782: finished round - in time
+28.06.2018 15:45:17:799: out int
+28.06.2018 15:45:17:900: out ext
+28.06.2018 15:45:18:48: clicked - TOO EARLY
+28.06.2018 15:45:18:48: delta error: -0.3420181
+28.06.2018 15:45:18:48: finished round - not in time
+28.06.2018 15:45:18:242: out ext
+28.06.2018 15:45:18:348: out int
+28.06.2018 15:45:18:432: out ext
+28.06.2018 15:45:18:877: clicked - PERFECT
+28.06.2018 15:45:18:877: delta error: -0.2600231
+28.06.2018 15:45:18:877: finished round - in time
+28.06.2018 15:45:18:911: out ext
+28.06.2018 15:45:19:127: out int
+28.06.2018 15:45:19:127: clicked - PERFECT
+28.06.2018 15:45:19:127: delta error: -0.004014015
+28.06.2018 15:45:19:127: finished round - in time
+28.06.2018 15:45:19:193: out ext
+28.06.2018 15:45:19:359: out ext
+28.06.2018 15:45:19:359: clicked - GOOD
+28.06.2018 15:45:19:359: delta error: 0.2306576
+28.06.2018 15:45:19:359: finished round - in time
+28.06.2018 15:45:19:557: out ext
+28.06.2018 15:45:19:624: clicked - PERFECT
+28.06.2018 15:45:19:624: delta error: -0.2420177
+28.06.2018 15:45:19:624: finished round - in time
+28.06.2018 15:45:19:889: out int
+28.06.2018 15:45:19:906: clicked - GOOD
+28.06.2018 15:45:19:906: delta error: 0.03532887
+28.06.2018 15:45:19:906: finished round - in time
+28.06.2018 15:45:19:971: out ext
+28.06.2018 15:45:20:253: out ext
+28.06.2018 15:45:20:418: clicked - PERFECT
+28.06.2018 15:45:20:418: delta error: -0.2026758
+28.06.2018 15:45:20:418: finished round - in time
+28.06.2018 15:45:20:469: out ext
+28.06.2018 15:45:20:617: clicked - PERFECT
+28.06.2018 15:45:20:617: delta error: -0.0106802
+28.06.2018 15:45:20:617: finished round - in time
+28.06.2018 15:45:20:651: out ext
+28.06.2018 15:45:20:833: clicked - GOOD
+28.06.2018 15:45:20:833: delta error: 0.2026529
+28.06.2018 15:45:20:833: finished round - in time
+28.06.2018 15:45:21:32: clicked - TOO EARLY
+28.06.2018 15:45:21:32: delta error: -0.3553514
+28.06.2018 15:45:21:32: finished round - not in time
+28.06.2018 15:45:21:48: out ext
+28.06.2018 15:45:21:232: out ext
+28.06.2018 15:45:21:430: clicked - GOOD
+28.06.2018 15:45:21:430: delta error: 0.0499773
+28.06.2018 15:45:21:430: finished round - in time
+28.06.2018 15:45:21:480: out ext
+28.06.2018 15:45:21:614: out int
+28.06.2018 15:45:21:614: clicked - GOOD
+28.06.2018 15:45:21:614: delta error: 0.2419958
+28.06.2018 15:45:21:614: finished round - in time
+28.06.2018 15:45:21:645: out ext
+28.06.2018 15:45:21:827: clicked - TOO EARLY
+28.06.2018 15:45:21:827: delta error: -0.2946711
+28.06.2018 15:45:21:827: finished round - not in time
+28.06.2018 15:45:21:878: out ext
+28.06.2018 15:45:22:45: out ext
+28.06.2018 15:45:23:451: clicked - PERFECT
+28.06.2018 15:45:23:451: delta error: -0.1733561
+28.06.2018 15:45:23:451: finished round - in time
+28.06.2018 15:45:23:452: out int
+28.06.2018 15:45:23:601: out ext
+28.06.2018 15:45:24:279: clicked - PERFECT
+28.06.2018 15:45:24:279: delta error: -0.09133816
+28.06.2018 15:45:24:279: finished round - in time
+28.06.2018 15:45:24:280: out int
+28.06.2018 15:45:24:329: out ext
+28.06.2018 15:45:24:677: clicked - TOO LATE
+28.06.2018 15:45:24:677: delta error: 0.2926521
+28.06.2018 15:45:24:677: finished round - not in time
+28.06.2018 15:45:24:711: out int
+28.06.2018 15:45:24:844: out ext
+28.06.2018 15:45:24:993: out int
+28.06.2018 15:45:25:9: clicked - PERFECT
+28.06.2018 15:45:25:9: delta error: -0.1160088
+28.06.2018 15:45:25:9: finished round - in time
+28.06.2018 15:45:25:58: out ext
+28.06.2018 15:45:25:424: out int
+28.06.2018 15:45:25:457: clicked - TOO LATE
+28.06.2018 15:45:25:457: delta error: 0.331995
+28.06.2018 15:45:25:457: finished round - not in time
+28.06.2018 15:45:25:541: out ext
+28.06.2018 15:45:25:904: clicked - GOOD
+28.06.2018 15:45:25:904: delta error: 0.0299778
+28.06.2018 15:45:25:904: finished round - in time
+28.06.2018 15:45:25:922: out int
+28.06.2018 15:45:26:4: out ext
+28.06.2018 15:45:26:219: out ext
+28.06.2018 15:45:26:401: clicked - PERFECT
+28.06.2018 15:45:26:401: delta error: -0.2293415
+28.06.2018 15:45:26:401: finished round - in time
+28.06.2018 15:45:26:452: out ext
+28.06.2018 15:45:27:48: clicked - TOO EARLY
+28.06.2018 15:45:27:48: delta error: -0.3393421
+28.06.2018 15:45:27:48: finished round - not in time
+28.06.2018 15:45:27:131: out ext
+28.06.2018 15:45:27:446: out ext
+28.06.2018 15:45:27:694: clicked - TOO LATE
+28.06.2018 15:45:27:694: delta error: 0.3219948
+28.06.2018 15:45:27:694: finished round - not in time
+28.06.2018 15:45:27:710: out ext
+28.06.2018 15:45:28:274: clicked - GOOD
+28.06.2018 15:45:28:274: delta error: 0.1693192
+28.06.2018 15:45:28:274: finished round - in time
+28.06.2018 15:45:28:324: out ext
+28.06.2018 15:45:28:707: out ext
+28.06.2018 15:45:28:805: clicked - PERFECT
+28.06.2018 15:45:28:805: delta error: -0.06868553
+28.06.2018 15:45:28:805: finished round - in time
+28.06.2018 15:45:29:452: out ext
+28.06.2018 15:45:30:148: clicked - PERFECT
+28.06.2018 15:45:30:148: delta error: -0.2246704
+28.06.2018 15:45:30:148: finished round - in time
+28.06.2018 15:45:30:231: out ext
+28.06.2018 15:45:30:761: clicked - TOO EARLY
+28.06.2018 15:45:30:761: delta error: -0.3560085
+28.06.2018 15:45:30:761: finished round - not in time
+28.06.2018 15:45:30:860: out ext
+28.06.2018 15:45:31:290: clicked - GOOD
+28.06.2018 15:45:31:290: delta error: -22.5
+28.06.2018 15:45:31:290: finished round - in time
+28.06.2018 15:45:31:291: out int
+28.06.2018 15:45:31:341: out ext
+28.06.2018 15:45:31:738: finished round - not in time
+28.06.2018 15:45:31:789: out int
+28.06.2018 15:45:31:823: out ext
+28.06.2018 15:45:32:552: IsochronyBig_80bpm(Clone)
+28.06.2018 15:45:33:579: finished round - not in time
+28.06.2018 15:45:33:729: out int
+28.06.2018 15:45:33:944: out ext
+28.06.2018 15:45:34:194: out int
+28.06.2018 15:45:34:307: finished round - not in time
+28.06.2018 15:45:34:672: out int
+28.06.2018 15:45:34:872: out ext
+28.06.2018 15:45:34:971: clicked - GOOD
+28.06.2018 15:45:34:971: delta error: 0.1606576
+28.06.2018 15:45:34:971: finished round - in time
+28.06.2018 15:45:35:469: out int
+28.06.2018 15:45:35:469: clicked - PERFECT
+28.06.2018 15:45:35:469: delta error: -0.07734704
+28.06.2018 15:45:35:469: finished round - in time
+28.06.2018 15:45:36:1: clicked - TOO EARLY
+28.06.2018 15:45:36:1: delta error: -0.3153515
+28.06.2018 15:45:36:1: finished round - not in time
+28.06.2018 15:45:36:546: clicked - GOOD
+28.06.2018 15:45:36:546: delta error: 0.2606578
+28.06.2018 15:45:36:547: finished round - in time
+28.06.2018 15:45:36:598: out int
+28.06.2018 15:45:37:112: out int
+28.06.2018 15:45:37:112: clicked - GOOD
+28.06.2018 15:45:37:112: delta error: 0.0653286
+28.06.2018 15:45:37:112: finished round - in time
+28.06.2018 15:45:37:409: out int
+28.06.2018 15:45:37:691: clicked - PERFECT
+28.06.2018 15:45:37:691: delta error: -0.108685
+28.06.2018 15:45:37:691: finished round - in time
+28.06.2018 15:45:37:973: out int
+28.06.2018 15:45:38:403: clicked - PERFECT
+28.06.2018 15:45:38:403: delta error: -0.1333561
+28.06.2018 15:45:38:403: finished round - in time
+28.06.2018 15:45:38:868: out ext
+28.06.2018 15:45:39:197: clicked - PERFECT
+28.06.2018 15:45:39:197: delta error: -0.09401369
+28.06.2018 15:45:39:197: finished round - in time
+28.06.2018 15:45:39:484: out int
+28.06.2018 15:45:39:846: clicked - PERFECT
+28.06.2018 15:45:39:846: delta error: -0.2040138
+28.06.2018 15:45:39:846: finished round - in time
+28.06.2018 15:45:40:212: out int
+28.06.2018 15:45:40:410: out int
+28.06.2018 15:45:40:560: clicked - PERFECT
+28.06.2018 15:45:40:560: delta error: -0.271338
+28.06.2018 15:45:40:560: finished round - in time
+28.06.2018 15:45:41:123: out ext
+28.06.2018 15:45:41:620: out int
+28.06.2018 15:45:41:983: clicked - TOO EARLY
+28.06.2018 15:45:41:983: delta error: -0.3206806
+28.06.2018 15:45:41:983: finished round - not in time
+28.06.2018 15:45:42:647: clicked - TOO LATE
+28.06.2018 15:45:42:647: delta error: 0.3406572
+28.06.2018 15:45:42:647: finished round - not in time
+28.06.2018 15:45:42:747: out ext
+28.06.2018 15:45:43:329: out int
+28.06.2018 15:45:43:345: clicked - TOO LATE
+28.06.2018 15:45:43:345: delta error: 0.2733107
+28.06.2018 15:45:43:345: finished round - not in time
+28.06.2018 15:45:43:561: out ext
+28.06.2018 15:45:44:57: clicked - GOOD
+28.06.2018 15:45:44:57: delta error: 0.248662
+28.06.2018 15:45:44:57: finished round - in time
+28.06.2018 15:45:44:124: out ext
+28.06.2018 15:45:44:604: out int
+28.06.2018 15:45:44:803: clicked - GOOD
+28.06.2018 15:45:44:803: delta error: 0.2453289
+28.06.2018 15:45:44:803: finished round - in time
+28.06.2018 15:45:45:533: out int
+28.06.2018 15:45:45:533: clicked - GOOD
+28.06.2018 15:45:45:533: delta error: 0.2206573
+28.06.2018 15:45:45:533: finished round - in time
+28.06.2018 15:45:45:698: out ext
+28.06.2018 15:45:46:13: out ext
+28.06.2018 15:45:46:212: out int
+28.06.2018 15:45:46:227: clicked - GOOD
+28.06.2018 15:45:46:228: delta error: 0.1533108
+28.06.2018 15:45:46:228: finished round - in time
+28.06.2018 15:45:46:327: out ext
+28.06.2018 15:45:46:563: out int
+28.06.2018 15:45:46:730: out ext
+28.06.2018 15:45:46:911: out int
+28.06.2018 15:45:46:912: clicked - GOOD
+28.06.2018 15:45:46:912: delta error: 0.1073246
+28.06.2018 15:45:46:912: finished round - in time
+28.06.2018 15:45:46:978: out ext
+28.06.2018 15:45:47:327: out int
+28.06.2018 15:45:47:525: out ext
+28.06.2018 15:45:47:706: clicked - GOOD
+28.06.2018 15:45:47:706: delta error: 0.1466436
+28.06.2018 15:45:47:706: finished round - in time
+28.06.2018 15:45:47:741: out ext
+28.06.2018 15:45:48:172: out ext
+28.06.2018 15:45:48:385: clicked - GOOD
+28.06.2018 15:45:48:385: delta error: 0.07931995
+28.06.2018 15:45:48:385: finished round - in time
+28.06.2018 15:45:48:468: out ext
+28.06.2018 15:45:48:867: out ext
+28.06.2018 15:45:49:32: out int
+28.06.2018 15:45:49:32: clicked - PERFECT
+28.06.2018 15:45:49:33: delta error: -0.0306797
+28.06.2018 15:45:49:33: finished round - in time
+28.06.2018 15:45:49:99: out ext
+28.06.2018 15:45:49:447: out int
+28.06.2018 15:45:49:711: clicked - PERFECT
+28.06.2018 15:45:49:711: delta error: -0.09800529
+28.06.2018 15:45:49:711: finished round - in time
+28.06.2018 15:45:49:761: out ext
+28.06.2018 15:45:50:130: out int
+28.06.2018 15:45:50:426: clicked - PERFECT
+28.06.2018 15:45:50:426: delta error: -0.1226749
+28.06.2018 15:45:50:426: finished round - in time
+28.06.2018 15:45:50:593: out ext
+28.06.2018 15:45:50:841: out int
+28.06.2018 15:45:51:124: clicked - PERFECT
+28.06.2018 15:45:51:124: delta error: -0.168684
+28.06.2018 15:45:51:124: finished round - in time
+28.06.2018 15:45:51:139: out int
+28.06.2018 15:45:51:273: out ext
+28.06.2018 15:45:51:504: out int
+28.06.2018 15:45:51:785: clicked - TOO EARLY
+28.06.2018 15:45:51:785: delta error: -0.2786846
+28.06.2018 15:45:51:785: finished round - not in time
+28.06.2018 15:45:51:852: out ext
+28.06.2018 15:45:52:150: out int
+28.06.2018 15:45:52:333: out ext
+28.06.2018 15:45:52:565: out ext
+28.06.2018 15:45:53:112: out int
+28.06.2018 15:45:53:245: out ext
+28.06.2018 15:45:53:558: out int
+28.06.2018 15:45:53:678: out ext
+28.06.2018 15:45:53:992: out int
+28.06.2018 15:45:54:59: out ext
+28.06.2018 15:45:54:474: out ext
+28.06.2018 15:45:54:588: clicked - TOO LATE
+28.06.2018 15:45:54:588: delta error: 0.2873249
+28.06.2018 15:45:54:588: finished round - not in time
+28.06.2018 15:45:54:953: out int
+28.06.2018 15:45:54:953: clicked - PERFECT
+28.06.2018 15:45:54:953: delta error: -0.1000233
+28.06.2018 15:45:54:953: finished round - in time
+28.06.2018 15:45:55:20: out ext
+28.06.2018 15:45:55:351: out int
+28.06.2018 15:45:55:351: finished round - not in time
+28.06.2018 15:45:55:400: out ext
+28.06.2018 15:45:55:633: out int
+28.06.2018 15:45:55:699: finished round - not in time
+28.06.2018 15:45:55:816: out ext
+28.06.2018 15:45:57:389: IsochronyMedium_80bpm(Clone)
+28.06.2018 15:45:57:769: out int
+28.06.2018 15:45:58:338: finished round - not in time
+28.06.2018 15:45:58:405: out ext
+28.06.2018 15:45:58:819: finished round - not in time
+28.06.2018 15:45:58:820: out int
+28.06.2018 15:45:58:886: out ext
+28.06.2018 15:45:59:101: out int
+28.06.2018 15:45:59:151: out ext
+28.06.2018 15:46:00:944: clicked - PERFECT
+28.06.2018 15:46:00:944: delta error: -0.1873469
+28.06.2018 15:46:00:944: finished round - in time
+28.06.2018 15:46:01:243: out ext
+28.06.2018 15:46:01:492: out int
+28.06.2018 15:46:01:507: clicked - TOO LATE
+28.06.2018 15:46:01:507: delta error: 0.3886623
+28.06.2018 15:46:01:507: finished round - not in time
+28.06.2018 15:46:01:674: out ext
+28.06.2018 15:46:02:38: out int
+28.06.2018 15:46:02:104: clicked - GOOD
+28.06.2018 15:46:02:104: delta error: 0.2359862
+28.06.2018 15:46:02:104: finished round - in time
+28.06.2018 15:46:02:172: out ext
+28.06.2018 15:46:02:720: clicked - GOOD
+28.06.2018 15:46:02:720: delta error: 0.0833106
+28.06.2018 15:46:02:721: finished round - in time
+28.06.2018 15:46:02:772: out ext
+28.06.2018 15:46:03:352: clicked - PERFECT
+28.06.2018 15:46:03:352: delta error: -0.02668953
+28.06.2018 15:46:03:352: finished round - in time
+28.06.2018 15:46:03:369: out ext
+28.06.2018 15:46:03:693: out ext
+28.06.2018 15:46:03:940: clicked - PERFECT
+28.06.2018 15:46:03:941: delta error: -0.2006803
+28.06.2018 15:46:03:941: finished round - in time
+28.06.2018 15:46:04:40: out ext
+28.06.2018 15:46:04:504: clicked - TOO LATE
+28.06.2018 15:46:04:504: delta error: 0.375329
+28.06.2018 15:46:04:504: finished round - not in time
+28.06.2018 15:46:04:538: out ext
+28.06.2018 15:46:05:19: clicked - GOOD
+28.06.2018 15:46:05:19: delta error: 0.1373243
+28.06.2018 15:46:05:19: finished round - in time
+28.06.2018 15:46:05:85: out ext
+28.06.2018 15:46:05:730: clicked - GOOD
+28.06.2018 15:46:05:730: delta error: 0.06997776
+28.06.2018 15:46:05:730: finished round - in time
+28.06.2018 15:46:05:830: out ext
+28.06.2018 15:46:06:168: out int
+28.06.2018 15:46:06:232: clicked - PERFECT
+28.06.2018 15:46:06:232: delta error: -0.168005
+28.06.2018 15:46:06:233: finished round - in time
+28.06.2018 15:46:06:283: out ext
+28.06.2018 15:46:06:830: out ext
+28.06.2018 15:46:06:846: clicked - TOO EARLY
+28.06.2018 15:46:06:846: delta error: -0.2993422
+28.06.2018 15:46:06:846: finished round - not in time
+28.06.2018 15:46:07:491: clicked - TOO LATE
+28.06.2018 15:46:07:492: delta error: 0.3406572
+28.06.2018 15:46:07:492: finished round - not in time
+28.06.2018 15:46:07:493: out int
+28.06.2018 15:46:07:558: out ext
+28.06.2018 15:46:07:940: out int
+28.06.2018 15:46:07:988: clicked - GOOD
+28.06.2018 15:46:07:988: delta error: 0.08131504
+28.06.2018 15:46:07:988: finished round - in time
+28.06.2018 15:46:08:72: out ext
+28.06.2018 15:46:08:602: clicked - PERFECT
+28.06.2018 15:46:08:602: delta error: -0.05002308
+28.06.2018 15:46:08:602: finished round - in time
+28.06.2018 15:46:08:718: out ext
+28.06.2018 15:46:09:297: clicked - PERFECT
+28.06.2018 15:46:09:297: delta error: -0.09600925
+28.06.2018 15:46:09:297: finished round - in time
+28.06.2018 15:46:09:446: out ext
+28.06.2018 15:46:09:884: out int
+28.06.2018 15:46:09:949: clicked - PERFECT
+28.06.2018 15:46:09:949: delta error: -0.2060089
+28.06.2018 15:46:09:949: finished round - in time
+28.06.2018 15:46:10:99: out ext
+28.06.2018 15:46:10:611: clicked - TOO EARLY
+28.06.2018 15:46:10:611: delta error: -0.2946711
+28.06.2018 15:46:10:612: finished round - not in time
+28.06.2018 15:46:10:663: out ext
+28.06.2018 15:46:11:241: clicked - TOO LATE
+28.06.2018 15:46:11:241: delta error: 0.3453283
+28.06.2018 15:46:11:241: finished round - not in time
+28.06.2018 15:46:11:242: out int
+28.06.2018 15:46:11:308: out ext
+28.06.2018 15:46:11:871: clicked - GOOD
+28.06.2018 15:46:11:871: delta error: 0.2139912
+28.06.2018 15:46:11:871: finished round - in time
+28.06.2018 15:46:11:905: out ext
+28.06.2018 15:46:12:467: clicked - GOOD
+28.06.2018 15:46:12:467: delta error: 0.08265305
+28.06.2018 15:46:12:467: finished round - in time
+28.06.2018 15:46:12:468: out int
+28.06.2018 15:46:12:567: out ext
+28.06.2018 15:46:13:32: out int
+28.06.2018 15:46:13:47: clicked - PERFECT
+28.06.2018 15:46:13:47: delta error: -0.09133816
+28.06.2018 15:46:13:47: finished round - in time
+28.06.2018 15:46:13:164: out ext
+28.06.2018 15:46:13:666: clicked - PERFECT
+28.06.2018 15:46:13:666: delta error: -0.2226753
+28.06.2018 15:46:13:666: finished round - in time
+28.06.2018 15:46:13:733: out int
+28.06.2018 15:46:13:998: out ext
+28.06.2018 15:46:14:261: clicked - TOO LATE
+28.06.2018 15:46:14:261: delta error: 0.374649
+28.06.2018 15:46:14:261: finished round - not in time
+28.06.2018 15:46:14:328: out int
+28.06.2018 15:46:14:892: clicked - GOOD
+28.06.2018 15:46:14:892: delta error: 0.2433109
+28.06.2018 15:46:14:892: finished round - in time
+28.06.2018 15:46:15:438: clicked - GOOD
+28.06.2018 15:46:15:438: delta error: 0.04798126
+28.06.2018 15:46:15:438: finished round - in time
+28.06.2018 15:46:15:439: out int
+28.06.2018 15:46:16:85: clicked - PERFECT
+28.06.2018 15:46:16:85: delta error: -0.04067993
+28.06.2018 15:46:16:85: finished round - in time
+28.06.2018 15:46:16:500: out int
+28.06.2018 15:46:16:666: clicked - PERFECT
+28.06.2018 15:46:16:666: delta error: -0.2146721
+28.06.2018 15:46:16:666: finished round - in time
+28.06.2018 15:46:16:882: out ext
+28.06.2018 15:46:17:287: out int
+28.06.2018 15:46:17:351: clicked - TOO EARLY
+28.06.2018 15:46:17:351: delta error: -0.2820187
+28.06.2018 15:46:17:351: finished round - not in time
+28.06.2018 15:46:17:783: out ext
+28.06.2018 15:46:18:31: clicked - TOO EARLY
+28.06.2018 15:46:18:31: delta error: -0.3493423
+28.06.2018 15:46:18:31: finished round - not in time
+28.06.2018 15:46:18:32: out int
+28.06.2018 15:46:18:413: out int
+28.06.2018 15:46:18:561: clicked - GOOD
+28.06.2018 15:46:18:561: delta error: 0.162653
+28.06.2018 15:46:18:561: finished round - in time
+28.06.2018 15:46:19:59: out int
+28.06.2018 15:46:19:207: clicked - GOOD
+28.06.2018 15:46:19:207: delta error: 0.07399178
+28.06.2018 15:46:19:207: finished round - in time
+28.06.2018 15:46:19:705: out int
+28.06.2018 15:46:19:919: clicked - GOOD
+28.06.2018 15:46:19:919: delta error: -22.5
+28.06.2018 15:46:19:919: finished round - in time
+28.06.2018 15:46:20:567: out int
+28.06.2018 15:46:20:617: out ext
+28.06.2018 15:46:21:315: A
+28.06.2018 15:46:21:315: B
+28.06.2018 15:46:21:315: C
+28.06.2018 15:46:22:531: touched A - correct
+28.06.2018 15:46:22:945: touched C - correct
+28.06.2018 15:46:23:375: out external circle
+28.06.2018 15:46:23:392: touched A - correct
+28.06.2018 15:46:23:393: out internal circle
+28.06.2018 15:46:23:690: touched B - correct
+28.06.2018 15:46:23:938: touched A - correct
+28.06.2018 15:46:24:320: out external circle
+28.06.2018 15:46:24:452: touched C - correct
+28.06.2018 15:46:24:801: touched A - correct
+28.06.2018 15:46:24:801: out internal circle
+28.06.2018 15:46:25:132: touched B - correct
+28.06.2018 15:46:25:298: touched A - correct
+28.06.2018 15:46:27:801: A
+28.06.2018 15:46:27:801: B
+28.06.2018 15:46:27:801: C
+28.06.2018 15:46:28:909: touched C - wrong
+28.06.2018 15:46:28:959: out external circle
+28.06.2018 15:46:29:372: touched B - wrong
+28.06.2018 15:46:29:505: touched A - correct
+28.06.2018 15:46:29:505: out external circle
+28.06.2018 15:46:29:853: touched C - correct
+28.06.2018 15:46:30:111: touched A - correct
+28.06.2018 15:46:30:111: out internal circle
+28.06.2018 15:46:30:342: touched B - correct
+28.06.2018 15:46:30:508: touched A - correct
+28.06.2018 15:46:30:971: touched C - correct
+28.06.2018 15:46:31:71: out external circle
+28.06.2018 15:46:31:270: touched A - correct
+28.06.2018 15:46:31:270: out internal circle
+28.06.2018 15:46:31:585: touched B - correct
+28.06.2018 15:46:31:668: touched A - correct
+28.06.2018 15:46:33:359: A
+28.06.2018 15:46:33:359: B
+28.06.2018 15:46:33:359: C
+28.06.2018 15:46:34:219: touched A - correct
+28.06.2018 15:46:34:484: out external circle
+28.06.2018 15:46:34:551: touched C - correct
+28.06.2018 15:46:34:783: touched A - correct
+28.06.2018 15:46:34:816: out internal circle
+28.06.2018 15:46:35:48: touched B - correct
+28.06.2018 15:46:35:214: touched A - correct
+28.06.2018 15:46:35:214: out external circle
+28.06.2018 15:46:35:527: touched C - correct
+28.06.2018 15:46:36:91: touched B - wrong
+28.06.2018 15:46:36:240: touched A - correct
+28.06.2018 15:46:36:241: out internal circle
+28.06.2018 15:46:36:621: touched C - wrong
+28.06.2018 15:46:36:953: touched A - wrong
+28.06.2018 15:46:37:101: touched B - correct
+28.06.2018 15:46:37:317: touched A - correct
+28.06.2018 15:46:39:832: A
+28.06.2018 15:46:39:832: B
+28.06.2018 15:46:39:832: C
+28.06.2018 15:46:40:692: touched A - correct
+28.06.2018 15:46:40:824: out external circle
+28.06.2018 15:46:40:941: touched C - correct
+28.06.2018 15:46:41:223: touched A - correct
+28.06.2018 15:46:41:405: out internal circle
+28.06.2018 15:46:41:470: touched B - correct
+28.06.2018 15:46:41:620: touched A - correct
+28.06.2018 15:46:41:984: touched C - correct
+28.06.2018 15:46:42:117: out external circle
+28.06.2018 15:46:42:250: touched A - correct
+28.06.2018 15:46:42:250: out internal circle
+28.06.2018 15:46:42:482: touched B - correct
+28.06.2018 15:46:42:713: touched A - correct
+28.06.2018 15:46:44:239: A
+28.06.2018 15:46:44:239: B
+28.06.2018 15:46:44:240: C
+28.06.2018 15:46:44:984: touched A - correct
+28.06.2018 15:46:45:463: out external circle
+28.06.2018 15:46:46:92: touched C - correct
+28.06.2018 15:46:47:64: touched A - correct
+28.06.2018 15:46:47:64: out internal circle
+28.06.2018 15:46:47:992: touched B - correct
+28.06.2018 15:46:48:786: touched A - correct
+28.06.2018 15:46:49:85: out external circle
+28.06.2018 15:46:50:442: touched C - correct
+28.06.2018 15:46:51:685: touched A - correct
+28.06.2018 15:46:52:530: touched B - correct
+28.06.2018 15:46:53:541: touched A - correct

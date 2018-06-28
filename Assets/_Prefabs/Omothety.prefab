@@ -437,6 +437,7 @@ MonoBehaviour:
   nextLevelButton: {fileID: 0}
   errorPercentage: 0.3
   resultObject: {fileID: 114807153540700702}
+  nextPerfect: 0
 --- !u!114 &114276552944222666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -491,7 +492,6 @@ MonoBehaviour:
   - {fileID: 114015088869564668}
   - {fileID: 114179511947456684}
   repetitions: 5
-  drawingCircle: 0
   smallError: 0.5
   bigError: 0.8
   touch: {fileID: 114567592098178252}
