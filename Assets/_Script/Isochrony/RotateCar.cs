@@ -48,7 +48,7 @@ public class RotateCar : MonoBehaviour {
         float angle = (Mathf.Atan(newX / newY) * Mathf.Rad2Deg + 90);
         if (first.x < 0)
             angle += 180;
-        Debug.Log("first: " + first  + "tan: " + (Mathf.Atan(newY / newX) * Mathf.Rad2Deg ));
+        //Debug.Log("first: " + first  + "tan: " + (Mathf.Atan(newY / newX) * Mathf.Rad2Deg ));
         this.transform.rotation =  Quaternion.Euler(0,0, angle) ;
 
 	}
