@@ -1,0 +1,806 @@
+PLAYER
+------
+Name: 000
+
+CONFIGURATION
+-------------
+timeDeltaError: 0.25
+tapError: 30
+isochronyInnerSpace: 111
+isochronyOuterSpace: 217
+isochronyRepetitions: 1
+omothetyDeltaSpace: 25
+omothetyRounds: 5
+omothetySlowMultiplier: 1.5
+omothetyFastMultiplier: 1.25
+
+RESULTS
+-------
+Tap80bpm(Clone)
+TOO EARLY: 1
+PERFECT:   12
+GOOD:      11
+TOO LATE:  1
+Well Done!!
+
+Tap80bpmContinuated(Clone)
+TOO EARLY: 1
+PERFECT:   11
+GOOD:      13
+TOO LATE:  2
+Well Done!!
+
+IsochronyMedium_80bpm(Clone)
+IN TIME & STAYED INSIDE:   5
+IN TIME & NOT STAYED INSIDE:   18
+NOT IN TIME & STAYED INSIDE:   1
+NOT IN TIME & NOT STAYED INSIDE:   5
+
+IsochronySmall_80bpm(Clone)
+IN TIME & STAYED INSIDE:   0
+IN TIME & NOT STAYED INSIDE:   18
+NOT IN TIME & STAYED INSIDE:   0
+NOT IN TIME & NOT STAYED INSIDE:   11
+
+IsochronyBig_80bpm(Clone)
+IN TIME & STAYED INSIDE:   0
+IN TIME & NOT STAYED INSIDE:   15
+NOT IN TIME & STAYED INSIDE:   1
+NOT IN TIME & NOT STAYED INSIDE:   13
+
+OMOTHETY - NORMAL
+mean small circle: 36.75%
+mean big circle: 63.25%
+Standard deviation: 05.56%
+mean total time: 01.54 seconds
+went out small 5 times, big: 5 times
+GOOD JOB!
+now do it faster, do it in max 01.23 seconds 
+
+OMOTHETY - FAST
+mean small circle: 36.51%
+mean big circle: 63.49%
+Standard deviation: 02.91%
+mean total time: 01.17 you had to do it in: 01.23 seconds
+went out small 5 times, big: 5 times
+ALMOST THERE!
+you are not enough fast, do it in max 01.15 seconds
+
+OMOTHETY - FAST
+mean small circle: 46.25%
+mean big circle: 53.75%
+Standard deviation: 07.88%
+mean total time: 01.45 you had to do it in: 01.23 seconds
+went out small 4 times, big: 5 times
+ALMOST THERE!
+you are not enough fast, do it in max 01.15 seconds
+
+OMOTHETY - FAST
+mean small circle: 35.82%
+mean big circle: 64.18%
+Standard deviation: 07.22%
+mean total time: 01.13 you had to do it in: 01.23 seconds
+went out small 3 times, big: 5 times
+GOOD JOB!
+now do it slower, do it in min 02.30 seconds 
+
+OMOTHETY - SLOW
+mean small circle: 37.73%
+mean big circle: 62.27%
+Standard deviation: 04.42%
+mean total time: 05.76 you had to do it in: 02.30 seconds
+went out small 2 times, big: 4 times
+GOOD JOB!
+
+
+
+LOGS
+-----
+18.07.2018 17:17:41:60: Tap80bpm(Clone)
+18.07.2018 17:17:44:314: clicked - TOO LATE
+18.07.2018 17:17:44:314: delta error: 0.2213151
+18.07.2018 17:17:44:960: clicked - GOOD
+18.07.2018 17:17:44:960: delta error: 0.1113153
+18.07.2018 17:17:45:755: clicked - GOOD
+18.07.2018 17:17:45:755: delta error: 0.1719956
+18.07.2018 17:17:46:500: clicked - GOOD
+18.07.2018 17:17:46:501: delta error: 0.1686621
+18.07.2018 17:17:47:247: clicked - GOOD
+18.07.2018 17:17:47:247: delta error: 0.165329
+18.07.2018 17:17:47:908: clicked - GOOD
+18.07.2018 17:17:47:908: delta error: 0.07664394
+18.07.2018 17:17:48:572: clicked - PERFECT
+18.07.2018 17:17:48:572: delta error: -0.0120182
+18.07.2018 17:17:49:284: clicked - PERFECT
+18.07.2018 17:17:49:284: delta error: -0.03668976
+18.07.2018 17:17:50:29: clicked - PERFECT
+18.07.2018 17:17:50:29: delta error: -0.04002285
+18.07.2018 17:17:50:956: clicked - GOOD
+18.07.2018 17:17:50:957: delta error: 0.1273241
+18.07.2018 17:17:51:636: clicked - GOOD
+18.07.2018 17:17:51:636: delta error: 0.05997753
+18.07.2018 17:17:52:382: clicked - GOOD
+18.07.2018 17:17:52:382: delta error: 0.05664444
+18.07.2018 17:17:53:177: clicked - GOOD
+18.07.2018 17:17:53:177: delta error: 0.09598637
+18.07.2018 17:17:53:906: clicked - GOOD
+18.07.2018 17:17:53:906: delta error: 0.09265327
+18.07.2018 17:17:54:602: clicked - GOOD
+18.07.2018 17:17:54:602: delta error: 0.02532864
+18.07.2018 17:17:55:281: clicked - PERFECT
+18.07.2018 17:17:55:281: delta error: -0.04201794
+18.07.2018 17:17:56:43: clicked - PERFECT
+18.07.2018 17:17:56:43: delta error: -0.02401352
+18.07.2018 17:17:56:805: clicked - PERFECT
+18.07.2018 17:17:56:805: delta error: -0.006009102
+18.07.2018 17:17:57:485: clicked - PERFECT
+18.07.2018 17:17:57:485: delta error: -0.09467125
+18.07.2018 17:17:58:197: clicked - PERFECT
+18.07.2018 17:17:58:197: delta error: -0.1193428
+18.07.2018 17:17:58:959: clicked - PERFECT
+18.07.2018 17:17:58:959: delta error: -0.1013374
+18.07.2018 17:17:59:688: clicked - PERFECT
+18.07.2018 17:17:59:688: delta error: -0.126009
+18.07.2018 17:18:00:449: clicked - PERFECT
+18.07.2018 17:18:00:449: delta error: -0.129343
+18.07.2018 17:18:01:146: clicked - PERFECT
+18.07.2018 17:18:01:146: delta error: -0.1753521
+18.07.2018 17:18:01:841: clicked - TOO EARLY
+18.07.2018 17:18:01:841: delta error: -0.2426758
+18.07.2018 17:18:06:354: Tap80bpmContinuated(Clone)
+18.07.2018 17:18:09:483: clicked - GOOD
+18.07.2018 17:18:09:483: delta error: 0.09331059
+18.07.2018 17:18:10:128: clicked - GOOD
+18.07.2018 17:18:10:128: delta error: -0.0166893
+18.07.2018 17:18:10:858: clicked - PERFECT
+18.07.2018 17:18:10:858: delta error: -0.02002287
+18.07.2018 17:18:11:536: clicked - PERFECT
+18.07.2018 17:18:11:536: delta error: -0.08734703
+18.07.2018 17:18:12:250: clicked - PERFECT
+18.07.2018 17:18:12:250: delta error: -0.1333561
+18.07.2018 17:18:12:945: clicked - PERFECT
+18.07.2018 17:18:12:945: delta error: -0.1793423
+18.07.2018 17:18:13:673: clicked - TOO EARLY
+18.07.2018 17:18:13:673: delta error: -0.2040138
+18.07.2018 17:18:14:220: clicked - TOO LATE
+18.07.2018 17:18:14:220: delta error: 0.32932
+18.07.2018 17:18:14:767: clicked - GOOD
+18.07.2018 17:18:14:767: delta error: 0.1339912
+18.07.2018 17:18:15:479: clicked - GOOD
+18.07.2018 17:18:15:479: delta error: 0.1093197
+18.07.2018 17:18:16:125: clicked - GOOD
+18.07.2018 17:18:16:125: delta error: -0.0006799698
+18.07.2018 17:18:16:871: clicked - GOOD
+18.07.2018 17:18:16:871: delta error: -0.004014015
+18.07.2018 17:18:17:584: clicked - PERFECT
+18.07.2018 17:18:17:584: delta error: -0.02868462
+18.07.2018 17:18:18:346: clicked - PERFECT
+18.07.2018 17:18:18:346: delta error: -0.03201771
+18.07.2018 17:18:19:75: clicked - PERFECT
+18.07.2018 17:18:19:75: delta error: -0.05668926
+18.07.2018 17:18:19:820: clicked - PERFECT
+18.07.2018 17:18:19:820: delta error: -0.06002235
+18.07.2018 17:18:20:532: clicked - PERFECT
+18.07.2018 17:18:20:532: delta error: -0.08467102
+18.07.2018 17:18:21:311: clicked - PERFECT
+18.07.2018 17:18:21:311: delta error: -0.06668949
+18.07.2018 17:18:22:106: clicked - PERFECT
+18.07.2018 17:18:22:106: delta error: -15.75
+18.07.2018 17:18:22:918: clicked - GOOD
+18.07.2018 17:18:22:918: delta error: -16.5
+18.07.2018 17:18:23:664: clicked - GOOD
+18.07.2018 17:18:23:664: delta error: -17.25
+18.07.2018 17:18:24:525: clicked - GOOD
+18.07.2018 17:18:24:525: delta error: -18
+18.07.2018 17:18:25:320: clicked - TOO LATE
+18.07.2018 17:18:25:320: delta error: -18.75
+18.07.2018 17:18:25:950: clicked - GOOD
+18.07.2018 17:18:25:950: delta error: -19.5
+18.07.2018 17:18:26:712: clicked - GOOD
+18.07.2018 17:18:26:712: delta error: -20.25
+18.07.2018 17:18:27:424: clicked - GOOD
+18.07.2018 17:18:27:424: delta error: -21
+18.07.2018 17:18:28:252: clicked - GOOD
+18.07.2018 17:18:28:252: delta error: -21.75
+18.07.2018 17:18:30:636: IsochronyMedium_80bpm(Clone)
+18.07.2018 17:18:33:405: clicked - TOO LATE
+18.07.2018 17:18:33:406: delta error: 0.5019956
+18.07.2018 17:18:33:406: finished round - not in time
+18.07.2018 17:18:33:896: out int
+18.07.2018 17:18:34:293: clicked - PERFECT
+18.07.2018 17:18:34:293: delta error: -0.1233561
+18.07.2018 17:18:34:293: finished round - in time
+18.07.2018 17:18:34:475: out int
+18.07.2018 17:18:34:942: clicked - PERFECT
+18.07.2018 17:18:34:942: delta error: -0.212018
+18.07.2018 17:18:34:942: finished round - in time
+18.07.2018 17:18:35:175: out int
+18.07.2018 17:18:35:489: clicked - TOO EARLY
+18.07.2018 17:18:35:489: delta error: -0.4286847
+18.07.2018 17:18:35:489: finished round - not in time
+18.07.2018 17:18:35:523: out ext
+18.07.2018 17:18:36:69: clicked - TOO LATE
+18.07.2018 17:18:36:69: delta error: 0.1686621
+18.07.2018 17:18:36:69: finished round - not in time
+18.07.2018 17:18:36:87: out ext
+18.07.2018 17:18:36:500: out int
+18.07.2018 17:18:36:550: out ext
+18.07.2018 17:18:36:699: clicked - GOOD
+18.07.2018 17:18:36:699: delta error: 0.03732443
+18.07.2018 17:18:36:699: finished round - in time
+18.07.2018 17:18:37:362: clicked - GOOD
+18.07.2018 17:18:37:362: delta error: -0.03002262
+18.07.2018 17:18:37:362: finished round - in time
+18.07.2018 17:18:38:73: clicked - PERFECT
+18.07.2018 17:18:38:73: delta error: -0.09734678
+18.07.2018 17:18:38:73: finished round - in time
+18.07.2018 17:18:38:173: out ext
+18.07.2018 17:18:38:802: clicked - PERFECT
+18.07.2018 17:18:38:802: delta error: -0.1006804
+18.07.2018 17:18:38:803: finished round - in time
+18.07.2018 17:18:39:515: clicked - PERFECT
+18.07.2018 17:18:39:515: delta error: -0.1466894
+18.07.2018 17:18:39:515: finished round - in time
+18.07.2018 17:18:39:731: out int
+18.07.2018 17:18:40:260: clicked - PERFECT
+18.07.2018 17:18:40:260: delta error: -0.1500225
+18.07.2018 17:18:40:260: finished round - in time
+18.07.2018 17:18:40:808: out ext
+18.07.2018 17:18:41:6: clicked - PERFECT
+18.07.2018 17:18:41:6: delta error: -0.1533556
+18.07.2018 17:18:41:6: finished round - in time
+18.07.2018 17:18:41:90: out ext
+18.07.2018 17:18:41:736: clicked - PERFECT
+18.07.2018 17:18:41:736: delta error: -0.1566896
+18.07.2018 17:18:41:736: finished round - in time
+18.07.2018 17:18:42:464: clicked - PERFECT
+18.07.2018 17:18:42:464: delta error: -0.1813383
+18.07.2018 17:18:42:465: finished round - in time
+18.07.2018 17:18:42:564: out ext
+18.07.2018 17:18:43:293: clicked - PERFECT
+18.07.2018 17:18:43:293: delta error: -0.1206799
+18.07.2018 17:18:43:293: finished round - in time
+18.07.2018 17:18:43:741: out int
+18.07.2018 17:18:43:923: out ext
+18.07.2018 17:18:44:56: clicked - PERFECT
+18.07.2018 17:18:44:56: delta error: -0.1026754
+18.07.2018 17:18:44:56: finished round - in time
+18.07.2018 17:18:44:801: clicked - PERFECT
+18.07.2018 17:18:44:801: delta error: -0.1060095
+18.07.2018 17:18:44:801: finished round - in time
+18.07.2018 17:18:45:116: out int
+18.07.2018 17:18:45:613: clicked - GOOD
+18.07.2018 17:18:45:613: delta error: -0.02401352
+18.07.2018 17:18:45:613: finished round - in time
+18.07.2018 17:18:45:745: out ext
+18.07.2018 17:18:46:60: out int
+18.07.2018 17:18:46:325: clicked - PERFECT
+18.07.2018 17:18:46:325: delta error: -0.07002258
+18.07.2018 17:18:46:325: finished round - in time
+18.07.2018 17:18:46:375: out ext
+18.07.2018 17:18:46:756: out int
+18.07.2018 17:18:47:104: clicked - PERFECT
+18.07.2018 17:18:47:104: delta error: -0.05201721
+18.07.2018 17:18:47:104: finished round - in time
+18.07.2018 17:18:47:204: out int
+18.07.2018 17:18:47:850: clicked - PERFECT
+18.07.2018 17:18:47:850: delta error: -0.05535126
+18.07.2018 17:18:47:850: finished round - in time
+18.07.2018 17:18:48:348: out int
+18.07.2018 17:18:48:496: clicked - PERFECT
+18.07.2018 17:18:48:496: delta error: -0.1653519
+18.07.2018 17:18:48:496: finished round - in time
+18.07.2018 17:18:48:993: out int
+18.07.2018 17:18:49:208: clicked - PERFECT
+18.07.2018 17:18:49:208: delta error: -0.1900234
+18.07.2018 17:18:49:208: finished round - in time
+18.07.2018 17:18:49:539: out int
+18.07.2018 17:18:49:953: clicked - PERFECT
+18.07.2018 17:18:49:953: delta error: -0.1933556
+18.07.2018 17:18:49:953: finished round - in time
+18.07.2018 17:18:50:3: out ext
+18.07.2018 17:18:50:302: out int
+18.07.2018 17:18:50:633: clicked - TOO EARLY
+18.07.2018 17:18:50:633: delta error: -0.2606812
+18.07.2018 17:18:50:633: finished round - not in time
+18.07.2018 17:18:50:816: out int
+18.07.2018 17:18:51:249: clicked - TOO EARLY
+18.07.2018 17:18:51:249: delta error: -0.3920174
+18.07.2018 17:18:51:249: finished round - not in time
+18.07.2018 17:18:51:332: out ext
+18.07.2018 17:18:51:862: clicked - TOO LATE
+18.07.2018 17:18:51:862: delta error: 0.2266445
+18.07.2018 17:18:51:862: finished round - not in time
+18.07.2018 17:18:51:895: out ext
+18.07.2018 17:18:52:194: out int
+18.07.2018 17:18:52:425: out ext
+18.07.2018 17:18:52:491: clicked - GOOD
+18.07.2018 17:18:52:491: delta error: 0.09532928
+18.07.2018 17:18:52:491: finished round - in time
+18.07.2018 17:18:52:542: out ext
+18.07.2018 17:18:52:823: out int
+18.07.2018 17:18:53:187: clicked - GOOD
+18.07.2018 17:18:53:187: delta error: -22.5
+18.07.2018 17:18:53:187: finished round - in time
+18.07.2018 17:18:53:204: out ext
+18.07.2018 17:18:55:26: IsochronySmall_80bpm(Clone)
+18.07.2018 17:18:57:594: out int
+18.07.2018 17:18:57:594: clicked - TOO LATE
+18.07.2018 17:18:57:594: delta error: 0.3099773
+18.07.2018 17:18:57:594: finished round - not in time
+18.07.2018 17:18:57:992: out int
+18.07.2018 17:18:58:124: clicked - GOOD
+18.07.2018 17:18:58:124: delta error: 0.0719955
+18.07.2018 17:18:58:124: finished round - in time
+18.07.2018 17:18:58:654: out int
+18.07.2018 17:18:58:853: out int
+18.07.2018 17:18:58:853: clicked - GOOD
+18.07.2018 17:18:58:853: delta error: 0.06866217
+18.07.2018 17:18:58:853: finished round - in time
+18.07.2018 17:18:58:969: out int
+18.07.2018 17:18:59:267: out int
+18.07.2018 17:18:59:532: clicked - PERFECT
+18.07.2018 17:18:59:532: delta error: 0.001315117
+18.07.2018 17:18:59:532: finished round - in time
+18.07.2018 17:18:59:831: out int
+18.07.2018 17:19:00:145: clicked - PERFECT
+18.07.2018 17:19:00:145: delta error: -0.1513381
+18.07.2018 17:19:00:146: finished round - in time
+18.07.2018 17:19:00:294: out ext
+18.07.2018 17:19:00:891: clicked - PERFECT
+18.07.2018 17:19:00:891: delta error: -0.1546712
+18.07.2018 17:19:00:891: finished round - in time
+18.07.2018 17:19:01:73: out ext
+18.07.2018 17:19:01:523: out int
+18.07.2018 17:19:01:572: clicked - TOO EARLY
+18.07.2018 17:19:01:572: delta error: -0.2220182
+18.07.2018 17:19:01:572: finished round - not in time
+18.07.2018 17:19:01:722: out ext
+18.07.2018 17:19:01:987: out ext
+18.07.2018 17:19:02:336: clicked - TOO EARLY
+18.07.2018 17:19:02:336: delta error: -0.2040138
+18.07.2018 17:19:02:337: finished round - not in time
+18.07.2018 17:19:02:369: out ext
+18.07.2018 17:19:02:914: clicked - TOO LATE
+18.07.2018 17:19:02:914: delta error: 0.3719954
+18.07.2018 17:19:02:914: finished round - not in time
+18.07.2018 17:19:02:964: out ext
+18.07.2018 17:19:03:429: out int
+18.07.2018 17:19:03:444: clicked - GOOD
+18.07.2018 17:19:03:444: delta error: 0.1553288
+18.07.2018 17:19:03:444: finished round - in time
+18.07.2018 17:19:03:528: out ext
+18.07.2018 17:19:03:976: out int
+18.07.2018 17:19:04:41: clicked - PERFECT
+18.07.2018 17:19:04:41: delta error: 0.002653122
+18.07.2018 17:19:04:41: finished round - in time
+18.07.2018 17:19:04:92: out ext
+18.07.2018 17:19:04:588: out int
+18.07.2018 17:19:04:720: clicked - PERFECT
+18.07.2018 17:19:04:720: delta error: -0.06467152
+18.07.2018 17:19:04:720: finished round - in time
+18.07.2018 17:19:04:754: out ext
+18.07.2018 17:19:05:202: out ext
+18.07.2018 17:19:05:449: clicked - PERFECT
+18.07.2018 17:19:05:450: delta error: -0.08934212
+18.07.2018 17:19:05:450: finished round - in time
+18.07.2018 17:19:05:850: out ext
+18.07.2018 17:19:06:114: clicked - PERFECT
+18.07.2018 17:19:06:114: delta error: -0.1780043
+18.07.2018 17:19:06:115: finished round - in time
+18.07.2018 17:19:06:164: out ext
+18.07.2018 17:19:06:563: out int
+18.07.2018 17:19:06:728: out ext
+18.07.2018 17:19:06:893: clicked - PERFECT
+18.07.2018 17:19:06:893: delta error: -0.1386852
+18.07.2018 17:19:06:893: finished round - in time
+18.07.2018 17:19:06:927: out ext
+18.07.2018 17:19:07:208: out int
+18.07.2018 17:19:07:588: clicked - TOO EARLY
+18.07.2018 17:19:07:589: delta error: -0.2060089
+18.07.2018 17:19:07:589: finished round - not in time
+18.07.2018 17:19:07:656: out ext
+18.07.2018 17:19:07:871: out int
+18.07.2018 17:19:08:152: clicked - TOO LATE
+18.07.2018 17:19:08:152: delta error: 0.369977
+18.07.2018 17:19:08:152: finished round - not in time
+18.07.2018 17:19:08:202: out ext
+18.07.2018 17:19:08:534: out int
+18.07.2018 17:19:08:666: out ext
+18.07.2018 17:19:08:831: clicked - TOO LATE
+18.07.2018 17:19:08:831: delta error: 0.3026533
+18.07.2018 17:19:08:831: finished round - not in time
+18.07.2018 17:19:08:932: out int
+18.07.2018 17:19:09:329: clicked - GOOD
+18.07.2018 17:19:09:329: delta error: 0.04331112
+18.07.2018 17:19:09:330: finished round - in time
+18.07.2018 17:19:09:395: out ext
+18.07.2018 17:19:09:752: out int
+18.07.2018 17:19:09:901: out ext
+18.07.2018 17:19:09:901: clicked - PERFECT
+18.07.2018 17:19:09:902: delta error: -0.1306801
+18.07.2018 17:19:09:902: finished round - in time
+18.07.2018 17:19:10:315: out ext
+18.07.2018 17:19:10:581: out int
+18.07.2018 17:19:10:581: clicked - TOO EARLY
+18.07.2018 17:19:10:581: delta error: -0.1980047
+18.07.2018 17:19:10:581: finished round - not in time
+18.07.2018 17:19:10:911: out ext
+18.07.2018 17:19:11:59: clicked - TOO LATE
+18.07.2018 17:19:11:59: delta error: 0.2713146
+18.07.2018 17:19:11:60: finished round - not in time
+18.07.2018 17:19:11:276: out int
+18.07.2018 17:19:11:474: out ext
+18.07.2018 17:19:11:822: out int
+18.07.2018 17:19:11:922: out ext
+18.07.2018 17:19:12:170: clicked - PERFECT
+18.07.2018 17:19:12:170: delta error: -0.1193428
+18.07.2018 17:19:12:170: finished round - in time
+18.07.2018 17:19:12:187: out int
+18.07.2018 17:19:12:468: out ext
+18.07.2018 17:19:12:850: out int
+18.07.2018 17:19:13:65: clicked - GOOD
+18.07.2018 17:19:13:65: delta error: 0.02664375
+18.07.2018 17:19:13:65: finished round - in time
+18.07.2018 17:19:13:82: out ext
+18.07.2018 17:19:13:546: out ext
+18.07.2018 17:19:13:645: out int
+18.07.2018 17:19:13:694: clicked - PERFECT
+18.07.2018 17:19:13:694: delta error: -0.08335686
+18.07.2018 17:19:13:694: finished round - in time
+18.07.2018 17:19:13:712: out ext
+18.07.2018 17:19:14:231: out int
+18.07.2018 17:19:14:264: clicked - TOO EARLY
+18.07.2018 17:19:14:264: delta error: -0.2573471
+18.07.2018 17:19:14:264: finished round - not in time
+18.07.2018 17:19:14:364: out ext
+18.07.2018 17:19:14:696: out int
+18.07.2018 17:19:14:794: clicked - TOO LATE
+18.07.2018 17:19:14:794: delta error: 0.2546482
+18.07.2018 17:19:14:794: finished round - not in time
+18.07.2018 17:19:14:844: out ext
+18.07.2018 17:19:15:175: out int
+18.07.2018 17:19:15:192: out ext
+18.07.2018 17:19:15:390: clicked - GOOD
+18.07.2018 17:19:15:390: delta error: 0.1019955
+18.07.2018 17:19:15:390: finished round - in time
+18.07.2018 17:19:15:408: out ext
+18.07.2018 17:19:15:688: out int
+18.07.2018 17:19:15:707: out ext
+18.07.2018 17:19:15:987: clicked - PERFECT
+18.07.2018 17:19:15:987: delta error: -0.05068016
+18.07.2018 17:19:15:987: finished round - in time
+18.07.2018 17:19:16:4: out ext
+18.07.2018 17:19:16:235: out int
+18.07.2018 17:19:16:252: out ext
+18.07.2018 17:19:16:931: out ext
+18.07.2018 17:19:17:495: out int
+18.07.2018 17:19:17:528: out ext
+18.07.2018 17:19:18:162: out ext
+18.07.2018 17:19:19:75: IsochronyBig_80bpm(Clone)
+18.07.2018 17:19:22:652: clicked - TOO EARLY
+18.07.2018 17:19:22:652: delta error: -0.1660092
+18.07.2018 17:19:22:652: finished round - not in time
+18.07.2018 17:19:22:653: out int
+18.07.2018 17:19:23:134: out int
+18.07.2018 17:19:23:232: clicked - TOO EARLY
+18.07.2018 17:19:23:232: delta error: -0.3613377
+18.07.2018 17:19:23:233: finished round - not in time
+18.07.2018 17:19:23:332: out ext
+18.07.2018 17:19:23:564: out ext
+18.07.2018 17:19:23:846: clicked - TOO LATE
+18.07.2018 17:19:23:846: delta error: 0.2573242
+18.07.2018 17:19:23:846: finished round - not in time
+18.07.2018 17:19:24:193: out ext
+18.07.2018 17:19:24:410: out ext
+18.07.2018 17:19:24:707: out int
+18.07.2018 17:19:24:922: clicked - PERFECT
+18.07.2018 17:19:24:922: delta error: -0.1546712
+18.07.2018 17:19:24:922: finished round - in time
+18.07.2018 17:19:24:972: out ext
+18.07.2018 17:19:25:507: clicked - TOO EARLY
+18.07.2018 17:19:25:507: delta error: -0.3286848
+18.07.2018 17:19:25:507: finished round - not in time
+18.07.2018 17:19:25:574: out ext
+18.07.2018 17:19:25:872: out ext
+18.07.2018 17:19:26:54: clicked - TOO LATE
+18.07.2018 17:19:26:54: delta error: 0.2259865
+18.07.2018 17:19:26:54: finished round - not in time
+18.07.2018 17:19:26:71: out ext
+18.07.2018 17:19:26:353: out int
+18.07.2018 17:19:26:402: clicked - TOO EARLY
+18.07.2018 17:19:26:402: delta error: -0.1826758
+18.07.2018 17:19:26:402: finished round - not in time
+18.07.2018 17:19:26:502: out ext
+18.07.2018 17:19:26:850: out int
+18.07.2018 17:19:26:948: clicked - TOO LATE
+18.07.2018 17:19:26:948: delta error: 0.3506575
+18.07.2018 17:19:26:949: finished round - not in time
+18.07.2018 17:19:27:32: out ext
+18.07.2018 17:19:27:347: out ext
+18.07.2018 17:19:27:844: out ext
+18.07.2018 17:19:28:109: out ext
+18.07.2018 17:19:28:605: clicked - TOO EARLY
+18.07.2018 17:19:28:606: delta error: -0.2140141
+18.07.2018 17:19:28:606: finished round - not in time
+18.07.2018 17:19:28:673: out ext
+18.07.2018 17:19:28:954: out int
+18.07.2018 17:19:29:169: clicked - TOO LATE
+18.07.2018 17:19:29:169: delta error: 0.3406572
+18.07.2018 17:19:29:169: finished round - not in time
+18.07.2018 17:19:29:186: out ext
+18.07.2018 17:19:29:600: out ext
+18.07.2018 17:19:29:699: clicked - GOOD
+18.07.2018 17:19:29:715: delta error: 0.123991
+18.07.2018 17:19:29:715: finished round - in time
+18.07.2018 17:19:29:720: out ext
+18.07.2018 17:19:30:333: clicked - PERFECT
+18.07.2018 17:19:30:333: delta error: 0.01399136
+18.07.2018 17:19:30:333: finished round - in time
+18.07.2018 17:19:30:383: out ext
+18.07.2018 17:19:30:846: out ext
+18.07.2018 17:19:31:61: clicked - PERFECT
+18.07.2018 17:19:31:62: delta error: -0.0106802
+18.07.2018 17:19:31:62: finished round - in time
+18.07.2018 17:19:31:112: out ext
+18.07.2018 17:19:31:410: out ext
+18.07.2018 17:19:31:807: clicked - PERFECT
+18.07.2018 17:19:31:807: delta error: -0.01401329
+18.07.2018 17:19:31:807: finished round - in time
+18.07.2018 17:19:31:873: out ext
+18.07.2018 17:19:32:553: clicked - PERFECT
+18.07.2018 17:19:32:553: delta error: -0.03868484
+18.07.2018 17:19:32:553: finished round - in time
+18.07.2018 17:19:32:669: out ext
+18.07.2018 17:19:33:216: clicked - PERFECT
+18.07.2018 17:19:33:216: delta error: -0.127347
+18.07.2018 17:19:33:216: finished round - in time
+18.07.2018 17:19:33:315: out ext
+18.07.2018 17:19:33:663: out int
+18.07.2018 17:19:33:746: out int
+18.07.2018 17:19:33:911: clicked - PERFECT
+18.07.2018 17:19:33:911: delta error: -0.1733561
+18.07.2018 17:19:33:911: finished round - in time
+18.07.2018 17:19:33:995: out ext
+18.07.2018 17:19:34:495: clicked - TOO EARLY
+18.07.2018 17:19:34:495: delta error: -0.3473473
+18.07.2018 17:19:34:495: finished round - not in time
+18.07.2018 17:19:34:529: out ext
+18.07.2018 17:19:34:843: out ext
+18.07.2018 17:19:35:108: clicked - TOO LATE
+18.07.2018 17:19:35:108: delta error: 0.2713146
+18.07.2018 17:19:35:108: finished round - not in time
+18.07.2018 17:19:35:142: out ext
+18.07.2018 17:19:35:406: out ext
+18.07.2018 17:19:35:687: clicked - GOOD
+18.07.2018 17:19:35:687: delta error: 0.09732437
+18.07.2018 17:19:35:687: finished round - in time
+18.07.2018 17:19:35:754: out ext
+18.07.2018 17:19:36:135: out ext
+18.07.2018 17:19:36:268: clicked - PERFECT
+18.07.2018 17:19:36:268: delta error: -0.05535126
+18.07.2018 17:19:36:268: finished round - in time
+18.07.2018 17:19:36:269: out int
+18.07.2018 17:19:36:335: out ext
+18.07.2018 17:19:36:880: clicked - TOO EARLY
+18.07.2018 17:19:36:880: delta error: -0.208004
+18.07.2018 17:19:36:880: finished round - not in time
+18.07.2018 17:19:36:914: out ext
+18.07.2018 17:19:37:246: out int
+18.07.2018 17:19:37:361: out ext
+18.07.2018 17:19:37:792: out int
+18.07.2018 17:19:38:7: clicked - GOOD
+18.07.2018 17:19:38:7: delta error: 0.1726532
+18.07.2018 17:19:38:7: finished round - in time
+18.07.2018 17:19:38:40: out ext
+18.07.2018 17:19:38:421: out int
+18.07.2018 17:19:38:504: clicked - PERFECT
+18.07.2018 17:19:38:504: delta error: -0.06535149
+18.07.2018 17:19:38:504: finished round - in time
+18.07.2018 17:19:38:626: out ext
+18.07.2018 17:19:38:809: out ext
+18.07.2018 17:19:39:24: out int
+18.07.2018 17:19:39:41: clicked - TOO EARLY
+18.07.2018 17:19:39:41: delta error: -0.2820187
+18.07.2018 17:19:39:41: finished round - not in time
+18.07.2018 17:19:39:106: out ext
+18.07.2018 17:19:39:372: out int
+18.07.2018 17:19:39:471: clicked - GOOD
+18.07.2018 17:19:39:471: delta error: 0.1446476
+18.07.2018 17:19:39:471: finished round - in time
+18.07.2018 17:19:39:620: out ext
+18.07.2018 17:19:39:885: out int
+18.07.2018 17:19:40:0: clicked - PERFECT
+18.07.2018 17:19:40:0: delta error: -0.07201767
+18.07.2018 17:19:40:1: finished round - in time
+18.07.2018 17:19:40:100: out ext
+18.07.2018 17:19:40:365: out int
+18.07.2018 17:19:40:548: out ext
+18.07.2018 17:19:40:896: out int
+18.07.2018 17:19:41:145: out ext
+18.07.2018 17:19:41:210: clicked - TOO LATE
+18.07.2018 17:19:41:210: delta error: 0.3939915
+18.07.2018 17:19:41:210: finished round - not in time
+18.07.2018 17:19:41:443: out int
+18.07.2018 17:19:41:674: clicked - GOOD
+18.07.2018 17:19:41:674: delta error: -22.5
+18.07.2018 17:19:41:674: finished round - in time
+18.07.2018 17:19:41:707: out ext
+18.07.2018 17:19:42:56: out int
+18.07.2018 17:19:42:90: out ext
+18.07.2018 17:19:43:85: A
+18.07.2018 17:19:43:85: B
+18.07.2018 17:19:43:85: C
+18.07.2018 17:19:49:539: touched A - correct
+18.07.2018 17:19:49:952: out external circle
+18.07.2018 17:19:50:119: touched C - correct
+18.07.2018 17:19:51:112: touched A - correct
+18.07.2018 17:19:51:427: touched B - correct
+18.07.2018 17:19:51:477: out internal circle
+18.07.2018 17:19:51:709: touched A - correct
+18.07.2018 17:19:51:726: out external circle
+18.07.2018 17:19:52:205: touched C - correct
+18.07.2018 17:19:52:604: touched A - correct
+18.07.2018 17:19:52:973: touched B - correct
+18.07.2018 17:19:53:139: out internal circle
+18.07.2018 17:19:53:221: touched A - correct
+18.07.2018 17:19:53:619: out external circle
+18.07.2018 17:19:53:701: touched C - correct
+18.07.2018 17:19:54:66: touched A - correct
+18.07.2018 17:19:54:348: touched B - correct
+18.07.2018 17:19:54:348: out internal circle
+18.07.2018 17:19:54:663: touched A - correct
+18.07.2018 17:19:54:982: out external circle
+18.07.2018 17:19:55:81: touched C - correct
+18.07.2018 17:19:55:445: touched A - correct
+18.07.2018 17:19:55:461: out internal circle
+18.07.2018 17:19:55:693: touched B - correct
+18.07.2018 17:19:55:892: touched A - correct
+18.07.2018 17:19:55:975: out external circle
+18.07.2018 17:19:56:290: touched C - correct
+18.07.2018 17:19:56:704: touched A - correct
+18.07.2018 17:19:57:7: touched B - correct
+18.07.2018 17:19:57:24: out internal circle
+18.07.2018 17:19:57:222: touched A - correct
+18.07.2018 17:19:59:628: A
+18.07.2018 17:19:59:629: B
+18.07.2018 17:19:59:629: C
+18.07.2018 17:20:00:140: touched A - correct
+18.07.2018 17:20:00:255: out external circle
+18.07.2018 17:20:00:421: touched B - wrong
+18.07.2018 17:20:00:570: touched A - wrong
+18.07.2018 17:20:00:886: touched C - correct
+18.07.2018 17:20:01:83: touched A - correct
+18.07.2018 17:20:01:84: out internal circle
+18.07.2018 17:20:01:366: touched B - correct
+18.07.2018 17:20:01:515: touched A - correct
+18.07.2018 17:20:01:879: touched C - correct
+18.07.2018 17:20:02:78: out external circle
+18.07.2018 17:20:02:211: touched A - correct
+18.07.2018 17:20:02:244: out internal circle
+18.07.2018 17:20:02:443: touched B - correct
+18.07.2018 17:20:02:641: touched A - correct
+18.07.2018 17:20:02:724: out external circle
+18.07.2018 17:20:02:972: touched C - correct
+18.07.2018 17:20:03:321: touched A - correct
+18.07.2018 17:20:03:387: out internal circle
+18.07.2018 17:20:03:469: touched B - correct
+18.07.2018 17:20:03:735: touched A - correct
+18.07.2018 17:20:03:801: out external circle
+18.07.2018 17:20:04:49: touched C - correct
+18.07.2018 17:20:04:381: touched A - correct
+18.07.2018 17:20:04:381: out internal circle
+18.07.2018 17:20:04:580: touched B - correct
+18.07.2018 17:20:04:771: touched A - correct
+18.07.2018 17:20:04:870: out external circle
+18.07.2018 17:20:05:135: touched C - correct
+18.07.2018 17:20:05:549: touched A - correct
+18.07.2018 17:20:05:549: out internal circle
+18.07.2018 17:20:05:682: touched B - correct
+18.07.2018 17:20:06:13: touched A - correct
+18.07.2018 17:20:07:422: A
+18.07.2018 17:20:07:422: B
+18.07.2018 17:20:07:422: C
+18.07.2018 17:20:08:266: touched A - correct
+18.07.2018 17:20:08:349: out external circle
+18.07.2018 17:20:08:514: touched B - wrong
+18.07.2018 17:20:08:630: touched A - wrong
+18.07.2018 17:20:08:928: touched C - correct
+18.07.2018 17:20:09:44: touched A - correct
+18.07.2018 17:20:09:45: out internal circle
+18.07.2018 17:20:09:260: touched B - correct
+18.07.2018 17:20:09:443: touched A - correct
+18.07.2018 17:20:09:492: out external circle
+18.07.2018 17:20:09:691: touched C - correct
+18.07.2018 17:20:09:890: touched A - correct
+18.07.2018 17:20:10:72: touched B - correct
+18.07.2018 17:20:10:254: touched A - correct
+18.07.2018 17:20:10:337: out external circle
+18.07.2018 17:20:10:553: touched C - correct
+18.07.2018 17:20:10:734: touched A - correct
+18.07.2018 17:20:10:752: out internal circle
+18.07.2018 17:20:10:999: touched B - correct
+18.07.2018 17:20:11:182: touched A - correct
+18.07.2018 17:20:11:387: out external circle
+18.07.2018 17:20:11:453: touched C - correct
+18.07.2018 17:20:11:851: touched B - wrong
+18.07.2018 17:20:12:165: touched A - correct
+18.07.2018 17:20:12:249: out internal circle
+18.07.2018 17:20:12:381: touched C - wrong
+18.07.2018 17:20:12:894: touched A - wrong
+18.07.2018 17:20:13:160: touched B - correct
+18.07.2018 17:20:13:375: touched A - correct
+18.07.2018 17:20:13:375: out external circle
+18.07.2018 17:20:13:722: touched C - correct
+18.07.2018 17:20:14:187: touched B - wrong
+18.07.2018 17:20:14:452: touched A - correct
+18.07.2018 17:20:14:534: out internal circle
+18.07.2018 17:20:14:733: touched C - wrong
+18.07.2018 17:20:15:148: touched B - correct
+18.07.2018 17:20:15:495: touched A - correct
+18.07.2018 17:20:16:507: A
+18.07.2018 17:20:16:507: B
+18.07.2018 17:20:16:507: C
+18.07.2018 17:20:17:434: touched A - correct
+18.07.2018 17:20:17:632: out external circle
+18.07.2018 17:20:17:732: touched B - wrong
+18.07.2018 17:20:17:881: touched A - wrong
+18.07.2018 17:20:18:269: touched C - correct
+18.07.2018 17:20:18:634: touched A - correct
+18.07.2018 17:20:18:833: touched B - correct
+18.07.2018 17:20:19:15: touched A - correct
+18.07.2018 17:20:19:115: out external circle
+18.07.2018 17:20:19:347: touched C - correct
+18.07.2018 17:20:19:695: touched A - correct
+18.07.2018 17:20:19:893: touched B - correct
+18.07.2018 17:20:20:75: touched A - correct
+18.07.2018 17:20:20:191: out external circle
+18.07.2018 17:20:20:390: touched C - correct
+18.07.2018 17:20:20:655: touched A - correct
+18.07.2018 17:20:20:738: out internal circle
+18.07.2018 17:20:20:854: touched B - correct
+18.07.2018 17:20:21:20: touched A - correct
+18.07.2018 17:20:21:168: out external circle
+18.07.2018 17:20:21:367: touched C - correct
+18.07.2018 17:20:21:649: touched A - correct
+18.07.2018 17:20:21:649: out internal circle
+18.07.2018 17:20:21:816: touched B - correct
+18.07.2018 17:20:22:14: touched A - correct
+18.07.2018 17:20:22:14: out external circle
+18.07.2018 17:20:22:345: touched C - correct
+18.07.2018 17:20:22:609: touched A - correct
+18.07.2018 17:20:22:743: out internal circle
+18.07.2018 17:20:22:792: touched B - correct
+18.07.2018 17:20:23:73: touched A - correct
+18.07.2018 17:20:24:318: A
+18.07.2018 17:20:24:318: B
+18.07.2018 17:20:24:318: C
+18.07.2018 17:20:25:450: touched A - correct
+18.07.2018 17:20:25:781: out external circle
+18.07.2018 17:20:26:344: touched B - wrong
+18.07.2018 17:20:27:7: touched A - wrong
+18.07.2018 17:20:27:620: touched C - correct
+18.07.2018 17:20:28:332: touched A - correct
+18.07.2018 17:20:28:332: out internal circle
+18.07.2018 17:20:28:946: touched B - correct
+18.07.2018 17:20:29:691: touched A - correct
+18.07.2018 17:20:30:967: out external circle
+18.07.2018 17:20:31:132: touched C - correct
+18.07.2018 17:20:32:502: touched A - correct
+18.07.2018 17:20:33:744: touched B - correct
+18.07.2018 17:20:34:689: touched A - correct
+18.07.2018 17:20:37:240: touched C - correct
+18.07.2018 17:20:37:554: out external circle
+18.07.2018 17:20:38:980: touched A - correct
+18.07.2018 17:20:40:421: touched B - correct
+18.07.2018 17:20:40:882: out internal circle
+18.07.2018 17:20:41:627: touched A - correct
+18.07.2018 17:20:44:12: touched C - correct
+18.07.2018 17:20:45:704: touched A - correct
+18.07.2018 17:20:46:846: touched B - correct
+18.07.2018 17:20:47:923: touched A - correct
+18.07.2018 17:20:50:185: touched C - correct
+18.07.2018 17:20:51:130: out external circle
+18.07.2018 17:20:51:760: touched A - correct
+18.07.2018 17:20:53:2: touched B - correct
+18.07.2018 17:20:54:261: touched A - correct

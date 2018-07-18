@@ -171,7 +171,7 @@ public class Controller : CallBackInterface {
             
             if (angle >= 360 * 4 + initialAngle)
             {
-                dragon.SetActive(false);//ciao
+                dragon.SetActive(false);
                 dragonDrawing = false;
             }
         }
